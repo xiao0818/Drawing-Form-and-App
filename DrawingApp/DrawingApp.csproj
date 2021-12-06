@@ -116,14 +116,23 @@
     <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="..\DrawingModel\Ellipse.cs">
+      <Link>Model\Ellipse.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
     </Compile>
-    <Compile Include="..\DrawingModel\Line.cs">
-      <Link>Model\Line.cs</Link>
-    </Compile>
     <Compile Include="..\DrawingModel\Model.cs">
       <Link>Model\Model.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\Rectangle.cs">
+      <Link>Model\Rectangle.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\Shape.cs">
+      <Link>Model\Shape.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\ShapeFlag.cs">
+      <Link>Model\ShapeFlag.cs</Link>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>

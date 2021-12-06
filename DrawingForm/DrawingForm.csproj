@@ -46,23 +46,33 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\DrawingModel\Ellipse.cs">
+      <Link>Model\Ellipse.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
-    </Compile>
-    <Compile Include="..\DrawingModel\Line.cs">
-      <Link>Model\Line.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\Rectangle.cs">
+      <Link>Model\Rectangle.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\Shape.cs">
+      <Link>Model\Shape.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\ShapeFlag.cs">
+      <Link>Model\ShapeFlag.cs</Link>
+    </Compile>
+    <Compile Include="PresentationModel\DrawingFormPresentationModel.cs" />
     <Compile Include="View\DoubleBufferedPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="View\Form1.cs">
+    <Compile Include="View\DrawingForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="View\DrawingForm.Designer.cs">
+      <DependentUpon>DrawingForm.cs</DependentUpon>
     </Compile>
     <Compile Include="View\WindowsFormsGraphicsAdaptor.cs" />
     <Compile Include="Program.cs" />
@@ -76,6 +86,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\DrawingForm.resx">
+      <DependentUpon>DrawingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
