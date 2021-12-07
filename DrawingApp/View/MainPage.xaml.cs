@@ -21,7 +21,7 @@ namespace DrawingApp
             this.InitializeComponent();
             _drawingAppPresentationModel = new DrawingAppPresentationModel(new Model());
             // Note: 重複使用_igraphics物件
-            _iGraphics = new View.WindowsStoreGraphicsAdaptor(_canvas);
+            _iGraphics = new WindowsStoreGraphicsAdaptor(_canvas);
             // Events
             _canvas.PointerPressed += HandleCanvasPointerPressed;
             _canvas.PointerReleased += HandleCanvasPointerReleased;

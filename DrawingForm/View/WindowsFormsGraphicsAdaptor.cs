@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace DrawingForm
 {
-    class WindowsFormsGraphicsAdaptor : IGraphics
+    public class WindowsFormsGraphicsAdaptor : IGraphics
     {
         Graphics _graphics;
         const int THICKNESS = 3;

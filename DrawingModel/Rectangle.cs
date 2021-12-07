@@ -1,6 +1,6 @@
 ﻿namespace DrawingModel
 {
-    class Rectangle : Shape
+    public class Rectangle : Shape
     {
         double _x1;
         double _y1;

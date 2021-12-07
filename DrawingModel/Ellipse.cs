@@ -1,6 +1,6 @@
 ﻿namespace DrawingModel
 {
-    class Ellipse : Shape
+    public class Ellipse : Shape
     {
         double _x1;
         double _y1;

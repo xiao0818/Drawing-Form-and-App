@@ -2,7 +2,7 @@
 
 namespace DrawingApp
 {
-    class DrawingAppPresentationModel
+    public class DrawingAppPresentationModel
     {
         public event DrawingAppPresentationModelChangedEventHandler _drawingAppPresentationModelChanged;
         public delegate void DrawingAppPresentationModelChangedEventHandler();
