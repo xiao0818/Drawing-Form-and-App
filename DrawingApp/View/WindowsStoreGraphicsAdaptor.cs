@@ -29,13 +29,25 @@ namespace DrawingApp.View
         //DrawRectangle
         public void DrawRectangle(double x1, double y1, double x2, double y2)
         {
+            if (x1 > x2)
+            {
+                double temp = x1;
+                x1 = x2;
+                x2 = temp;
+            }
+            if (y1 > y2)
+            {
+                double temp = y1;
+                y1 = y2;
+                y2 = temp;
+            }
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Rectangle rectangle = new Windows.UI.Xaml.Shapes.Rectangle();
             rectangle.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
-            rectangle.Width = x2;
-            rectangle.Height = y2;
+            rectangle.Width = x2 - x1;
+            rectangle.Height = y2- y1;
             rectangle.Stroke = new SolidColorBrush(Colors.Black);
-            rectangle.StrokeThickness = 3;
+            rectangle.StrokeThickness = 1;
             rectangle.Fill = new SolidColorBrush(Colors.Yellow);
             // 將圖形物件加入Children
             _canvas.Children.Add(rectangle);
@@ -44,13 +56,25 @@ namespace DrawingApp.View
         //DrawEllipse
         public void DrawEllipse(double x1, double y1, double x2, double y2)
         {
+            if (x1 > x2)
+            {
+                double temp = x1;
+                x1 = x2;
+                x2 = temp;
+            }
+            if (y1 > y2)
+            {
+                double temp = y1;
+                y1 = y2;
+                y2 = temp;
+            }
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse = new Windows.UI.Xaml.Shapes.Ellipse();
             ellipse.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
-            ellipse.Width = x2;
-            ellipse.Height = y2;
+            ellipse.Width = x2 - x1;
+            ellipse.Height = y2 - y1;
             ellipse.Stroke = new SolidColorBrush(Colors.Black);
-            ellipse.StrokeThickness = 3;
+            ellipse.StrokeThickness = 1;
             ellipse.Fill = new SolidColorBrush(Colors.Orange);
             // 將圖形物件加入Children
             _canvas.Children.Add(ellipse);

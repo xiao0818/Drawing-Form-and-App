@@ -188,77 +188,77 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Ellipse.SetY1.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Ellipse.SetX2.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Ellipse.SetY2.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>4</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Ellipse.Draw.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>5</Id>
               <SmellType>ICS(變數-1)</SmellType>
               <HashCode>Variable1.Ellipse.x1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>11</Line>
+              <Line>5</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Ellipse.x1</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Ellipse.cs</File>
+              <Line>5</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Ellipse.y1</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Ellipse.cs</File>
+              <Line>6</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Ellipse.y1</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Ellipse.cs</File>
+              <Line>6</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Ellipse.x2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Ellipse.cs</File>
+              <Line>7</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -269,12 +269,12 @@
             <Smell>
               <Id>6</Id>
               <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Ellipse.x1</HashCode>
+              <HashCode>ClassDeclaration1.Ellipse.x2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>11</Line>
+              <Line>7</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -285,12 +285,12 @@
             <Smell>
               <Id>7</Id>
               <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Ellipse.y1</HashCode>
+              <HashCode>Variable1.Ellipse.y2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>12</Line>
+              <Line>8</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -301,12 +301,12 @@
             <Smell>
               <Id>8</Id>
               <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Ellipse.y1</HashCode>
+              <HashCode>ClassDeclaration1.Ellipse.y2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>12</Line>
+              <Line>8</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -316,77 +316,13 @@
             </Smell>
             <Smell>
               <Id>9</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Ellipse.x2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>10</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Ellipse.x2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>11</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Ellipse.y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>12</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Ellipse.y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>13</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Ellipse.SetX1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>15</Line>
+              <Line>11</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -395,14 +331,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>14</Id>
+              <Id>10</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Ellipse.SetY1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>19</Line>
+              <Line>17</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -411,7 +347,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>15</Id>
+              <Id>11</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Ellipse.SetX2</HashCode>
               <Severity>Red</Severity>
@@ -427,190 +363,238 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>16</Id>
+              <Id>12</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Ellipse.SetY2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Ellipse.cs</File>
-              <Line>27</Line>
+              <Line>29</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
               <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>13</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerPressed.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>16</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerPressed.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>16</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>15</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.Model.PointerPressed</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>16</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>16</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerMoved.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>37</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>17</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Line.SetY1.0</HashCode>
-              <Severity>Red</Severity>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerMoved.y</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>19</Line>
+              <File>Model.cs</File>
+              <Line>37</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>18</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Line.SetX2.0</HashCode>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.Model.PointerMoved</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>23</Line>
+              <File>Model.cs</File>
+              <Line>37</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>19</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Line.SetY2.0</HashCode>
-              <Severity>Red</Severity>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerReleased.x</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>27</Line>
+              <File>Model.cs</File>
+              <Line>48</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>20</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Line.Draw.0</HashCode>
-              <Severity>Red</Severity>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.Model.PointerReleased.y</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>31</Line>
+              <File>Model.cs</File>
+              <Line>48</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>21</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Line.x1</HashCode>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.Model.PointerReleased</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>11</Line>
+              <File>Model.cs</File>
+              <Line>48</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>22</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Line.x1</HashCode>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Rectangle.x1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>11</Line>
+              <File>Rectangle.cs</File>
+              <Line>5</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>23</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Line.y1</HashCode>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Rectangle.x1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>12</Line>
+              <File>Rectangle.cs</File>
+              <Line>5</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>24</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Line.y1</HashCode>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Rectangle.y1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>12</Line>
+              <File>Rectangle.cs</File>
+              <Line>6</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
+              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>25</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Line.x2</HashCode>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Rectangle.y1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>13</Line>
+              <File>Rectangle.cs</File>
+              <Line>6</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>26</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Line.x2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>27</Id>
               <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Line.y2</HashCode>
+              <HashCode>Variable1.Rectangle.x2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>14</Line>
+              <File>Rectangle.cs</File>
+              <Line>7</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -619,14 +603,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>28</Id>
+              <Id>27</Id>
               <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Line.y2</HashCode>
+              <HashCode>ClassDeclaration1.Rectangle.x2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>14</Line>
+              <File>Rectangle.cs</File>
+              <Line>7</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -635,30 +619,46 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>29</Id>
-              <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Line.SetX1</HashCode>
+              <Id>28</Id>
+              <SmellType>ICS(變數-1)</SmellType>
+              <HashCode>Variable1.Rectangle.y2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>15</Line>
+              <File>Rectangle.cs</File>
+              <Line>8</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>29</Id>
+              <SmellType>ICS(類別宣告-1)</SmellType>
+              <HashCode>ClassDeclaration1.Rectangle.y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Rectangle.cs</File>
+              <Line>8</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>30</Id>
               <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Line.SetY1</HashCode>
+              <HashCode>Method5.Rectangle.SetX1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>19</Line>
+              <File>Rectangle.cs</File>
+              <Line>11</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -669,12 +669,12 @@
             <Smell>
               <Id>31</Id>
               <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Line.SetX2</HashCode>
+              <HashCode>Method5.Rectangle.SetY1</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>23</Line>
+              <File>Rectangle.cs</File>
+              <Line>17</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -684,390 +684,6 @@
             </Smell>
             <Smell>
               <Id>32</Id>
-              <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Line.SetY2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>33</Id>
-              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerPressed.x</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>34</Id>
-              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerPressed.y</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>35</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.Model.PointerPressed</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>36</Id>
-              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerMoved.x</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>37</Id>
-              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerMoved.y</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>38</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.Model.PointerMoved</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>39</Id>
-              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerReleased.x</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>40</Id>
-              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
-              <HashCode>UnsuitableNaming.Model.PointerReleased.y</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>41</Id>
-              <SmellType>ICS(函式-2)</SmellType>
-              <HashCode>Method2.Model.PointerReleased</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>42</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Rectangle.SetY1.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>43</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Rectangle.SetX2.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>44</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Rectangle.SetY2.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>45</Id>
-              <SmellType>ICS(空白與空行-16)</SmellType>
-              <HashCode>SpacingAndNewLine16.Rectangle.Draw.0</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(空白與空行-16) 每個函式之間加一個空行</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>46</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Rectangle.x1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>47</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Rectangle.x1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>48</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Rectangle.y1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>49</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Rectangle.y1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>50</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Rectangle.x2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>51</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Rectangle.x2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>52</Id>
-              <SmellType>ICS(變數-1)</SmellType>
-              <HashCode>Variable1.Rectangle.y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(變數-1) Class 成員變數以底線開始，底線後第一個字母小寫，若由多個單字組成，從第二個單字開始，每個單字的第一個字母大寫，其餘小寫。 不以底線區隔單字</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>53</Id>
-              <SmellType>ICS(類別宣告-1)</SmellType>
-              <HashCode>ClassDeclaration1.Rectangle.y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(類別宣告-1) 除非為類別常數(static class constants)，成員變數請勿宣告為 public</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>54</Id>
-              <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Rectangle.SetX1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>55</Id>
-              <SmellType>ICS(函式-5)</SmellType>
-              <HashCode>Method5.Rectangle.SetY1</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>56</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Rectangle.SetX2</HashCode>
               <Severity>Red</Severity>
@@ -1083,14 +699,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>57</Id>
+              <Id>33</Id>
               <SmellType>ICS(函式-5)</SmellType>
               <HashCode>Method5.Rectangle.SetY2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingModel</Project>
               <File>Rectangle.cs</File>
-              <Line>27</Line>
+              <Line>29</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1099,30 +715,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>58</Id>
-              <SmellType>Literal constants(字面常數)-"Rectangle"</SmellType>
-              <HashCode>LiteralConstants.Form1."Rectangle"</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>18</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>59</Id>
+              <Id>34</Id>
               <SmellType>Literal constants(字面常數)-30</SmellType>
-              <HashCode>LiteralConstants.Form1.30</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.30</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>20</Line>
+              <File>DrawingForm.cs</File>
+              <Line>24</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1131,14 +731,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>60</Id>
+              <Id>35</Id>
               <SmellType>Literal constants(字面常數)-30</SmellType>
-              <HashCode>LiteralConstants.Form1.30</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.30</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>30</Line>
+              <File>DrawingForm.cs</File>
+              <Line>34</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1147,14 +747,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>61</Id>
+              <Id>36</Id>
               <SmellType>Literal constants(字面常數)-30</SmellType>
-              <HashCode>LiteralConstants.Form1.30</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.30</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>40</Line>
+              <File>DrawingForm.cs</File>
+              <Line>44</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1163,14 +763,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>62</Id>
+              <Id>37</Id>
               <SmellType>Literal constants(字面常數)-100</SmellType>
-              <HashCode>LiteralConstants.Form1.100</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.100</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>21</Line>
+              <File>DrawingForm.cs</File>
+              <Line>25</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1179,14 +779,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>63</Id>
+              <Id>38</Id>
               <SmellType>Literal constants(字面常數)-100</SmellType>
-              <HashCode>LiteralConstants.Form1.100</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.100</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>22</Line>
+              <File>DrawingForm.cs</File>
+              <Line>26</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1195,13 +795,253 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>64</Id>
+              <Id>39</Id>
               <SmellType>Literal constants(字面常數)-100</SmellType>
-              <HashCode>LiteralConstants.Form1.100</HashCode>
+              <HashCode>LiteralConstants.DrawingForm.100</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
+              <File>DrawingForm.cs</File>
+              <Line>35</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>40</Id>
+              <SmellType>Literal constants(字面常數)-100</SmellType>
+              <HashCode>LiteralConstants.DrawingForm.100</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingForm.cs</File>
+              <Line>45</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>41</Id>
+              <SmellType>Literal constants(字面常數)-10</SmellType>
+              <HashCode>LiteralConstants.DrawingForm.10</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingForm.cs</File>
+              <Line>26</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>42</Id>
+              <SmellType>Literal constants(字面常數)-10</SmellType>
+              <HashCode>LiteralConstants.DrawingForm.10</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingForm.cs</File>
+              <Line>36</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>43</Id>
+              <SmellType>Literal constants(字面常數)-10</SmellType>
+              <HashCode>LiteralConstants.DrawingForm.10</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingForm.cs</File>
+              <Line>46</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>44</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerPressed.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>45</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerPressed.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>46</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingFormPresentationModel.PointerPressed</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>47</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerMoved.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>48</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerMoved.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>49</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingFormPresentationModel.PointerMoved</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>50</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerReleased.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>51</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingFormPresentationModel.PointerReleased.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>52</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingFormPresentationModel.PointerReleased</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>53</Id>
+              <SmellType>Literal constants(字面常數)-3</SmellType>
+              <HashCode>LiteralConstants.DrawRectangle.3</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Line>24</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>54</Id>
+              <SmellType>Literal constants(字面常數)-3</SmellType>
+              <HashCode>LiteralConstants.DrawEllipse.3</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>WindowsFormsGraphicsAdaptor.cs</File>
               <Line>31</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
@@ -1211,135 +1051,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>65</Id>
-              <SmellType>Literal constants(字面常數)-100</SmellType>
-              <HashCode>LiteralConstants.Form1.100</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>41</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>66</Id>
-              <SmellType>Literal constants(字面常數)-10</SmellType>
-              <HashCode>LiteralConstants.Form1.10</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>22</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>67</Id>
-              <SmellType>Literal constants(字面常數)-10</SmellType>
-              <HashCode>LiteralConstants.Form1.10</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>32</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>68</Id>
-              <SmellType>Literal constants(字面常數)-10</SmellType>
-              <HashCode>LiteralConstants.Form1.10</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>42</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>69</Id>
-              <SmellType>Literal constants(字面常數)-"Ellipse"</SmellType>
-              <HashCode>LiteralConstants.Form1."Ellipse"</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>28</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>70</Id>
-              <SmellType>Literal constants(字面常數)-358</SmellType>
-              <HashCode>LiteralConstants.Form1.358</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>32</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>71</Id>
-              <SmellType>Literal constants(字面常數)-"Clear"</SmellType>
-              <HashCode>LiteralConstants.Form1."Clear"</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>38</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>72</Id>
-              <SmellType>Literal constants(字面常數)-616</SmellType>
-              <HashCode>LiteralConstants.Form1.616</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>42</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>73</Id>
+              <Id>55</Id>
               <SmellType>Literal constants(字面常數)-"Failed to load Page "</SmellType>
               <HashCode>LiteralConstants.OnNavigationFailed."Failed to load Page "</HashCode>
               <Severity>Red</Severity>
@@ -1355,7 +1067,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>74</Id>
+              <Id>56</Id>
               <SmellType>Long method(過長函式)</SmellType>
               <HashCode>LongMethod.App.OnLaunched.35LaunchActivatedEventArgs e;</HashCode>
               <Severity>Red</Severity>
@@ -1371,7 +1083,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>75</Id>
+              <Id>57</Id>
               <SmellType>ICS(函式-2)</SmellType>
               <HashCode>Method2.App.OnNavigationFailed</HashCode>
               <Severity>Warning</Severity>
@@ -1387,7 +1099,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>76</Id>
+              <Id>58</Id>
               <SmellType>ICS(函式-2)</SmellType>
               <HashCode>Method2.App.OnSuspending</HashCode>
               <Severity>Warning</Severity>
@@ -1403,14 +1115,158 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>77</Id>
+              <Id>59</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerPressed.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>60</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerPressed.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>61</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingAppPresentationModel.PointerPressed</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>75</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>62</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerMoved.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>63</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerMoved.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>64</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingAppPresentationModel.PointerMoved</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>81</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>65</Id>
+              <SmellType>Unsuitable naming(名不符實)-x(x)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerReleased.x</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>66</Id>
+              <SmellType>Unsuitable naming(名不符實)-y(y)</SmellType>
+              <HashCode>UnsuitableNaming.DrawingAppPresentationModel.PointerReleased.y</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>67</Id>
+              <SmellType>ICS(函式-2)</SmellType>
+              <HashCode>Method2.DrawingAppPresentationModel.PointerReleased</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>88</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-2) 每個函式表示一種操作，因此一律使用動詞做為第一個單字</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>68</Id>
               <SmellType>Unsuitable naming(名不符實)-_igraphics(igraphics)</SmellType>
               <HashCode>UnsuitableNaming.MainPage._igraphics._igraphics</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingApp</Project>
               <File>MainPage.xaml.cs</File>
-              <Line>15</Line>
+              <Line>16</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1419,14 +1275,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>78</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX1" lack of comments</SmellType>
-              <HashCode>.Ellipse.cs.Unresolved warnings(忽視警告)-The method "SetX1" lack of comments.15</HashCode>
+              <Id>69</Id>
+              <SmellType>Literal constants(字面常數)-3</SmellType>
+              <HashCode>LiteralConstants.DrawRectangle.3</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project />
-              <File>Ellipse.cs</File>
-              <Line>15</Line>
+              <Project>DrawingApp</Project>
+              <File>WindowsStoreGraphicsAdaptor.cs</File>
+              <Line>38</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1435,14 +1291,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>79</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY1" lack of comments</SmellType>
-              <HashCode>.Ellipse.cs.Unresolved warnings(忽視警告)-The method "SetY1" lack of comments.19</HashCode>
+              <Id>70</Id>
+              <SmellType>Literal constants(字面常數)-3</SmellType>
+              <HashCode>LiteralConstants.DrawEllipse.3</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project />
-              <File>Ellipse.cs</File>
-              <Line>19</Line>
+              <Project>DrawingApp</Project>
+              <File>WindowsStoreGraphicsAdaptor.cs</File>
+              <Line>53</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1451,509 +1307,13 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>80</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX2" lack of comments</SmellType>
-              <HashCode>.Ellipse.cs.Unresolved warnings(忽視警告)-The method "SetX2" lack of comments.23</HashCode>
+              <Id>71</Id>
+              <SmellType>Unresolved warnings(忽視警告)-The method "Main" lack of comments</SmellType>
+              <HashCode>DrawingApp\DrawingApp.App.g.i.cs.Unresolved warnings(忽視警告)-The method "Main" lack of comments.20</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project />
-              <File>Ellipse.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>81</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY2" lack of comments</SmellType>
-              <HashCode>.Ellipse.cs.Unresolved warnings(忽視警告)-The method "SetY2" lack of comments.27</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Ellipse.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>82</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Draw" lack of comments</SmellType>
-              <HashCode>.Ellipse.cs.Unresolved warnings(忽視警告)-The method "Draw" lack of comments.31</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Ellipse.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>83</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX1" lack of comments</SmellType>
-              <HashCode>.Line.cs.Unresolved warnings(忽視警告)-The method "SetX1" lack of comments.15</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Line.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>84</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY1" lack of comments</SmellType>
-              <HashCode>.Line.cs.Unresolved warnings(忽視警告)-The method "SetY1" lack of comments.19</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Line.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>85</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX2" lack of comments</SmellType>
-              <HashCode>.Line.cs.Unresolved warnings(忽視警告)-The method "SetX2" lack of comments.23</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Line.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>86</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY2" lack of comments</SmellType>
-              <HashCode>.Line.cs.Unresolved warnings(忽視警告)-The method "SetY2" lack of comments.27</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Line.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>87</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Draw" lack of comments</SmellType>
-              <HashCode>.Line.cs.Unresolved warnings(忽視警告)-The method "Draw" lack of comments.31</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Line.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>88</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "PointerPressed" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "PointerPressed" lack of comments.15</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>89</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "PointerMoved" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "PointerMoved" lack of comments.27</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>90</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "PointerReleased" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "PointerReleased" lack of comments.37</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>91</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Clear" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "Clear" lack of comments.52</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>52</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>92</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Draw" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "Draw" lack of comments.59</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>59</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>93</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "NotifyModelChanged" lack of comments</SmellType>
-              <HashCode>.Model.cs.Unresolved warnings(忽視警告)-The method "NotifyModelChanged" lack of comments.68</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Model.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>94</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX1" lack of comments</SmellType>
-              <HashCode>.Rectangle.cs.Unresolved warnings(忽視警告)-The method "SetX1" lack of comments.15</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Rectangle.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>95</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY1" lack of comments</SmellType>
-              <HashCode>.Rectangle.cs.Unresolved warnings(忽視警告)-The method "SetY1" lack of comments.19</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>96</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX2" lack of comments</SmellType>
-              <HashCode>.Rectangle.cs.Unresolved warnings(忽視警告)-The method "SetX2" lack of comments.23</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Rectangle.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>97</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY2" lack of comments</SmellType>
-              <HashCode>.Rectangle.cs.Unresolved warnings(忽視警告)-The method "SetY2" lack of comments.27</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Rectangle.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>98</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Draw" lack of comments</SmellType>
-              <HashCode>.Rectangle.cs.Unresolved warnings(忽視警告)-The method "Draw" lack of comments.31</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Rectangle.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>99</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX1" lack of comments</SmellType>
-              <HashCode>.Shape.cs.Unresolved warnings(忽視警告)-The method "SetX1" lack of comments.11</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Shape.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>100</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY1" lack of comments</SmellType>
-              <HashCode>.Shape.cs.Unresolved warnings(忽視警告)-The method "SetY1" lack of comments.12</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Shape.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>101</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetX2" lack of comments</SmellType>
-              <HashCode>.Shape.cs.Unresolved warnings(忽視警告)-The method "SetX2" lack of comments.13</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Shape.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>102</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "SetY2" lack of comments</SmellType>
-              <HashCode>.Shape.cs.Unresolved warnings(忽視警告)-The method "SetY2" lack of comments.14</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Shape.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>103</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "Draw" lack of comments</SmellType>
-              <HashCode>.Shape.cs.Unresolved warnings(忽視警告)-The method "Draw" lack of comments.15</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project />
-              <File>Shape.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>104</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleClearButtonClick" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleClearButtonClick" lack of comments.63</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>63</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>105</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleCanvasPointerPressed" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleCanvasPointerPressed" lack of comments.68</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>106</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleCanvasPointerReleased" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleCanvasPointerReleased" lack of comments.73</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>73</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>107</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleCanvasPointerMoved" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleCanvasPointerMoved" lack of comments.78</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>78</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>108</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleCanvasPaint" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleCanvasPaint" lack of comments.83</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>83</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>109</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "HandleModelChanged" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.Form1.cs.Unresolved warnings(忽視警告)-The method "HandleModelChanged" lack of comments.91</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>91</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>110</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "ClearAll" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.WindowsFormsGraphicsAdaptor.cs.Unresolved warnings(忽視警告)-The method "ClearAll" lack of comments.15</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>111</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "DrawLine" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.WindowsFormsGraphicsAdaptor.cs.Unresolved warnings(忽視警告)-The method "DrawLine" lack of comments.20</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Project>DrawingApp\DrawingApp</Project>
+              <File>App.g.i.cs</File>
               <Line>20</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
@@ -1963,30 +1323,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>112</Id>
-              <SmellType>Unresolved warnings(忽視警告)-The method "DrawRectangle" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.WindowsFormsGraphicsAdaptor.cs.Unresolved warnings(忽視警告)-The method "DrawRectangle" lack of comments.25</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>25</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>113</Id>
+              <Id>72</Id>
               <SmellType>Unresolved warnings(忽視警告)-The method "DrawEllipse" lack of comments</SmellType>
-              <HashCode>DrawingForm\DrawingForm.WindowsFormsGraphicsAdaptor.cs.Unresolved warnings(忽視警告)-The method "DrawEllipse" lack of comments.30</HashCode>
+              <HashCode>.IGraphics.cs.Unresolved warnings(忽視警告)-The method "DrawEllipse" lack of comments.10</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>DrawingForm\DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>30</Line>
+              <Project />
+              <File>IGraphics.cs</File>
+              <Line>10</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -1995,1127 +1339,23 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>114</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Rectangle.SetX1(double)</HashCode>
+              <Id>73</Id>
+              <SmellType>Unresolved warnings(忽視警告)-The method "Main" lack of comments</SmellType>
+              <HashCode>.App.g.i.cs.Unresolved warnings(忽視警告)-The method "Main" lack of comments.20</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>115</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Rectangle.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>116</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Rectangle.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>117</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Rectangle.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>118</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Rectangle.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>119</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Line.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>120</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Line.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>121</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Line.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>122</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Line.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>123</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Line.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Line.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>124</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Model.PointerPressed(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerPressed(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>125</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Model.PointerMoved(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerMoved(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>126</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>37 DrawingModel.Model.PointerReleased(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerReleased(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>127</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>52 DrawingModel.Model.Clear()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>52</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Clear()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>128</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>59 DrawingModel.Model.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>59</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>129</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>68 DrawingModel.Model.NotifyModelChanged()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Model.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.NotifyModelChanged()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>130</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Ellipse.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>131</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Ellipse.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>132</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Ellipse.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>133</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Ellipse.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>134</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Ellipse.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>135</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.Shape.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Shape.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>136</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.Shape.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Shape.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>137</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.Shape.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Shape.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>138</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.Shape.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Shape.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>139</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Shape.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>Shape.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>140</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.IGraphics.ClearAll()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>IGraphics.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.ClearAll()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>141</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.IGraphics.DrawLine(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>IGraphics.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawLine(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>142</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>IGraphics.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>143</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingModel</Project>
-              <File>IGraphics.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>144</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.ClearAll()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.ClearAll()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>145</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>20 DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawLine(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
+              <Project />
+              <File>App.g.i.cs</File>
               <Line>20</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
               <EndCol>0</EndCol>
-              <Comment>DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawLine(double, double, double, double)</Comment>
+              <Comment />
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>146</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>25 DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawRectangle(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>25</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawRectangle(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>147</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>30 DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawEllipse(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>WindowsFormsGraphicsAdaptor.cs</File>
-              <Line>30</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.PresentationModel.WindowsFormsGraphicsAdaptor.DrawEllipse(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>148</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Rectangle.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Rectangle.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>149</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Rectangle.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>150</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Rectangle.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Rectangle.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>151</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Rectangle.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Rectangle.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>152</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Rectangle.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>153</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Line.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Line.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>154</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Line.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Line.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>155</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Line.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Line.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>156</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Line.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Line.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>157</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Line.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Line.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>158</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Model.PointerPressed(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerPressed(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>159</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Model.PointerMoved(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerMoved(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>160</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>37 DrawingModel.Model.PointerReleased(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerReleased(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>161</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>52 DrawingModel.Model.Clear()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>52</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Clear()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>162</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>59 DrawingModel.Model.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>59</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>163</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>68 DrawingModel.Model.NotifyModelChanged()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Model.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.NotifyModelChanged()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>164</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Ellipse.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Ellipse.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>165</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Ellipse.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Ellipse.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>166</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Ellipse.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Ellipse.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>167</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Ellipse.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Ellipse.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>168</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Ellipse.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>169</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>63 DrawingForm.Form1.HandleClearButtonClick(object, System.EventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>63</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleClearButtonClick(object, System.EventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>170</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>68 DrawingForm.Form1.HandleCanvasPointerPressed(object, System.Windows.Forms.MouseEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleCanvasPointerPressed(object, System.Windows.Forms.MouseEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>171</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>73 DrawingForm.Form1.HandleCanvasPointerReleased(object, System.Windows.Forms.MouseEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>73</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleCanvasPointerReleased(object, System.Windows.Forms.MouseEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>172</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>78 DrawingForm.Form1.HandleCanvasPointerMoved(object, System.Windows.Forms.MouseEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>78</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleCanvasPointerMoved(object, System.Windows.Forms.MouseEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>173</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>83 DrawingForm.Form1.HandleCanvasPaint(object, System.Windows.Forms.PaintEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>83</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleCanvasPaint(object, System.Windows.Forms.PaintEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>174</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>91 DrawingForm.Form1.HandleModelChanged()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Form1.cs</File>
-              <Line>91</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingForm.Form1.HandleModelChanged()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>175</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.Shape.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Shape.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>176</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.Shape.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Shape.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>177</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.Shape.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Shape.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>178</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.Shape.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Shape.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>179</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Shape.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>Shape.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>180</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.IGraphics.ClearAll()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>IGraphics.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.ClearAll()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>181</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.IGraphics.DrawLine(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>IGraphics.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawLine(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>182</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>IGraphics.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>183</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>IGraphics.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>184</Id>
+              <Id>74</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>129 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</HashCode>
               <Severity>Red</Severity>
@@ -3131,7 +1371,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>185</Id>
+              <Id>75</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>134 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</HashCode>
               <Severity>Red</Severity>
@@ -3147,78 +1387,14 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>186</Id>
+              <Id>76</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>22 DrawingApp.View.WindowsStoreGraphicsAdaptor.ClearAll()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>WindowsStoreGraphicsAdaptor.cs</File>
-              <Line>22</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.View.WindowsStoreGraphicsAdaptor.ClearAll()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>187</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>28 DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawLine(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>WindowsStoreGraphicsAdaptor.cs</File>
-              <Line>28</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawLine(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>188</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>41 DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawRectangle(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>WindowsStoreGraphicsAdaptor.cs</File>
-              <Line>41</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawRectangle(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>189</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>54 DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawEllipse(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>WindowsStoreGraphicsAdaptor.cs</File>
-              <Line>54</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.View.WindowsStoreGraphicsAdaptor.DrawEllipse(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>190</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>40 DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</HashCode>
+              <HashCode>44 DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingApp</Project>
               <File>MainPage.g.i.cs</File>
-              <Line>40</Line>
+              <Line>44</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -3227,87 +1403,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>191</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Rectangle.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Rectangle.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>192</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Rectangle.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Rectangle.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>193</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Rectangle.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Rectangle.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>194</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Rectangle.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Rectangle.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>195</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Rectangle.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Rectangle.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>196</Id>
+              <Id>77</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>20 DrawingApp.Program.Main(string[])</HashCode>
               <Severity>Red</Severity>
@@ -3322,486 +1418,6 @@
               <Comment>DrawingApp.Program.Main(string[])</Comment>
               <Auto>false</Auto>
             </Smell>
-            <Smell>
-              <Id>197</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Line.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Line.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>198</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Line.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Line.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>199</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Line.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Line.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>200</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Line.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Line.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>201</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Line.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Line.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Line.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>202</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Model.PointerPressed(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerPressed(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>203</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Model.PointerMoved(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerMoved(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>204</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>37 DrawingModel.Model.PointerReleased(double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.PointerReleased(double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>205</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>52 DrawingModel.Model.Clear()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>52</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Clear()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>206</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>59 DrawingModel.Model.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>59</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>207</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>68 DrawingModel.Model.NotifyModelChanged()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Model.cs</File>
-              <Line>68</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Model.NotifyModelChanged()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>208</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Ellipse.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Ellipse.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>209</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>19 DrawingModel.Ellipse.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Ellipse.cs</File>
-              <Line>19</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>210</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>23 DrawingModel.Ellipse.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Ellipse.cs</File>
-              <Line>23</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>211</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>27 DrawingModel.Ellipse.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Ellipse.cs</File>
-              <Line>27</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>212</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>31 DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Ellipse.cs</File>
-              <Line>31</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Ellipse.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>213</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>32 DrawingApp.MainPage.HandleClearButtonClick(object, Windows.UI.Xaml.RoutedEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>32</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.HandleClearButtonClick(object, Windows.UI.Xaml.RoutedEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>214</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>37 DrawingApp.MainPage.HandleCanvasPointerPressed(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>37</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.HandleCanvasPointerPressed(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>215</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>42 DrawingApp.MainPage.HandleCanvasPointerReleased(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>42</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.HandleCanvasPointerReleased(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>216</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>47 DrawingApp.MainPage.HandleCanvasPointerMoved(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>47</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.HandleCanvasPointerMoved(object, Windows.UI.Xaml.Input.PointerRoutedEventArgs)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>217</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>52 DrawingApp.MainPage.HandleModelChanged()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>52</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingApp.MainPage.HandleModelChanged()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>218</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.Shape.SetX1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Shape.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>219</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.Shape.SetY1(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Shape.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY1(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>220</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.Shape.SetX2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Shape.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetX2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>221</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.Shape.SetY2(double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Shape.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.SetY2(double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>222</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>15 DrawingModel.Shape.Draw(DrawingModel.IGraphics)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>Shape.cs</File>
-              <Line>15</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.Shape.Draw(DrawingModel.IGraphics)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>223</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>11 DrawingModel.IGraphics.ClearAll()</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>IGraphics.cs</File>
-              <Line>11</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.ClearAll()</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>224</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>12 DrawingModel.IGraphics.DrawLine(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>IGraphics.cs</File>
-              <Line>12</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawLine(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>225</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>13 DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>IGraphics.cs</File>
-              <Line>13</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawRectangle(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>226</Id>
-              <SmellType>Lack of comments(缺乏註解)</SmellType>
-              <HashCode>14 DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>IGraphics.cs</File>
-              <Line>14</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>DrawingModel.IGraphics.DrawEllipse(double, double, double, double)</Comment>
-              <Auto>false</Auto>
-            </Smell>
           </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
@@ -3814,11 +1430,6 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>IGraphics.cs</RelativePath>
-                <ProjectName>DrawingModel</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>Line.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -3839,6 +1450,11 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Shape.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ShapeFlag.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -3868,14 +1484,19 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>View\Form1.cs</RelativePath>
+                <RelativePath>View\DrawingForm.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
-                <AnalysisFileType>Model</AnalysisFileType>
+                <AnalysisFileType>ViewOrController</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>View\Form1.Designer.cs</RelativePath>
+                <RelativePath>View\DrawingForm.Designer.cs</RelativePath>
                 <ProjectName>DrawingForm</ProjectName>
                 <AnalysisFileType>Designer</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>View\DrawingFormPresentationModel.cs</RelativePath>
+                <ProjectName>DrawingForm</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>View\WindowsFormsGraphicsAdaptor.cs</RelativePath>
@@ -3893,6 +1514,11 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>View\DrawingAppPresentationModel.cs</RelativePath>
+                <ProjectName>DrawingApp</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>View\MainPage.xaml.cs</RelativePath>
                 <ProjectName>DrawingApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -3904,7 +1530,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>755</ProductionLoc>
+          <ProductionLoc>1090</ProductionLoc>
           <TestLoc>0</TestLoc>
         </CodeReview>
       </Data>

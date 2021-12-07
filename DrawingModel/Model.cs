@@ -38,8 +38,8 @@ namespace DrawingModel
         {
             if (_isPressed)
             {
-                _hint.SetX2(x - _firstPointX);
-                _hint.SetY2(y - _firstPointY);
+                _hint.SetX2(x);
+                _hint.SetY2(y);
                 NotifyModelChanged();
             }
         }

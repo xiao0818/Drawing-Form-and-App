@@ -13,6 +13,7 @@ namespace DrawingForm
         public DrawingFormPresentationModel(Model model)
         {
             _model = model;
+            _model._modelChanged += NotifyModelChanged;
         }
 
         public bool IsRectangleButtonEnable
