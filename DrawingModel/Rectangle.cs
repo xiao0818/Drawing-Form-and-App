@@ -46,7 +46,7 @@
         //Draw
         public void Draw(IGraphics graphics)
         {
-            graphics.DrawRectangle(_x1, _y1, _x2, _y2);
+            graphics.DrawRectangle(TakeSmall(_x1, _x2), TakeSmall(_y1, _y2), TakeLarge(_x1, _x2), TakeLarge(_y1, _y2));
         }
 
         //Copy
@@ -58,6 +58,26 @@
             hint.SetX2 = _x2;
             hint.SetY2 = _y2;
             return hint;
-        } 
+        }
+
+        //TakeLarger
+        private double TakeLarge(double number1, double number2)
+        {
+            if (number1 > number2)
+            {
+                return number1;
+            }
+            return number2;
+        }
+
+        //TakeSmaller
+        private double TakeSmall(double number1, double number2)
+        {
+            if (number1 < number2)
+            {
+                return number1;
+            }
+            return number2;
+        }
     }
 }

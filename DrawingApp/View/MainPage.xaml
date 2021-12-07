@@ -10,8 +10,8 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid>
-        <Button x:Name="_rectangle" Content="Rectangle" HorizontalAlignment="Left" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30" Click="HandleRectangleButtonClick"/>
-        <Button x:Name="_ellipse" Content="Ellipse" HorizontalAlignment="Center" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30" Click="HandleEllipseButtonClick"/>
+        <Button x:Name="_rectangle" Content="Rectangle" HorizontalAlignment="Left" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Button x:Name="_ellipse" Content="Ellipse" HorizontalAlignment="Center" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30"/>
         <Button x:Name="_clear" Content="Clear" HorizontalAlignment="Right" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30"/>
         <Canvas x:Name="_canvas" Margin="10,50,10,10" Background="#FFFFFFA0"/>
 

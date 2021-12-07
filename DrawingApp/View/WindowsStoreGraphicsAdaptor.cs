@@ -29,18 +29,6 @@ namespace DrawingApp.View
         //DrawRectangle
         public void DrawRectangle(double x1, double y1, double x2, double y2)
         {
-            if (x1 > x2)
-            {
-                double temp = x1;
-                x1 = x2;
-                x2 = temp;
-            }
-            if (y1 > y2)
-            {
-                double temp = y1;
-                y1 = y2;
-                y2 = temp;
-            }
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Rectangle rectangle = new Windows.UI.Xaml.Shapes.Rectangle();
             rectangle.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
@@ -56,18 +44,6 @@ namespace DrawingApp.View
         //DrawEllipse
         public void DrawEllipse(double x1, double y1, double x2, double y2)
         {
-            if (x1 > x2)
-            {
-                double temp = x1;
-                x1 = x2;
-                x2 = temp;
-            }
-            if (y1 > y2)
-            {
-                double temp = y1;
-                y1 = y2;
-                y2 = temp;
-            }
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse = new Windows.UI.Xaml.Shapes.Ellipse();
             ellipse.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
