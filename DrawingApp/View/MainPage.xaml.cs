@@ -1,4 +1,5 @@
-﻿using Windows.UI.Xaml;
+﻿using DrawingModel;
+using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
 
@@ -11,44 +12,83 @@ namespace DrawingApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        DrawingModel.Model _model;
-        DrawingModel.IGraphics _igraphics;
+        Model _model;
+        IGraphics _igraphics;
+        int _shapeFlag = (int)ShapeFlag.Null;
 
         public MainPage()
         {
             this.InitializeComponent();
             // Model
-            _model = new DrawingModel.Model();
+            _model = new Model();
             // Note: 重複使用_igraphics物件
             _igraphics = new View.WindowsStoreGraphicsAdaptor(_canvas);
             // Events
             _canvas.PointerPressed += HandleCanvasPointerPressed;
             _canvas.PointerReleased += HandleCanvasPointerReleased;
             _canvas.PointerMoved += HandleCanvasPointerMoved;
+            _rectangle.Click += HandleRectangleButtonClick;
+            _ellipse.Click += HandleEllipseButtonClick;
             _clear.Click += HandleClearButtonClick;
             _model._modelChanged += HandleModelChanged;
         }
 
+        //HandleRectangleButtonClick
+        private void HandleRectangleButtonClick(object sender, RoutedEventArgs e)
+        {
+            _rectangle.IsEnabled = false;
+            _ellipse.IsEnabled = true;
+            _shapeFlag = (int)ShapeFlag.Rectangle;
+        }
+
+        //HandleEllipseButtonClick
+        private void HandleEllipseButtonClick(object sender, RoutedEventArgs e)
+        {
+            _rectangle.IsEnabled = true;
+            _ellipse.IsEnabled = false;
+            _shapeFlag = (int)ShapeFlag.Ellipse;
+        }
+
+        //HandleClearButtonClick
         private void HandleClearButtonClick(object sender, RoutedEventArgs e)
         {
             _model.Clear();
+            _rectangle.IsEnabled = true;
+            _ellipse.IsEnabled = true;
+            _shapeFlag = (int)ShapeFlag.Null;
         }
 
+        //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            _model.PointerPressed(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+            if (_shapeFlag != (int)ShapeFlag.Null)
+            {
+                _model.PointerPressed(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
+            }
         }
 
+        //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            _model.PointerReleased(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+            if (_shapeFlag != (int)ShapeFlag.Null)
+            {
+                _model.PointerReleased(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                _rectangle.IsEnabled = true;
+                _ellipse.IsEnabled = true;
+                _shapeFlag = (int)ShapeFlag.Null;
+            }
         }
 
+        //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            _model.PointerMoved(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+            if (_shapeFlag != (int)ShapeFlag.Null)
+            {
+                _model.PointerMoved(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+            }
         }
 
+        //HandleModelChanged
         public void HandleModelChanged()
         {
             _model.Draw(_igraphics);

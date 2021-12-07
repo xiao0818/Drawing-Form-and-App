@@ -1,4 +1,6 @@
 ﻿<Page
+    Height="384" 
+    Width="684"
     x:Class="DrawingApp.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
@@ -7,10 +9,11 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
     <Grid>
-        <Button x:Name="_clear" Content="Clear" HorizontalAlignment="Stretch" Margin="99,48,99,0" VerticalAlignment="Top"/>
-        <Canvas x:Name="_canvas" Margin="99,138,99,99" Background="#FFFFFFA0"/>
+        <Button x:Name="_rectangle" Content="Rectangle" HorizontalAlignment="Left" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30" Click="HandleRectangleButtonClick"/>
+        <Button x:Name="_ellipse" Content="Ellipse" HorizontalAlignment="Center" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30" Click="HandleEllipseButtonClick"/>
+        <Button x:Name="_clear" Content="Clear" HorizontalAlignment="Right" Margin="50,10,50,10" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Canvas x:Name="_canvas" Margin="10,50,10,10" Background="#FFFFFFA0"/>
 
     </Grid>
 </Page>

@@ -16,52 +16,44 @@ namespace DrawingApp.View
 
         public WindowsStoreGraphicsAdaptor(Canvas canvas)
         {
-            this._canvas = canvas;
+            _canvas = canvas;
         }
 
+        //ClearAll
         public void ClearAll()
         {
             // 清除Children也就清除畫布
             _canvas.Children.Clear();
         }
 
-        public void DrawLine(double x1, double y1, double x2, double y2)
-        {
-            // 先建立圖形物件
-            Windows.UI.Xaml.Shapes.Line line = new Windows.UI.Xaml.Shapes.Line();
-            line.X1 = x1;
-            line.Y1 = y1;
-            line.X2 = x2;
-            line.Y2 = y2;
-            line.Stroke = new SolidColorBrush(Colors.Black);
-            // 將圖形物件加入Children
-            _canvas.Children.Add(line);
-        }
-
+        //DrawRectangle
         public void DrawRectangle(double x1, double y1, double x2, double y2)
         {
-            //// 先建立圖形物件
-            //Windows.UI.Xaml.Shapes.Line line = new Windows.UI.Xaml.Shapes.Line();
-            //line.X1 = x1;
-            //line.Y1 = y1;
-            //line.X2 = x2;
-            //line.Y2 = y2;
-            //line.Stroke = new SolidColorBrush(Colors.Black);
-            //// 將圖形物件加入Children
-            //_canvas.Children.Add(line);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Rectangle rectangle = new Windows.UI.Xaml.Shapes.Rectangle();
+            rectangle.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
+            rectangle.Width = x2;
+            rectangle.Height = y2;
+            rectangle.Stroke = new SolidColorBrush(Colors.Black);
+            rectangle.StrokeThickness = 3;
+            rectangle.Fill = new SolidColorBrush(Colors.Yellow);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(rectangle);
         }
 
+        //DrawEllipse
         public void DrawEllipse(double x1, double y1, double x2, double y2)
         {
-            //// 先建立圖形物件
-            //Windows.UI.Xaml.Shapes.Line line = new Windows.UI.Xaml.Shapes.Line();
-            //line.X1 = x1;
-            //line.Y1 = y1;
-            //line.X2 = x2;
-            //line.Y2 = y2;
-            //line.Stroke = new SolidColorBrush(Colors.Black);
-            //// 將圖形物件加入Children
-            //_canvas.Children.Add(line);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Ellipse ellipse = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
+            ellipse.Width = x2;
+            ellipse.Height = y2;
+            ellipse.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse.StrokeThickness = 3;
+            ellipse.Fill = new SolidColorBrush(Colors.Orange);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(ellipse);
         }
     }
 }
