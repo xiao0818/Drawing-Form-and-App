@@ -12,15 +12,14 @@ namespace DrawingApp
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        Model _model;
+        DrawingAppPresentationModel _drawingAppPresentationModel;
         IGraphics _igraphics;
         int _shapeFlag = (int)ShapeFlag.Null;
 
         public MainPage()
         {
             this.InitializeComponent();
-            // Model
-            _model = new Model();
+            _drawingAppPresentationModel = new DrawingAppPresentationModel(new Model());
             // Note: 重複使用_igraphics物件
             _igraphics = new View.WindowsStoreGraphicsAdaptor(_canvas);
             // Events
@@ -30,32 +29,35 @@ namespace DrawingApp
             _rectangle.Click += HandleRectangleButtonClick;
             _ellipse.Click += HandleEllipseButtonClick;
             _clear.Click += HandleClearButtonClick;
-            _model._modelChanged += HandleModelChanged;
+            _drawingAppPresentationModel._drawingAppPresentationModelChanged += HandleModelChanged;
         }
 
         //HandleRectangleButtonClick
         private void HandleRectangleButtonClick(object sender, RoutedEventArgs e)
         {
-            _rectangle.IsEnabled = false;
-            _ellipse.IsEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Rectangle;
+            _drawingAppPresentationModel.HandleRectangleButtonClick();
+            _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+            _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
         }
 
         //HandleEllipseButtonClick
         private void HandleEllipseButtonClick(object sender, RoutedEventArgs e)
         {
-            _rectangle.IsEnabled = true;
-            _ellipse.IsEnabled = false;
-            _shapeFlag = (int)ShapeFlag.Ellipse;
+            _drawingAppPresentationModel.HandleEllipseButtonClick();
+            _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+            _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
         }
 
         //HandleClearButtonClick
         private void HandleClearButtonClick(object sender, RoutedEventArgs e)
         {
-            _model.Clear();
-            _rectangle.IsEnabled = true;
-            _ellipse.IsEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Null;
+            _drawingAppPresentationModel.Clear();
+            _drawingAppPresentationModel.HandleClearButtonClick();
+            _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+            _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
         }
 
         //HandleCanvasPointerPressed
@@ -63,7 +65,7 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerPressed(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
+                _drawingAppPresentationModel.PointerPressed(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
             }
         }
 
@@ -72,10 +74,11 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerReleased(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
-                _rectangle.IsEnabled = true;
-                _ellipse.IsEnabled = true;
-                _shapeFlag = (int)ShapeFlag.Null;
+                _drawingAppPresentationModel.PointerReleased(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                _drawingAppPresentationModel.HandleCanvasPointerReleased();
+                _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+                _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+                _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
             }
         }
 
@@ -84,14 +87,14 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerMoved(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                _drawingAppPresentationModel.PointerMoved(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
             }
         }
 
         //HandleModelChanged
         public void HandleModelChanged()
         {
-            _model.Draw(_igraphics);
+            _drawingAppPresentationModel.Draw(_igraphics);
         }
     }
 }
