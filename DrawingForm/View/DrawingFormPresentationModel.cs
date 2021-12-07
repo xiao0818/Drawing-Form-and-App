@@ -73,22 +73,22 @@ namespace DrawingForm
         }
 
         //PointerPressed
-        public void PointerPressed(double x, double y, int shapeFlag)
+        public void PressedPointer(double pointX, double pointY, int shapeFlag)
         {
-            _model.PointerPressed( x, y, shapeFlag);
+            _model.PressedPointer(pointX, pointY, shapeFlag);
         }
 
         //PointerMoved
-        public void PointerMoved(double x, double y)
+        public void MovedPointer(double pointX, double pointY)
         {
-            _model.PointerMoved(x, y);
+            _model.MovedPointer(pointX, pointY);
             NotifyModelChanged();
         }
 
         //PointerReleased
-        public void PointerReleased(double x, double y)
+        public void ReleasedPointer(double pointX, double pointY)
         {
-            _model.PointerReleased(x, y);
+            _model.ReleasedPointer(pointX, pointY);
             NotifyModelChanged();
         }
 

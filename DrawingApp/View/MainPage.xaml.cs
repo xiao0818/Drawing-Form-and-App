@@ -13,7 +13,7 @@ namespace DrawingApp
     public sealed partial class MainPage : Page
     {
         DrawingAppPresentationModel _drawingAppPresentationModel;
-        IGraphics _igraphics;
+        IGraphics _iGraphics;
         int _shapeFlag = (int)ShapeFlag.Null;
 
         public MainPage()
@@ -21,7 +21,7 @@ namespace DrawingApp
             this.InitializeComponent();
             _drawingAppPresentationModel = new DrawingAppPresentationModel(new Model());
             // Note: 重複使用_igraphics物件
-            _igraphics = new View.WindowsStoreGraphicsAdaptor(_canvas);
+            _iGraphics = new View.WindowsStoreGraphicsAdaptor(_canvas);
             // Events
             _canvas.PointerPressed += HandleCanvasPointerPressed;
             _canvas.PointerReleased += HandleCanvasPointerReleased;
@@ -65,7 +65,7 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingAppPresentationModel.PointerPressed(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
+                _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
             }
         }
 
@@ -74,7 +74,7 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingAppPresentationModel.PointerReleased(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
                 _drawingAppPresentationModel.HandleCanvasPointerReleased();
                 _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
                 _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
@@ -87,14 +87,14 @@ namespace DrawingApp
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingAppPresentationModel.PointerMoved(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
             }
         }
 
         //HandleModelChanged
         public void HandleModelChanged()
         {
-            _drawingAppPresentationModel.Draw(_igraphics);
+            _drawingAppPresentationModel.Draw(_iGraphics);
         }
     }
 }

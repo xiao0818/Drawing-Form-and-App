@@ -6,6 +6,7 @@ namespace DrawingForm
     class WindowsFormsGraphicsAdaptor : IGraphics
     {
         Graphics _graphics;
+        const int THICKNESS = 3;
 
         public WindowsFormsGraphicsAdaptor(Graphics graphics)
         {
@@ -33,7 +34,7 @@ namespace DrawingForm
                 y1 = y2;
                 y2 = temp;
             }
-            _graphics.DrawRectangle(new Pen(Color.Black, 3), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
+            _graphics.DrawRectangle(new Pen(Color.Black, THICKNESS), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
             _graphics.FillRectangle(new SolidBrush(Color.Yellow), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
         }
 
@@ -52,7 +53,7 @@ namespace DrawingForm
                 y1 = y2;
                 y2 = temp;
             }
-            _graphics.DrawEllipse(new Pen(Color.Black, 3), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
             _graphics.FillEllipse(new SolidBrush(Color.Orange), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
         }
     }

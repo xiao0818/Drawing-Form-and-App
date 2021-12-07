@@ -13,7 +13,7 @@ namespace DrawingModel
         Shape _hint;
 
         //PointerPressed
-        public void PointerPressed(double x, double y, int shapeFlag)
+        public void PressedPointer(double pointX, double pointY, int shapeFlag)
         {
             if (shapeFlag == (int)ShapeFlag.Rectangle)
             {
@@ -23,29 +23,29 @@ namespace DrawingModel
             {
                 _hint = new Ellipse();
             }
-            if (x > 0 && y > 0)
+            if (pointX > 0 && pointY > 0)
             {
-                _firstPointX = x;
-                _firstPointY = y;
-                _hint.SetX1(_firstPointX);
-                _hint.SetY1(_firstPointY);
+                _firstPointX = pointX;
+                _firstPointY = pointY;
+                _hint.SetX1 = _firstPointX;
+                _hint.SetY1 = _firstPointY;
                 _isPressed = true;
             }
         }
 
         //PointerMoved
-        public void PointerMoved(double x, double y)
+        public void MovedPointer(double pointX, double pointY)
         {
             if (_isPressed)
             {
-                _hint.SetX2(x);
-                _hint.SetY2(y);
+                _hint.SetX2 = pointX;
+                _hint.SetY2 = pointY;
                 NotifyModelChanged();
             }
         }
 
         //PointerReleased
-        public void PointerReleased(double x, double y)
+        public void ReleasedPointer(double pointX, double pointY)
         {
             if (_isPressed)
             {

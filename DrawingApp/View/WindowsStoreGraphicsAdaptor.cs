@@ -45,7 +45,7 @@ namespace DrawingApp.View
             Windows.UI.Xaml.Shapes.Rectangle rectangle = new Windows.UI.Xaml.Shapes.Rectangle();
             rectangle.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
             rectangle.Width = x2 - x1;
-            rectangle.Height = y2- y1;
+            rectangle.Height = y2 - y1;
             rectangle.Stroke = new SolidColorBrush(Colors.Black);
             rectangle.StrokeThickness = 1;
             rectangle.Fill = new SolidColorBrush(Colors.Yellow);

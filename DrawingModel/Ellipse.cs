@@ -2,33 +2,45 @@
 {
     class Ellipse : Shape
     {
-        public double _x1;
-        public double _y1;
-        public double _x2;
-        public double _y2;
+        double _x1;
+        double _y1;
+        double _x2;
+        double _y2;
 
         //SetX1
-        public void SetX1(double number)
+        public double SetX1
         {
-            _x1 = number;
+            set
+            {
+                _x1 = value;
+            }
         }
 
         //SetY1
-        public void SetY1(double number)
+        public double SetY1
         {
-            _y1 = number;
+            set
+            {
+                _y1 = value;
+            }
         }
 
         //SetX2
-        public void SetX2(double number)
+        public double SetX2
         {
-            _x2 = number;
+            set
+            {
+                _x2 = value;
+            }
         }
 
         //SetY2
-        public void SetY2(double number)
+        public double SetY2
         {
-            _y2 = number;
+            set
+            {
+                _y2 = value;
+            }
         }
 
         //Draw
@@ -41,10 +53,10 @@
         public Shape Copy()
         {
             Ellipse hint = new Ellipse();
-            hint.SetX1(_x1);
-            hint.SetY1(_y1);
-            hint.SetX2(_x2);
-            hint.SetY2(_y2);
+            hint.SetX1 = _x1;
+            hint.SetY1 = _y1;
+            hint.SetX2 = _x2;
+            hint.SetY2 = _y2;
             return hint;
         }
     }

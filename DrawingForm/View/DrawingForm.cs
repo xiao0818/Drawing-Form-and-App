@@ -12,6 +12,9 @@ namespace DrawingForm
         Button _ellipse = new Button();
         Button _clear = new Button();
         int _shapeFlag = (int)ShapeFlag.Null;
+        const int HEIGHT = 30;
+        const int WIDTH = 100;
+        const int LOCATION_Y = 10;
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -21,9 +24,9 @@ namespace DrawingForm
             //
             _rectangle.Text = "Rectangle";
             _rectangle.AutoSize = false;
-            _rectangle.Height = 30;
-            _rectangle.Width = 100;
-            _rectangle.Location = new Point(100, 10);
+            _rectangle.Height = HEIGHT;
+            _rectangle.Width = WIDTH;
+            _rectangle.Location = new Point(100, LOCATION_Y);
             _rectangle.Click += HandleRectangleButtonClick;
             Controls.Add(_rectangle);
             //
@@ -31,9 +34,9 @@ namespace DrawingForm
             //
             _ellipse.Text = "Ellipse";
             _ellipse.AutoSize = false;
-            _ellipse.Height = 30;
-            _ellipse.Width = 100;
-            _ellipse.Location = new Point(358, 10);
+            _ellipse.Height = HEIGHT;
+            _ellipse.Width = WIDTH;
+            _ellipse.Location = new Point(358, LOCATION_Y);
             _ellipse.Click += HandleEllipseButtonClick;
             Controls.Add(_ellipse);
             //
@@ -41,9 +44,9 @@ namespace DrawingForm
             //
             _clear.Text = "Clear";
             _clear.AutoSize = false;
-            _clear.Height = 30;
-            _clear.Width = 100;
-            _clear.Location = new Point(616, 10);
+            _clear.Height = HEIGHT;
+            _clear.Width = WIDTH;
+            _clear.Location = new Point(616, LOCATION_Y);
             _clear.Click += HandleClearButtonClick;
             Controls.Add(_clear);
             //
@@ -97,7 +100,7 @@ namespace DrawingForm
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingFormPresentationModel.PointerPressed(e.X, e.Y, _shapeFlag);
+                _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag);
             }
         }
 
@@ -106,7 +109,7 @@ namespace DrawingForm
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingFormPresentationModel.PointerReleased(e.X, e.Y);
+                _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y);
                 _drawingFormPresentationModel.HandleCanvasPointerReleased();
                 _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
                 _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
@@ -119,7 +122,7 @@ namespace DrawingForm
         {
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _drawingFormPresentationModel.PointerMoved(e.X, e.Y);
+                _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
             }
         }
 

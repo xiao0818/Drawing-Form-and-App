@@ -3,16 +3,28 @@
     public interface Shape
     {
         //SetX1
-        void SetX1(double number);
+        double SetX1
+        {
+            set;
+        }
 
         //SetY1
-        void SetY1(double number);
+        double SetY1
+        {
+            set;
+        }
 
         //SetX2
-        void SetX2(double number);
+        double SetX2
+        {
+            set;
+        }
 
         //SetY2
-        void SetY2(double number);
+        double SetY2
+        {
+            set;
+        }
 
         //Draw
         void Draw(IGraphics graphics);
