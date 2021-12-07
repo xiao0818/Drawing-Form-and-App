@@ -78,7 +78,7 @@ namespace DrawingModel
         }
 
         //NotifyModelChanged
-        void NotifyModelChanged()
+        private void NotifyModelChanged()
         {
             if (_modelChanged != null)
             {

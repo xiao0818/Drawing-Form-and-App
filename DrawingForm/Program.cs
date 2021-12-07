@@ -1,5 +1,4 @@
-﻿using DrawingForm.PresentationModel;
-using DrawingModel;
+﻿using DrawingModel;
 using System;
 using System.Windows.Forms;
 
@@ -15,7 +14,7 @@ namespace DrawingForm
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new DrawingForm(new Model()));
+            Application.Run(new DrawingForm(new DrawingFormPresentationModel(new Model())));
         }
     }
 }

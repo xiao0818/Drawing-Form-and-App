@@ -6,26 +6,38 @@
         public double y1;
         public double x2;
         public double y2;
+
+        //SetX1
         public void SetX1(double number)
         {
             x1 = number;
         }
+
+        //SetY1
         public void SetY1(double number)
         {
             y1 = number;
         }
+
+        //SetX2
         public void SetX2(double number)
         {
             x2 = number;
         }
+
+        //SetY2
         public void SetY2(double number)
         {
             y2 = number;
         }
+
+        //Draw
         public void Draw(IGraphics graphics)
         {
             graphics.DrawEllipse(x1, y1, x2, y2);
         }
+
+        //Shape
         public Shape Copy()
         {
             Ellipse hint = new Ellipse();

@@ -6,46 +6,46 @@ namespace DrawingForm
 {
     public partial class DrawingForm : Form
     {
-        DrawingModel.Model _model;
+        DrawingFormPresentationModel _drawingFormPresentationModel;
         Panel _canvas = new DoubleBufferedPanel();
-        Button rectangle = new Button();
-        Button ellipse = new Button();
-        Button clear = new Button();
-        int shapeFlag = (int)ShapeFlag.Null;
+        Button _rectangle = new Button();
+        Button _ellipse = new Button();
+        Button _clear = new Button();
+        int _shapeFlag = (int)ShapeFlag.Null;
 
-        public DrawingForm(Model model)
+        public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
             InitializeComponent();
             //
+            // prepare rectangle button
+            //
+            _rectangle.Text = "Rectangle";
+            _rectangle.AutoSize = false;
+            _rectangle.Height = 30;
+            _rectangle.Width = 100;
+            _rectangle.Location = new Point(100, 10);
+            _rectangle.Click += HandleRectangleButtonClick;
+            Controls.Add(_rectangle);
+            //
+            // prepare ellipse button
+            //
+            _ellipse.Text = "Ellipse";
+            _ellipse.AutoSize = false;
+            _ellipse.Height = 30;
+            _ellipse.Width = 100;
+            _ellipse.Location = new Point(358, 10);
+            _ellipse.Click += HandleEllipseButtonClick;
+            Controls.Add(_ellipse);
+            //
             // prepare clear button
             //
-            rectangle.Text = "Rectangle";
-            rectangle.AutoSize = false;
-            rectangle.Height = 30;
-            rectangle.Width = 100;
-            rectangle.Location = new Point(100, 10);
-            rectangle.Click += HandleRectangleButtonClick;
-            Controls.Add(rectangle);
-            //
-            // prepare clear button
-            //
-            ellipse.Text = "Ellipse";
-            ellipse.AutoSize = false;
-            ellipse.Height = 30;
-            ellipse.Width = 100;
-            ellipse.Location = new Point(358, 10);
-            ellipse.Click += HandleEllipseButtonClick;
-            Controls.Add(ellipse);
-            //
-            // prepare clear button
-            //
-            clear.Text = "Clear";
-            clear.AutoSize = false;
-            clear.Height = 30;
-            clear.Width = 100;
-            clear.Location = new Point(616, 10);
-            clear.Click += HandleClearButtonClick;
-            Controls.Add(clear);
+            _clear.Text = "Clear";
+            _clear.AutoSize = false;
+            _clear.Height = 30;
+            _clear.Width = 100;
+            _clear.Location = new Point(616, 10);
+            _clear.Click += HandleClearButtonClick;
+            Controls.Add(_clear);
             //
             // prepare canvas
             //
@@ -60,67 +60,79 @@ namespace DrawingForm
             //
             // prepare presentation model and model
             //
-            _model = model;
-            _model._modelChanged += HandleModelChanged;
+            _drawingFormPresentationModel = drawingFormPresentationModel;
+            _drawingFormPresentationModel._drawingFormPresentationModelChanged += HandleModelChanged;
         }
 
+        //HandleRectangleButtonClick
         public void HandleRectangleButtonClick(object sender, System.EventArgs e)
         {
-            rectangle.Enabled = false;
-            ellipse.Enabled = true;
-            shapeFlag = (int)ShapeFlag.Rectangle;
+            _drawingFormPresentationModel.HandleRectangleButtonClick();
+            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
+        //HandleEllipseButtonClick
         public void HandleEllipseButtonClick(object sender, System.EventArgs e)
         {
-            rectangle.Enabled = true;
-            ellipse.Enabled = false;
-            shapeFlag = (int)ShapeFlag.Ellipse;
+            _drawingFormPresentationModel.HandleEllipseButtonClick();
+            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
+        //HandleClearButtonClick
         public void HandleClearButtonClick(object sender, System.EventArgs e)
         {
-            _model.Clear();
-            rectangle.Enabled = true;
-            ellipse.Enabled = true;
-            shapeFlag = (int)ShapeFlag.Null;
+            _drawingFormPresentationModel.Clear();
+            _drawingFormPresentationModel.HandleClearButtonClick();
+            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
+        //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, MouseEventArgs e)
         {
-            if (shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerPressed(e.X, e.Y, shapeFlag);
+                _drawingFormPresentationModel.PointerPressed(e.X, e.Y, _shapeFlag);
             }
         }
 
+        //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, MouseEventArgs e)
         {
-            if (shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerReleased(e.X, e.Y);
-                rectangle.Enabled = true;
-                ellipse.Enabled = true;
-                shapeFlag = (int)ShapeFlag.Null;
+                _drawingFormPresentationModel.PointerReleased(e.X, e.Y);
+                _drawingFormPresentationModel.HandleCanvasPointerReleased();
+                _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+                _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+                _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             }
         }
 
+        //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, MouseEventArgs e)
         {
-            if (shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != (int)ShapeFlag.Null)
             {
-                _model.PointerMoved(e.X, e.Y);
+                _drawingFormPresentationModel.PointerMoved(e.X, e.Y);
             }
         }
 
+        //HandleCanvasPaint
         public void HandleCanvasPaint(object sender, PaintEventArgs e)
         {
             // e.Graphics物件是Paint事件帶進來的，只能在當次Paint使用
             // 而Adaptor又直接使用e.Graphics，因此，Adaptor不能重複使用
             // 每次都要重新new
-            _model.Draw(new PresentationModel.WindowsFormsGraphicsAdaptor(e.Graphics));
+            _drawingFormPresentationModel.Draw(new WindowsFormsGraphicsAdaptor(e.Graphics));
         }
 
+        //HandleModelChanged
         public void HandleModelChanged()
         {
             Invalidate(true);
