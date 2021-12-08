@@ -194,7 +194,7 @@
               <Weight>27</Weight>
               <Project>DrawingApp</Project>
               <File>App.xaml.cs</File>
-              <Line>39</Line>
+              <Line>29</Line>
               <StartLine>0</StartLine>
               <StartCol>0</StartCol>
               <EndLine>0</EndLine>
@@ -376,10 +376,45 @@
                 <ProjectName>DrawingApp</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>EllipseTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>ModelTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>RectangleTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>unittest\DrawingFormPresentationModelTests.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>unittest\WindowsFormsGraphicsAdaptorTests.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1161</ProductionLoc>
-          <TestLoc>0</TestLoc>
+          <ProductionLoc>1259</ProductionLoc>
+          <TestLoc>217</TestLoc>
         </CodeReview>
       </Data>
     </div>

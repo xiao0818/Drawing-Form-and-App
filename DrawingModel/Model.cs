@@ -27,8 +27,8 @@ namespace DrawingModel
             {
                 _firstPointX = pointX;
                 _firstPointY = pointY;
-                _hint.SetX1 = _firstPointX;
-                _hint.SetY1 = _firstPointY;
+                _hint.X1 = _firstPointX;
+                _hint.Y1 = _firstPointY;
                 _isPressed = true;
             }
         }
@@ -38,8 +38,8 @@ namespace DrawingModel
         {
             if (_isPressed)
             {
-                _hint.SetX2 = pointX;
-                _hint.SetY2 = pointY;
+                _hint.X2 = pointX;
+                _hint.Y2 = pointY;
                 NotifyModelChanged();
             }
         }
@@ -49,6 +49,8 @@ namespace DrawingModel
         {
             if (_isPressed)
             {
+                _hint.X2 = pointX;
+                _hint.Y2 = pointY;
                 _isPressed = false;
                 _shapes.Add(_hint.Copy());
                 NotifyModelChanged();

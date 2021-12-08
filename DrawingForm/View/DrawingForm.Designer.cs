@@ -37,8 +37,8 @@ namespace DrawingForm
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "DrawingForm";
+            this.Text = "DrawingForm";
             this.ResumeLayout(false);
 
         }

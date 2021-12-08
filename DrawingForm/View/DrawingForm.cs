@@ -52,6 +52,7 @@ namespace DrawingForm
             //
             // prepare canvas
             //
+            _canvas.Name = "_canvas";
             _canvas.Dock = DockStyle.Fill;
             _canvas.BackColor = Color.LightYellow;
             _canvas.MouseDown += HandleCanvasPointerPressed;

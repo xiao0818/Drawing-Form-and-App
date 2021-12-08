@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingForm.Tests
+namespace DrawingForm.Tests.UnitTest
 {
     [TestClass()]
     public class WindowsFormsGraphicsAdaptorTests

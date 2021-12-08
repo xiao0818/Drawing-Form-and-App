@@ -3,26 +3,30 @@
     public interface Shape
     {
         //SetX1
-        double SetX1
+        double X1
         {
+            get;
             set;
         }
 
         //SetY1
-        double SetY1
+        double Y1
         {
+            get;
             set;
         }
 
         //SetX2
-        double SetX2
+        double X2
         {
+            get;
             set;
         }
 
         //SetY2
-        double SetY2
+        double Y2
         {
+            get;
             set;
         }
 

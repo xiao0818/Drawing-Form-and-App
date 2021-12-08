@@ -5,6 +5,15 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class ModelTests
     {
+        Model model;
+
+        //Initialize
+        [TestInitialize()]
+        public void SetUp()
+        {
+            model = new Model();
+        }
+
         //PressedPointerTest
         [TestMethod()]
         public void PressedPointerTest()

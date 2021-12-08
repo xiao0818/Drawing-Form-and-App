@@ -7,36 +7,52 @@
         double _x2;
         double _y2;
 
-        //SetX1
-        public double SetX1
+        //X1
+        public double X1
         {
+            get
+            {
+                return _x1;
+            }
             set
             {
                 _x1 = value;
             }
         }
 
-        //SetY1
-        public double SetY1
+        //Y1
+        public double Y1
         {
+            get
+            {
+                return _y1;
+            }
             set
             {
                 _y1 = value;
             }
         }
 
-        //SetX2
-        public double SetX2
+        //X2
+        public double X2
         {
+            get
+            {
+                return _x2;
+            }
             set
             {
                 _x2 = value;
             }
         }
 
-        //SetY2
-        public double SetY2
+        //Y2
+        public double Y2
         {
+            get
+            {
+                return _y2;
+            }
             set
             {
                 _y2 = value;
@@ -53,10 +69,10 @@
         public Shape Copy()
         {
             Rectangle hint = new Rectangle();
-            hint.SetX1 = _x1;
-            hint.SetY1 = _y1;
-            hint.SetX2 = _x2;
-            hint.SetY2 = _y2;
+            hint.X1 = _x1;
+            hint.Y1 = _y1;
+            hint.X2 = _x2;
+            hint.Y2 = _y2;
             return hint;
         }
 
