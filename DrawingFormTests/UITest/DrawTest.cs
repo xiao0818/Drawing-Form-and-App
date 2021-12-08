@@ -51,7 +51,6 @@ namespace DrawingForm.Tests.UITest
             _robot.DragAndDrop("_canvas", -160, -50, -150, 175);
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop("_canvas", 150, -50, 160, 175);
-            _robot.Sleep(1);
             _robot.ClickButton("Clear");
             _robot.Sleep(1);
         }

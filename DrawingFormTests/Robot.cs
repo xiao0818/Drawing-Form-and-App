@@ -117,8 +117,13 @@ namespace DrawingForm.Tests
         public void DragAndDrop(string id, int x1, int y1, int x2, int y2)
         {
             WindowsElement element = _driver.FindElementByAccessibilityId(id);
-            var action = new Actions(_driver);
-            action.MoveToElement(element).MoveByOffset(x1, y1).ClickAndHold().MoveByOffset((x2 - x1), (y2 - y1)).Release().Perform();
+            Actions action = new Actions(_driver);
+            action.MoveToElement(element);
+            action.MoveByOffset(x1, y1);
+            action.ClickAndHold();
+            action.MoveByOffset((x2 - x1), (y2 - y1));
+            action.Release();
+            action.Perform();
         }
     }
 }

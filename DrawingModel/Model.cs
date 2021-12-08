@@ -12,6 +12,51 @@ namespace DrawingModel
         List<Shape> _shapes = new List<Shape>();
         Shape _hint;
 
+        //GetFirstPointX
+        public double GetFirstPointX
+        {
+            get
+            {
+                return _firstPointX;
+            }
+        }
+
+        //GetFirstPointY
+        public double GetFirstPointY
+        {
+            get
+            {
+                return _firstPointY;
+            }
+        }
+
+        //GetIsPressed
+        public bool GetIsPressed
+        {
+            get
+            {
+                return _isPressed;
+            }
+        }
+
+        //GetShapes
+        public List<Shape> GetShapes
+        {
+            get
+            {
+                return _shapes;
+            }
+        }
+
+        //GetHint
+        public Shape GetHint
+        {
+            get
+            {
+                return _hint;
+            }
+        }
+
         //PointerPressed
         public void PressedPointer(double pointX, double pointY, int shapeFlag)
         {
@@ -80,7 +125,7 @@ namespace DrawingModel
         }
 
         //NotifyModelChanged
-        private void NotifyModelChanged()
+        public void NotifyModelChanged()
         {
             if (_modelChanged != null)
             {

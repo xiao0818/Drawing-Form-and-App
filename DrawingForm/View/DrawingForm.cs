@@ -36,7 +36,7 @@ namespace DrawingForm
             _ellipse.AutoSize = false;
             _ellipse.Height = HEIGHT;
             _ellipse.Width = WIDTH;
-            _ellipse.Location = new Point(358, LOCATION_Y);
+            _ellipse.Location = new Point(350, LOCATION_Y);
             _ellipse.Click += HandleEllipseButtonClick;
             Controls.Add(_ellipse);
             //
@@ -46,7 +46,7 @@ namespace DrawingForm
             _clear.AutoSize = false;
             _clear.Height = HEIGHT;
             _clear.Width = WIDTH;
-            _clear.Location = new Point(616, LOCATION_Y);
+            _clear.Location = new Point(600, LOCATION_Y);
             _clear.Click += HandleClearButtonClick;
             Controls.Add(_clear);
             //

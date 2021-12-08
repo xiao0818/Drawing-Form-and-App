@@ -204,6 +204,54 @@
             </Smell>
             <Smell>
               <Id>2</Id>
+              <SmellType>Long parameter list(過長參數列)</SmellType>
+              <HashCode>LongParameterList.Robot.DragAndDrop.string id;int x1;int y1;int x2;int y2;</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>5</Weight>
+              <Project>DrawingFormTests</Project>
+              <File>Robot.cs</File>
+              <Line>117</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>Unresolved warnings(忽視警告)-The type 'Ellipse' exists in both 'DrawingForm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' and 'DrawingModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.EllipseTests.cs.Unresolved warnings(忽視警告)-The type 'Ellipse' exists in both 'DrawingForm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' and 'DrawingModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.8</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>EllipseTests.cs</File>
+              <Line>8</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Unresolved warnings(忽視警告)-The type 'Ellipse' exists in both 'DrawingForm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' and 'DrawingModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'</SmellType>
+              <HashCode>DrawingModelTests\DrawingModelTests.EllipseTests.cs.Unresolved warnings(忽視警告)-The type 'Ellipse' exists in both 'DrawingForm, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' and 'DrawingModel, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.14</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModelTests\DrawingModelTests</Project>
+              <File>EllipseTests.cs</File>
+              <Line>14</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment />
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>129 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</HashCode>
               <Severity>Red</Severity>
@@ -219,7 +267,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>3</Id>
+              <Id>6</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>134 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</HashCode>
               <Severity>Red</Severity>
@@ -235,7 +283,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>7</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>44 DrawingApp.MainPage.UnloadObject(Windows.UI.Xaml.DependencyObject)</HashCode>
               <Severity>Red</Severity>
@@ -251,7 +299,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>5</Id>
+              <Id>8</Id>
               <SmellType>Lack of comments(缺乏註解)</SmellType>
               <HashCode>20 DrawingApp.Program.Main(string[])</HashCode>
               <Severity>Red</Severity>
@@ -402,19 +450,34 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>unittest\DrawingFormPresentationModelTests.cs</RelativePath>
+                <RelativePath>Robot.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>UITest\ButtonFunctionTest.cs</RelativePath>
                 <ProjectName>DrawingFormTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>unittest\WindowsFormsGraphicsAdaptorTests.cs</RelativePath>
+                <RelativePath>UITest\DrawTest.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>UnitTest\DrawingFormPresentationModelTests.cs</RelativePath>
+                <ProjectName>DrawingFormTests</ProjectName>
+                <AnalysisFileType>Test</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>UnitTest\WindowsFormsGraphicsAdaptorTests.cs</RelativePath>
                 <ProjectName>DrawingFormTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1259</ProductionLoc>
-          <TestLoc>217</TestLoc>
+          <ProductionLoc>1391</ProductionLoc>
+          <TestLoc>361</TestLoc>
         </CodeReview>
       </Data>
     </div>
