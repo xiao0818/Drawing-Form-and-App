@@ -31,7 +31,7 @@ namespace DrawingModel
         }
 
         //GetIsPressed
-        public bool GetIsPressed
+        public bool IsPressed
         {
             get
             {

@@ -13,6 +13,15 @@ namespace DrawingForm
             this._graphics = graphics;
         }
 
+        //GetGraphics
+        public Graphics GetGraphics
+        {
+            get
+            {
+                return _graphics;
+            }
+        }
+
         //ClearAll
         public void ClearAll()
         {

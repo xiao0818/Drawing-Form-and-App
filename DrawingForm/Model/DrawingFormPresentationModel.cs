@@ -106,7 +106,7 @@ namespace DrawingForm
         }
 
         //NotifyModelChanged
-        private void NotifyModelChanged()
+        public void NotifyModelChanged()
         {
             if (_drawingFormPresentationModelChanged != null)
             {

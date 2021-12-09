@@ -23,7 +23,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(20, model.GetFirstPointY);
             Assert.AreEqual(10, model.GetHint.X1);
             Assert.AreEqual(20, model.GetHint.Y1);
-            Assert.IsTrue(model.GetIsPressed);
+            Assert.IsTrue(model.IsPressed);
         }
 
         //PressedPointerTestForEllipse
@@ -35,7 +35,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(20, model.GetFirstPointY);
             Assert.AreEqual(10, model.GetHint.X1);
             Assert.AreEqual(20, model.GetHint.Y1);
-            Assert.IsTrue(model.GetIsPressed);
+            Assert.IsTrue(model.IsPressed);
         }
 
         //PressedPointerTestFail
@@ -45,7 +45,7 @@ namespace DrawingModel.Tests
             model.PressedPointer(-10, -20, (int)ShapeFlag.Null);
             Assert.AreEqual(0, model.GetFirstPointX);
             Assert.AreEqual(0, model.GetFirstPointY);
-            Assert.IsFalse(model.GetIsPressed);
+            Assert.IsFalse(model.IsPressed);
         }
 
         //MovedPointerTest
@@ -97,7 +97,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(model.GetHint.Y1, model.GetShapes[0].Y1);
             Assert.AreEqual(model.GetHint.X2, model.GetShapes[0].X2);
             Assert.AreEqual(model.GetHint.Y2, model.GetShapes[0].Y2);
-            Assert.IsFalse(model.GetIsPressed);
+            Assert.IsFalse(model.IsPressed);
             Assert.IsTrue(isNotifyObserverWork);
         }
 
@@ -127,7 +127,7 @@ namespace DrawingModel.Tests
             };
             model.Clear();
             Assert.AreEqual(0, model.GetShapes.Count);
-            Assert.IsFalse(model.GetIsPressed);
+            Assert.IsFalse(model.IsPressed);
             Assert.IsTrue(isNotifyObserverWork);
         }
 
@@ -149,6 +149,15 @@ namespace DrawingModel.Tests
             };
             model.NotifyModelChanged();
             Assert.IsTrue(isNotifyObserverWork);
+        }
+
+        //NotifyModelChangedNull
+        [TestMethod()]
+        public void NotifyModelChangedNull()
+        {
+            bool isNotifyObserverWork = false;
+            model.NotifyModelChanged();
+            Assert.IsFalse(isNotifyObserverWork);
         }
     }
 }
