@@ -12,7 +12,7 @@ namespace DrawingForm
         Button _ellipse = new Button();
         Button _clear = new Button();
         int _shapeFlag = (int)ShapeFlag.Null;
-        const int HEIGHT = 30;
+        const int HEIGHT = 40;
         const int WIDTH = 100;
         const int LOCATION_Y = 10;
 
@@ -36,7 +36,7 @@ namespace DrawingForm
             _ellipse.AutoSize = false;
             _ellipse.Height = HEIGHT;
             _ellipse.Width = WIDTH;
-            _ellipse.Location = new Point(350, LOCATION_Y);
+            _ellipse.Location = new Point(625, LOCATION_Y);
             _ellipse.Click += HandleEllipseButtonClick;
             Controls.Add(_ellipse);
             //
@@ -46,7 +46,7 @@ namespace DrawingForm
             _clear.AutoSize = false;
             _clear.Height = HEIGHT;
             _clear.Width = WIDTH;
-            _clear.Location = new Point(600, LOCATION_Y);
+            _clear.Location = new Point(1150, LOCATION_Y);
             _clear.Click += HandleClearButtonClick;
             Controls.Add(_clear);
             //

@@ -106,7 +106,7 @@ namespace DrawingApp
         }
 
         //NotifyModelChanged
-        private void NotifyModelChanged()
+        public void NotifyModelChanged()
         {
             if (_drawingAppPresentationModelChanged != null)
             {

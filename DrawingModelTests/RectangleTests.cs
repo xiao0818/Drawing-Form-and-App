@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingModel.Tests
+namespace DrawingModel.Tests.UnitTest
 {
     [TestClass()]
     public class RectangleTests
@@ -12,13 +12,6 @@ namespace DrawingModel.Tests
         public void SetUp()
         {
             rectangle = new Rectangle();
-        }
-
-        //DrawTest
-        [TestMethod()]
-        public void DrawTest()
-        {
-            Assert.Fail();
         }
 
         //CopyTest

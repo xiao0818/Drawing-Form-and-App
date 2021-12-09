@@ -432,20 +432,10 @@
                 <ProjectName>DrawingFormTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>UnitTest\DrawingFormPresentationModelTests.cs</RelativePath>
-                <ProjectName>DrawingFormTests</ProjectName>
-                <AnalysisFileType>Test</AnalysisFileType>
-              </AnalysisFile>
-              <AnalysisFile>
-                <RelativePath>UnitTest\WindowsFormsGraphicsAdaptorTests.cs</RelativePath>
-                <ProjectName>DrawingFormTests</ProjectName>
-                <AnalysisFileType>Test</AnalysisFileType>
-              </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>1436</ProductionLoc>
-          <TestLoc>553</TestLoc>
+          <ProductionLoc>1445</ProductionLoc>
+          <TestLoc>337</TestLoc>
         </CodeReview>
       </Data>
     </div>

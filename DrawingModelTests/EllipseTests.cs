@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingModel.Tests
+namespace DrawingModel.Tests.UnitTest
 {
     [TestClass()]
     public class EllipseTests
@@ -12,13 +12,6 @@ namespace DrawingModel.Tests
         public void SetUp()
         {
             ellipse = new Ellipse();
-        }
-
-        //DrawTest
-        [TestMethod()]
-        public void DrawTest()
-        {
-            Assert.Fail();
         }
 
         //CopyTest

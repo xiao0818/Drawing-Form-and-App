@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingModel.Tests
+namespace DrawingModel.Tests.UnitTest
 {
     [TestClass()]
     public class ModelTests
@@ -129,13 +129,6 @@ namespace DrawingModel.Tests
             Assert.AreEqual(0, model.GetShapes.Count);
             Assert.IsFalse(model.IsPressed);
             Assert.IsTrue(isNotifyObserverWork);
-        }
-
-        //DrawTest
-        [TestMethod()]
-        public void DrawTest()
-        {
-            Assert.Fail();
         }
 
         //NotifyModelChanged

@@ -31,11 +31,11 @@ namespace DrawingForm
         {
             this.SuspendLayout();
             // 
-            // Form1
+            // DrawingForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1350, 729);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DrawingForm";
             this.Text = "DrawingForm";
