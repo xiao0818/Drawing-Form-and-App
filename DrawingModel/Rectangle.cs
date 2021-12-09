@@ -77,7 +77,7 @@
         }
 
         //TakeLarger
-        private double TakeLarge(double number1, double number2)
+        public double TakeLarge(double number1, double number2)
         {
             if (number1 > number2)
             {
@@ -87,7 +87,7 @@
         }
 
         //TakeSmaller
-        private double TakeSmall(double number1, double number2)
+        public double TakeSmall(double number1, double number2)
         {
             if (number1 < number2)
             {

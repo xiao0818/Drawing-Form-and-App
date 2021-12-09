@@ -1,5 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace DrawingForm.Tests.UITest
@@ -33,7 +34,7 @@ namespace DrawingForm.Tests.UITest
         public void DrawRectangle()
         {
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -100, -100, 100, 100);
+            _robot.DragAndDrop(-100, -100, 100, 100);
             _robot.Sleep(1);
         }
 
@@ -42,7 +43,7 @@ namespace DrawingForm.Tests.UITest
         public void DrawEllipse()
         {
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", -100, -100, 100, 100);
+            _robot.DragAndDrop(-100, -100, 100, 100);
             _robot.Sleep(1);
         }
 
@@ -51,9 +52,9 @@ namespace DrawingForm.Tests.UITest
         public void Clear()
         {
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -100, -100, 100, 100);
+            _robot.DragAndDrop(-100, -100, 100, 100);
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", -100, -100, 100, 100);
+            _robot.DragAndDrop(-100, -100, 100, 100);
             _robot.ClickButton("Clear");
             _robot.Sleep(1);
         }

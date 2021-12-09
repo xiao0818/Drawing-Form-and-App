@@ -33,24 +33,24 @@ namespace DrawingForm.Tests.UITest
         public void DrawSnowman()
         {
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", -150, 25, 150, 325);
+            _robot.DragAndDrop(-150, 25, 150, 325);
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", -100, -150, 100, 50);
+            _robot.DragAndDrop(-100, -150, 100, 50);
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", -60, -100, -20, -60);
+            _robot.DragAndDrop(-60, -100, -20, -60);
             _robot.ClickButton("Ellipse");
-            _robot.DragAndDrop("_canvas", 20, -100, 60, -60);
+            _robot.DragAndDrop(20, -100, 60, -60);
 
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -120, -225, 120, -120);
+            _robot.DragAndDrop(-120, -225, 120, -120);
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -150, -125, 150, -110);
+            _robot.DragAndDrop(-150, -125, 150, -110);
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -20, -30, 20, 10);
+            _robot.DragAndDrop(-20, -30, 20, 10);
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", -160, -50, -150, 175);
+            _robot.DragAndDrop(-160, -50, -150, 175);
             _robot.ClickButton("Rectangle");
-            _robot.DragAndDrop("_canvas", 150, -50, 160, 175);
+            _robot.DragAndDrop(150, -50, 160, 175);
             _robot.ClickButton("Clear");
             _robot.Sleep(1);
         }

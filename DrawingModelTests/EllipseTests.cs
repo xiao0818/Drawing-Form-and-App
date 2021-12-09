@@ -18,14 +18,51 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void CopyTest()
         {
-            ellipse.X1 = 50;
-            ellipse.Y1 = 100;
-            ellipse.X2 = 150;
-            ellipse.Y2 = 200;
-            Assert.AreEqual(ellipse.X1, ellipse.Copy().X1);
-            Assert.AreEqual(ellipse.Y1, ellipse.Copy().Y1);
-            Assert.AreEqual(ellipse.X2, ellipse.Copy().X2);
-            Assert.AreEqual(ellipse.Y2, ellipse.Copy().Y2);
+            ellipse.X1 = 10;
+            ellipse.Y1 = 20;
+            ellipse.X2 = 30;
+            ellipse.Y2 = 40;
+            Shape ellipseCopy = ellipse.Copy();
+            Assert.AreEqual(ellipse.X1, ellipseCopy.X1);
+            Assert.AreEqual(ellipse.Y1, ellipseCopy.Y1);
+            Assert.AreEqual(ellipse.X2, ellipseCopy.X2);
+            Assert.AreEqual(ellipse.Y2, ellipseCopy.Y2);
+        }
+
+        //TakeLargeTest1
+        [TestMethod()]
+        public void TakeLargeTest1()
+        {
+            ellipse.X1 = 10;
+            ellipse.X2 = 30;
+            Assert.AreEqual(30, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
+        }
+
+        //TakeLargeTest2
+        [TestMethod()]
+        public void TakeLargeTest2()
+        {
+            ellipse.X1 = 30;
+            ellipse.X2 = 10;
+            Assert.AreEqual(30, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
+        }
+
+        //TakeSmallTest1
+        [TestMethod()]
+        public void TakeSmallTest1()
+        {
+            ellipse.X1 = 10;
+            ellipse.X2 = 30;
+            Assert.AreEqual(10, ellipse.TakeSmall(ellipse.X1, ellipse.X2));
+        }
+
+        //TakeSmallTest2
+        [TestMethod()]
+        public void TakeSmallTest2()
+        {
+            ellipse.X1 = 30;
+            ellipse.X2 = 10;
+            Assert.AreEqual(10, ellipse.TakeSmall(ellipse.X1, ellipse.X2));
         }
     }
 }

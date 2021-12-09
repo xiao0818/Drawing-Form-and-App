@@ -19,6 +19,7 @@ namespace DrawingForm.Tests
         const string DEVICE_NAME = "deviceName";
         const string WINDOWS = "WindowsPC";
         const int WAITING_SECONDS = 5;
+        const string CANVAS_ID = "_canvas";
 
         // constructor
         public Robot(string targetAppPath, string root)
@@ -114,9 +115,9 @@ namespace DrawingForm.Tests
         }
 
         // drag
-        public void DragAndDrop(string id, int x1, int y1, int x2, int y2)
+        public void DragAndDrop(int x1, int y1, int x2, int y2)
         {
-            WindowsElement element = _driver.FindElementByAccessibilityId(id);
+            WindowsElement element = _driver.FindElementByAccessibilityId(CANVAS_ID);
             Actions action = new Actions(_driver);
             action.MoveToElement(element);
             action.MoveByOffset(x1, y1);
