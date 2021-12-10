@@ -40,6 +40,10 @@ namespace DrawingForm.Tests.UITest
             _robot.DragAndDrop(-60, -100, -20, -60);
             _robot.ClickButton("Ellipse");
             _robot.DragAndDrop(20, -100, 60, -60);
+            _robot.ClickButton("Ellipse");
+            _robot.DragAndDrop(-30, 60, 30, 120);
+            _robot.ClickButton("Ellipse");
+            _robot.DragAndDrop(-30, 135, 30, 195);
 
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-120, -225, 120, -120);
