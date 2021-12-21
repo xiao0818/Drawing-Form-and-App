@@ -46,8 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="..\DrawingModel\CommandManager.cs">
+      <Link>Model\CommandManager.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\DrawCommand.cs">
+      <Link>Model\DrawCommand.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\Ellipse.cs">
       <Link>Model\Ellipse.cs</Link>
+    </Compile>
+    <Compile Include="..\DrawingModel\ICommand.cs">
+      <Link>Model\ICommand.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>

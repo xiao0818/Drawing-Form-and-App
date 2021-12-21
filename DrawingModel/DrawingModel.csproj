@@ -41,7 +41,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CommandManager.cs" />
+    <Compile Include="DrawCommand.cs" />
     <Compile Include="Ellipse.cs" />
+    <Compile Include="ICommand.cs" />
     <Compile Include="IGraphics.cs" />
     <Compile Include="Line.cs" />
     <Compile Include="Model.cs" />

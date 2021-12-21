@@ -13,14 +13,25 @@ namespace DrawingForm
         Button _line = new Button();
         Button _clear = new Button();
         Label _label = new Label();
+        ToolStripButton undo;
+        ToolStripButton redo;
         int _shapeFlag = (int)ShapeFlag.Null;
         const int HEIGHT = 40;
         const int WIDTH = 100;
-        const int LOCATION_Y = 10;
+        const int LOCATION_Y = 30;
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
             InitializeComponent();
+            ToolStrip ts = new ToolStrip();
+            //Controls.Add(ts);
+            ts.Parent = this;
+            undo = new ToolStripButton("Undo", null, UndoHandler);
+            undo.Enabled = false;
+            ts.Items.Add(undo);
+            redo = new ToolStripButton("Redo", null, RedoHandler);
+            redo.Enabled = false;
+            ts.Items.Add(redo);
             //
             // prepare rectangle button
             //
@@ -88,6 +99,12 @@ namespace DrawingForm
             //
             _drawingFormPresentationModel = drawingFormPresentationModel;
             _drawingFormPresentationModel._drawingFormPresentationModelChanged += HandleModelChanged;
+            //
+            // Use Double buffer
+            //
+            SetStyle(ControlStyles.DoubleBuffer, true);
+            SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.AllPaintingInWmPaint, true);
         }
 
         //HandleRectangleButtonClick
@@ -138,6 +155,17 @@ namespace DrawingForm
             {
                 _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag);
             }
+            RefreshUI();
+        }
+
+        //HandleCanvasPointerMoved
+        public void HandleCanvasPointerMoved(object sender, MouseEventArgs e)
+        {
+            if (_shapeFlag != (int)ShapeFlag.Null)
+            {
+                _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
+            }
+            RefreshUI();
         }
 
         //HandleCanvasPointerReleased
@@ -152,15 +180,7 @@ namespace DrawingForm
                 _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
                 _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             }
-        }
-
-        //HandleCanvasPointerMoved
-        public void HandleCanvasPointerMoved(object sender, MouseEventArgs e)
-        {
-            if (_shapeFlag != (int)ShapeFlag.Null)
-            {
-                _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
-            }
+            RefreshUI();
         }
 
         //HandleCanvasPaint
@@ -176,6 +196,29 @@ namespace DrawingForm
         public void HandleModelChanged()
         {
             Invalidate(true);
+        }
+
+        //UndoHandler
+        void UndoHandler(object sender, System.EventArgs e)
+        {
+            _drawingFormPresentationModel.Undo();
+            RefreshUI();
+        }
+
+        //RedoHandler
+        void RedoHandler(object sender, System.EventArgs e)
+        {
+            _drawingFormPresentationModel.Redo();
+            RefreshUI();
+        }
+
+        //RefreshUI
+        void RefreshUI()
+        {
+            // 更新redo與undo是否為enabled
+            redo.Enabled = _drawingFormPresentationModel.IsRedoEnabled;
+            undo.Enabled = _drawingFormPresentationModel.IsUndoEnabled;
+            Invalidate();
         }
     }
 }

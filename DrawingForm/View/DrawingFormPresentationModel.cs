@@ -127,6 +127,36 @@ namespace DrawingForm
             _model.Draw(graphics);
         }
 
+        //Undo
+        public void Undo()
+        {
+            _model.Undo();
+        }
+
+        //Redo
+        public void Redo()
+        {
+            _model.Redo();
+        }
+
+        //IsRedoEnabled
+        public bool IsRedoEnabled
+        {
+            get
+            {
+                return _model.IsRedoEnabled;
+            }
+        }
+
+        //IsUndoEnabled
+        public bool IsUndoEnabled
+        {
+            get
+            {
+                return _model.IsUndoEnabled;
+            }
+        }
+
         //NotifyModelChanged
         public void NotifyModelChanged()
         {

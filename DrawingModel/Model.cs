@@ -11,6 +11,7 @@ namespace DrawingModel
         bool _isPressed = false;
         List<Shape> _shapes = new List<Shape>();
         Shape _hint;
+        CommandManager commandManager = new CommandManager();
 
         //GetFirstPointX
         public double GetFirstPointX
@@ -101,7 +102,8 @@ namespace DrawingModel
                 _hint.X2 = pointX;
                 _hint.Y2 = pointY;
                 _isPressed = false;
-                _shapes.Add(_hint.Copy());
+                //_shapes.Add(_hint.Copy());
+                commandManager.Execute(new DrawCommand(this, _hint.Copy()));
                 NotifyModelChanged();
             }
         }
@@ -125,6 +127,48 @@ namespace DrawingModel
             if (_isPressed)
             {
                 _hint.Draw(graphics);
+            }
+        }
+
+        //DrawShape
+        public void DrawShape(Shape shape)
+        {
+            _shapes.Add(shape);
+        }
+
+        //DeleteShape
+        public void DeleteShape()
+        {
+            _shapes.RemoveAt(_shapes.Count - 1);
+        }
+
+        //Undo
+        public void Undo()
+        {
+            commandManager.Undo();
+            NotifyModelChanged();
+        }
+
+        //Redo
+        public void Redo()
+        {
+            commandManager.Redo();
+            NotifyModelChanged();
+        }
+
+        public bool IsRedoEnabled
+        {
+            get
+            {
+                return commandManager.IsRedoEnabled;
+            }
+        }
+
+        public bool IsUndoEnabled
+        {
+            get
+            {
+                return commandManager.IsUndoEnabled;
             }
         }
 
