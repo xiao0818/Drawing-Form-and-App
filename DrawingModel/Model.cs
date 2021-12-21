@@ -68,6 +68,10 @@ namespace DrawingModel
             {
                 _hint = new Ellipse();
             }
+            else if (shapeFlag == (int)ShapeFlag.Line)
+            {
+                _hint = new Line();
+            }
             if (pointX > 0 && pointY > 0)
             {
                 _firstPointX = pointX;

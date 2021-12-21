@@ -41,5 +41,11 @@ namespace DrawingForm
             _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
             _graphics.FillEllipse(new SolidBrush(Color.Orange), (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
         }
+
+        //DrawLine
+        public void DrawLine(double x1, double y1, double x2, double y2)
+        {
+            _graphics.DrawLine(new Pen(Color.Black, THICKNESS), (float)x1, (float)y1, (float)x2, (float)y2);
+        }
     }
 }

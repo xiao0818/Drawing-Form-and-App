@@ -8,6 +8,7 @@ namespace DrawingForm
         public delegate void DrawingFormPresentationModelChangedEventHandler();
         bool _isRectangleButtonEnabled = true;
         bool _isEllipseButtonEnabled = true;
+        bool _isLineButtonEnabled = true;
         int _shapeFlag = (int)ShapeFlag.Null;
         Model _model;
         public DrawingFormPresentationModel(Model model)
@@ -32,6 +33,14 @@ namespace DrawingForm
             }
         }
 
+        public bool IsLineButtonEnable
+        {
+            get
+            {
+                return _isLineButtonEnabled;
+            }
+        }
+
         public int GetShapeFlag
         {
             get
@@ -45,6 +54,7 @@ namespace DrawingForm
         {
             _isRectangleButtonEnabled = false;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Rectangle;
         }
 
@@ -53,7 +63,17 @@ namespace DrawingForm
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = false;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Ellipse;
+        }
+
+        //HandleLineButtonClick
+        public void HandleLineButtonClick()
+        {
+            _isRectangleButtonEnabled = true;
+            _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = false;
+            _shapeFlag = (int)ShapeFlag.Line;
         }
 
         //HandleClearButtonClick
@@ -61,6 +81,7 @@ namespace DrawingForm
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Null;
         }
 
@@ -69,6 +90,7 @@ namespace DrawingForm
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Null;
         }
 

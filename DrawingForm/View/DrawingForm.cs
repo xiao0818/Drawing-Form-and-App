@@ -10,7 +10,9 @@ namespace DrawingForm
         Panel _canvas = new DoubleBufferedPanel();
         Button _rectangle = new Button();
         Button _ellipse = new Button();
+        Button _line = new Button();
         Button _clear = new Button();
+        Label _label = new Label();
         int _shapeFlag = (int)ShapeFlag.Null;
         const int HEIGHT = 40;
         const int WIDTH = 100;
@@ -36,9 +38,19 @@ namespace DrawingForm
             _ellipse.AutoSize = false;
             _ellipse.Height = HEIGHT;
             _ellipse.Width = WIDTH;
-            _ellipse.Location = new Point(625, LOCATION_Y);
+            _ellipse.Location = new Point(450, LOCATION_Y);
             _ellipse.Click += HandleEllipseButtonClick;
             Controls.Add(_ellipse);
+            //
+            // prepare line button
+            //
+            _line.Text = "Line";
+            _line.AutoSize = false;
+            _line.Height = HEIGHT;
+            _line.Width = WIDTH;
+            _line.Location = new Point(800, LOCATION_Y);
+            _line.Click += HandleLineButtonClick;
+            Controls.Add(_line);
             //
             // prepare clear button
             //
@@ -49,6 +61,16 @@ namespace DrawingForm
             _clear.Location = new Point(1150, LOCATION_Y);
             _clear.Click += HandleClearButtonClick;
             Controls.Add(_clear);
+            //
+            // prepare label
+            //
+            _label.Name = "_label";
+            _label.Text = "";
+            _label.Height = HEIGHT;
+            _label.Width = 2 * WIDTH;
+            _label.Location = new Point(1100, 660);
+            _label.BackColor = Color.White;
+            Controls.Add(_label);
             //
             // prepare canvas
             //
@@ -74,6 +96,7 @@ namespace DrawingForm
             _drawingFormPresentationModel.HandleRectangleButtonClick();
             _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
@@ -83,6 +106,17 @@ namespace DrawingForm
             _drawingFormPresentationModel.HandleEllipseButtonClick();
             _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
+            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+        }
+
+        //HandleLineButtonClick
+        public void HandleLineButtonClick(object sender, System.EventArgs e)
+        {
+            _drawingFormPresentationModel.HandleLineButtonClick();
+            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
@@ -93,6 +127,7 @@ namespace DrawingForm
             _drawingFormPresentationModel.HandleClearButtonClick();
             _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
@@ -114,6 +149,7 @@ namespace DrawingForm
                 _drawingFormPresentationModel.HandleCanvasPointerReleased();
                 _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
                 _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+                _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
                 _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             }
         }

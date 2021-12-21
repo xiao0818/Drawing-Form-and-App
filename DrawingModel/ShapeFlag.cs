@@ -4,6 +4,7 @@
     {
         Null,
         Rectangle,
-        Ellipse
+        Ellipse,
+        Line
     }
 }

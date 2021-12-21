@@ -52,6 +52,9 @@
     <Compile Include="..\DrawingModel\IGraphics.cs">
       <Link>Model\IGraphics.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\Line.cs">
+      <Link>Model\Line.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\Model.cs">
       <Link>Model\Model.cs</Link>
     </Compile>
