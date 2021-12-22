@@ -108,7 +108,6 @@ namespace DrawingModel
                 _hint.X2 = pointX;
                 _hint.Y2 = pointY;
                 _isPressed = false;
-                //_shapes.Add(_hint.Copy());
                 commandManager.Execute(new DrawCommand(this, _hint.Copy()));
                 NotifyModelChanged();
             }
@@ -123,6 +122,7 @@ namespace DrawingModel
             {
                 this.Undo();
             }
+            //_shapes.Clear();
             NotifyModelChanged();
         }
 

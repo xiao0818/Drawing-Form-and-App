@@ -21,5 +21,14 @@
         {
             _model.DeleteShape();
         }
+
+        //GetShape
+        public string GetShape
+        {
+            get
+            {
+                return _shape.GetShape;
+            }
+        }
     }
 }

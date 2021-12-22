@@ -155,6 +155,7 @@ namespace DrawingApp
         //UndoHandler
         void UndoHandler(object sender, RoutedEventArgs e)
         {
+            this.ResetSelection();
             _drawingAppPresentationModel.Undo();
             RefreshUI();
         }
@@ -162,6 +163,7 @@ namespace DrawingApp
         //RedoHandler
         void RedoHandler(object sender, RoutedEventArgs e)
         {
+            this.ResetSelection();
             _drawingAppPresentationModel.Redo();
             RefreshUI();
         }
@@ -203,7 +205,7 @@ namespace DrawingApp
             {
                 if (shapes[shapes.Count - 1].GetShape == "DotRectangle")
                 {
-                    _drawingAppPresentationModel.DeleteShape();
+                    _drawingAppPresentationModel.Undo();
                     _label.Text = "Selected : None";
                 }
             }

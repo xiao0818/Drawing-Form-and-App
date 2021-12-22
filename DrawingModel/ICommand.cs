@@ -7,5 +7,11 @@
 
         //UnExecute
         void UnExecute();
+
+        //GetShape
+        string GetShape
+        {
+            get;
+        }
     }
 }

@@ -235,6 +235,7 @@ namespace DrawingForm
         //UndoHandler
         void UndoHandler(object sender, System.EventArgs e)
         {
+            this.ResetSelection();
             _drawingFormPresentationModel.Undo();
             RefreshUI();
         }
@@ -242,6 +243,7 @@ namespace DrawingForm
         //RedoHandler
         void RedoHandler(object sender, System.EventArgs e)
         {
+            this.ResetSelection();
             _drawingFormPresentationModel.Redo();
             RefreshUI();
         }
@@ -283,7 +285,7 @@ namespace DrawingForm
             {
                 if (shapes[shapes.Count - 1].GetShape == "DotRectangle")
                 {
-                    _drawingFormPresentationModel.DeleteShape();
+                    _drawingFormPresentationModel.Undo();
                     _label.Text = "Selected : None";
                 }
             }
