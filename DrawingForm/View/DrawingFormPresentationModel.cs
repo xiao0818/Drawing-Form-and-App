@@ -1,4 +1,5 @@
 ﻿using DrawingModel;
+using System.Collections.Generic;
 
 namespace DrawingForm
 {
@@ -46,6 +47,15 @@ namespace DrawingForm
             get
             {
                 return _shapeFlag;
+            }
+        }
+
+        //GetShapes
+        public List<Shape> GetShapes
+        {
+            get
+            {
+                return _model.GetShapes;
             }
         }
 

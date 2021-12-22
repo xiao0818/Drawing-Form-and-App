@@ -65,7 +65,7 @@
             graphics.DrawLine(_x1, _y1, _x2, _y2);
         }
 
-        //Shape
+        //Copy
         public Shape Copy()
         {
             Line hint = new Line();
@@ -74,6 +74,15 @@
             hint.X2 = _x2;
             hint.Y2 = _y2;
             return hint;
+        }
+
+        //GetShape
+        public string GetShape
+        {
+            get
+            {
+                return "Line";
+            }
         }
     }
 }

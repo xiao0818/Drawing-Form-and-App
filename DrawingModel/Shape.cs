@@ -35,5 +35,11 @@
 
         //Copy
         Shape Copy();
+
+        //GetShape
+        string GetShape
+        {
+            get;
+        }
     }
 }

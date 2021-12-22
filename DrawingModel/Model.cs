@@ -75,6 +75,10 @@ namespace DrawingModel
             {
                 _hint = new Line();
             }
+            else if (shapeFlag == (int)ShapeFlag.DotRectangle)
+            {
+                _hint = new DotRectangle();
+            }
             if (pointX > 0 && pointY > 0)
             {
                 _firstPointX = pointX;
@@ -128,14 +132,14 @@ namespace DrawingModel
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
             {
-                if(aShape.GetType().ToString() == "DrawingModel.Line")
+                if(aShape.GetShape == "Line")
                 {
                     aShape.Draw(graphics);
                 }
             }
             foreach (Shape aShape in _shapes)
             {
-                if (aShape.GetType().ToString() != "DrawingModel.Line")
+                if (aShape.GetShape != "Line")
                 {
                     aShape.Draw(graphics);
                 }

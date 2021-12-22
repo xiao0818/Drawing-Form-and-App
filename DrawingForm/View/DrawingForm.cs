@@ -1,4 +1,6 @@
 ﻿using DrawingModel;
+using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -15,6 +17,7 @@ namespace DrawingForm
         Label _label = new Label();
         ToolStripButton undo;
         ToolStripButton redo;
+        bool _isSelectMode = true;
         int _shapeFlag = (int)ShapeFlag.Null;
         const int HEIGHT = 40;
         const int WIDTH = 100;
@@ -115,6 +118,7 @@ namespace DrawingForm
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
         }
 
         //HandleEllipseButtonClick
@@ -125,6 +129,7 @@ namespace DrawingForm
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
         }
 
         //HandleLineButtonClick
@@ -135,6 +140,7 @@ namespace DrawingForm
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
         }
 
         //HandleClearButtonClick
@@ -146,6 +152,7 @@ namespace DrawingForm
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            _isSelectMode = true;
             RefreshUI();
         }
 
@@ -155,6 +162,7 @@ namespace DrawingForm
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
                 _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag);
+                _isSelectMode = false;
             }
             RefreshUI();
         }
@@ -172,16 +180,35 @@ namespace DrawingForm
         //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, MouseEventArgs e)
         {
-            if (_shapeFlag != (int)ShapeFlag.Null)
+            Console.WriteLine(_isSelectMode);
+            if (_isSelectMode == true)
             {
-                _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y);
-                _drawingFormPresentationModel.HandleCanvasPointerReleased();
-                _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-                _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-                _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-                _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+                List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
+                for (int index = 0; index < shapes.Count; index++)
+                {
+                    Shape aShape = shapes[shapes.Count - index -1];
+                    if(((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
+                    {
+                        _drawingFormPresentationModel.PressedPointer(aShape.X1, aShape.Y1, (int)ShapeFlag.DotRectangle);
+                        _drawingFormPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2);
+                        break;
+                    }
+                }
             }
-            RefreshUI();
+            else
+            {
+                if (_shapeFlag != (int)ShapeFlag.Null)
+                {
+                    _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y);
+                    _drawingFormPresentationModel.HandleCanvasPointerReleased();
+                    _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+                    _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+                    _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
+                    _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+                }
+                RefreshUI();
+            }
+            _isSelectMode = true;
         }
 
         //HandleCanvasPaint

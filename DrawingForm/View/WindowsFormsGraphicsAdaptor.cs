@@ -47,5 +47,13 @@ namespace DrawingForm
         {
             _graphics.DrawLine(new Pen(Color.Black, THICKNESS), (float)x1, (float)y1, (float)x2, (float)y2);
         }
+
+        //DrawDotRectangle
+        public void DrawDotRectangle(double x1, double y1, double x2, double y2)
+        {
+            Pen pen = new Pen(Color.Red, THICKNESS);
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            _graphics.DrawRectangle(pen, (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
+        }
     }
 }

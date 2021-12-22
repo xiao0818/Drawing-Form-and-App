@@ -5,6 +5,7 @@
         Null,
         Rectangle,
         Ellipse,
-        Line
+        Line,
+        DotRectangle
     }
 }

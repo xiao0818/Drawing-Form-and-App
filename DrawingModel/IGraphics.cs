@@ -13,5 +13,8 @@
 
         //DrawLine
         void DrawLine(double x1, double y1, double x2, double y2);
+
+        //DrawDotRectangle
+        void DrawDotRectangle(double x1, double y1, double x2, double y2);
     }
 }

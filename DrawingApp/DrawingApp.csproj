@@ -119,6 +119,9 @@
     <Compile Include="..\DrawingModel\CommandManager.cs">
       <Link>Model\CommandManager.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\DotRectangle.cs">
+      <Link>Model\DotRectangle.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\DrawCommand.cs">
       <Link>Model\DrawCommand.cs</Link>
     </Compile>

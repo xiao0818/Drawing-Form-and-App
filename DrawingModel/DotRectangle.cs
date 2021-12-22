@@ -1,6 +1,6 @@
 ﻿namespace DrawingModel
 {
-    public class Ellipse : Shape
+    public class DotRectangle : Shape
     {
         double _x1;
         double _y1;
@@ -62,13 +62,13 @@
         //Draw
         public void Draw(IGraphics graphics)
         {
-            graphics.DrawEllipse(TakeSmall(_x1, _x2), TakeSmall(_y1, _y2), TakeLarge(_x1, _x2), TakeLarge(_y1, _y2));
+            graphics.DrawDotRectangle(TakeSmall(_x1, _x2), TakeSmall(_y1, _y2), TakeLarge(_x1, _x2), TakeLarge(_y1, _y2));
         }
 
         //Copy
         public Shape Copy()
         {
-            Ellipse hint = new Ellipse();
+            DotRectangle hint = new DotRectangle();
             hint.X1 = _x1;
             hint.Y1 = _y1;
             hint.X2 = _x2;
@@ -81,7 +81,7 @@
         {
             get
             {
-                return "Ellipse";
+                return "DotRectangle";
             }
         }
 

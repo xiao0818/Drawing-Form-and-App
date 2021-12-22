@@ -76,6 +76,15 @@
             return hint;
         }
 
+        //GetShape
+        public string GetShape
+        {
+            get
+            {
+                return "Rectangle";
+            }
+        }
+
         //TakeLarger
         public double TakeLarge(double number1, double number2)
         {
