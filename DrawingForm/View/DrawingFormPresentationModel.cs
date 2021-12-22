@@ -137,6 +137,12 @@ namespace DrawingForm
             _model.Draw(graphics);
         }
 
+        //DeleteShape
+        public void DeleteShape()
+        {
+            _model.DeleteShape();
+        }
+
         //Undo
         public void Undo()
         {

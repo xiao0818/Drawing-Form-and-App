@@ -154,12 +154,14 @@ namespace DrawingModel
         public void DrawShape(Shape shape)
         {
             _shapes.Add(shape);
+            NotifyModelChanged();
         }
 
         //DeleteShape
         public void DeleteShape()
         {
             _shapes.RemoveAt(_shapes.Count - 1);
+            NotifyModelChanged();
         }
 
         //Undo
