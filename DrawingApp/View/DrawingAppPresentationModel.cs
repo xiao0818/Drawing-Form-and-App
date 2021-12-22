@@ -1,4 +1,5 @@
 ﻿using DrawingModel;
+using System.Collections.Generic;
 
 namespace DrawingApp
 {
@@ -46,6 +47,15 @@ namespace DrawingApp
             get
             {
                 return _shapeFlag;
+            }
+        }
+
+        //GetShapes
+        public List<Shape> GetShapes
+        {
+            get
+            {
+                return _model.GetShapes;
             }
         }
 
@@ -125,6 +135,12 @@ namespace DrawingApp
         public void Draw(IGraphics graphics)
         {
             _model.Draw(graphics);
+        }
+
+        //DeleteShape
+        public void DeleteShape()
+        {
+            _model.DeleteShape();
         }
 
         //Undo

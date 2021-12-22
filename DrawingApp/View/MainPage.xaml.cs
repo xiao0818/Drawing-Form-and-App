@@ -1,4 +1,5 @@
 ﻿using DrawingModel;
+using System.Collections.Generic;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -15,6 +16,7 @@ namespace DrawingApp
         DrawingAppPresentationModel _drawingAppPresentationModel;
         IGraphics _iGraphics;
         int _shapeFlag = (int)ShapeFlag.Null;
+        bool _isSelectMode = true;
 
         public MainPage()
         {
@@ -45,6 +47,8 @@ namespace DrawingApp
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
             _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
+            this.ResetSelection();
         }
 
         //HandleEllipseButtonClick
@@ -55,6 +59,8 @@ namespace DrawingApp
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
             _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
+            this.ResetSelection();
         }
 
         //HandleLineButtonClick
@@ -65,6 +71,8 @@ namespace DrawingApp
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
             _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+            _isSelectMode = false;
+            this.ResetSelection();
         }
 
         //HandleClearButtonClick
@@ -76,6 +84,8 @@ namespace DrawingApp
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
             _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+            _isSelectMode = true;
+            this.ResetSelection();
             RefreshUI();
         }
 
@@ -85,6 +95,8 @@ namespace DrawingApp
             if (_shapeFlag != (int)ShapeFlag.Null)
             {
                 _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
+                _isSelectMode = false;
+                this.ResetSelection();
             }
             RefreshUI();
         }
@@ -102,16 +114,36 @@ namespace DrawingApp
         //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            if (_shapeFlag != (int)ShapeFlag.Null)
+            this.ResetSelection();
+            if (_isSelectMode == true)
             {
-                _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
-                _drawingAppPresentationModel.HandleCanvasPointerReleased();
-                _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
-                _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
-                _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
-                _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+                List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
+                for (int index = 0; index < shapes.Count; index++)
+                {
+                    Shape aShape = shapes[shapes.Count - index - 1];
+                    if (((aShape.X1 <= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 >= e.GetCurrentPoint(_canvas).Position.X) || (aShape.X1 >= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 <= e.GetCurrentPoint(_canvas).Position.X)) && ((aShape.Y1 <= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 >= e.GetCurrentPoint(_canvas).Position.Y) || (aShape.Y1 >= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 <= e.GetCurrentPoint(_canvas).Position.Y)))
+                    {
+                        _drawingAppPresentationModel.PressedPointer(aShape.X1, aShape.Y1, (int)ShapeFlag.DotRectangle);
+                        _drawingAppPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2);
+                        _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
+                        break;
+                    }
+                }
             }
-            RefreshUI();
+            else
+            {
+                if (_shapeFlag != (int)ShapeFlag.Null)
+                {
+                    _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+                    _drawingAppPresentationModel.HandleCanvasPointerReleased();
+                    _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+                    _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+                    _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
+                    _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+                }
+                RefreshUI();
+                _isSelectMode = true;
+            }
         }
 
         //HandleModelChanged
@@ -141,6 +173,40 @@ namespace DrawingApp
             _redo.IsEnabled = _drawingAppPresentationModel.IsRedoEnabled;
             _undo.IsEnabled = _drawingAppPresentationModel.IsUndoEnabled;
             _drawingAppPresentationModel.Draw(_iGraphics);
+        }
+
+        //TakeLarger
+        public double TakeLarge(double number1, double number2)
+        {
+            if (number1 > number2)
+            {
+                return number1;
+            }
+            return number2;
+        }
+
+        //TakeSmaller
+        public double TakeSmall(double number1, double number2)
+        {
+            if (number1 < number2)
+            {
+                return number1;
+            }
+            return number2;
+        }
+
+        //ReserSelection
+        public void ResetSelection()
+        {
+            List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
+            if (shapes.Count != 0)
+            {
+                if (shapes[shapes.Count - 1].GetShape == "DotRectangle")
+                {
+                    _drawingAppPresentationModel.DeleteShape();
+                    _label.Text = "Selected : None";
+                }
+            }
         }
     }
 }

@@ -69,5 +69,19 @@ namespace DrawingApp
             // 將圖形物件加入Children
             _canvas.Children.Add(line);
         }
+
+        //DrawDotRectangle
+        public void DrawDotRectangle(double x1, double y1, double x2, double y2)
+        {
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Rectangle dotRectangle = new Windows.UI.Xaml.Shapes.Rectangle();
+            dotRectangle.Margin = new Windows.UI.Xaml.Thickness(x1, y1, 0, 0);
+            dotRectangle.Width = x2 - x1;
+            dotRectangle.Height = y2 - y1;
+            dotRectangle.Stroke = new SolidColorBrush(Colors.Red);
+            dotRectangle.StrokeThickness = 3;
+            // 將圖形物件加入Children
+            _canvas.Children.Add(dotRectangle);
+        }
     }
 }

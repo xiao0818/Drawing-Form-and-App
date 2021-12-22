@@ -16,7 +16,7 @@
         <Button x:Name="_clear" Content="Clear" Margin="1216,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
         
         <Canvas x:Name="_canvas" Margin="0,100,0,0" Background="#FFFFFFA0">
-            <TextBlock x:Name="_label" Text="Selected : None" Canvas.Left="1116" Canvas.Top="640" Width="200" Height="40"/>
+            <TextBlock x:Name="_label" Text="Selected : None" Canvas.Left="1066" Canvas.Top="640" Width="250" Height="20"/>
         </Canvas>
     </Grid>
 </Page>
