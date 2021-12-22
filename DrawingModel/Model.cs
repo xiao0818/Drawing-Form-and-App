@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace DrawingModel
@@ -127,7 +128,17 @@ namespace DrawingModel
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
             {
-                aShape.Draw(graphics);
+                if(aShape.GetType().ToString() == "DrawingModel.Line")
+                {
+                    aShape.Draw(graphics);
+                }
+            }
+            foreach (Shape aShape in _shapes)
+            {
+                if (aShape.GetType().ToString() != "DrawingModel.Line")
+                {
+                    aShape.Draw(graphics);
+                }
             }
             if (_isPressed)
             {
