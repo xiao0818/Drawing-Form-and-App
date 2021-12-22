@@ -23,12 +23,17 @@ namespace DrawingApp
             // Note: 重複使用_igraphics物件
             _iGraphics = new WindowsStoreGraphicsAdaptor(_canvas);
             // Events
+            _undo.IsEnabled = false;
+            _redo.IsEnabled = false;
             _canvas.PointerPressed += HandleCanvasPointerPressed;
             _canvas.PointerReleased += HandleCanvasPointerReleased;
             _canvas.PointerMoved += HandleCanvasPointerMoved;
             _rectangle.Click += HandleRectangleButtonClick;
             _ellipse.Click += HandleEllipseButtonClick;
+            _line.Click += HandleLineButtonClick;
             _clear.Click += HandleClearButtonClick;
+            _undo.Click += UndoHandler;
+            _redo.Click += RedoHandler;
             _drawingAppPresentationModel._drawingAppPresentationModelChanged += HandleModelChanged;
         }
 
@@ -38,6 +43,7 @@ namespace DrawingApp
             _drawingAppPresentationModel.HandleRectangleButtonClick();
             _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
         }
 
@@ -47,6 +53,17 @@ namespace DrawingApp
             _drawingAppPresentationModel.HandleEllipseButtonClick();
             _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
+            _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+        }
+
+        //HandleLineButtonClick
+        private void HandleLineButtonClick(object sender, RoutedEventArgs e)
+        {
+            _drawingAppPresentationModel.HandleLineButtonClick();
+            _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+            _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
         }
 
@@ -57,7 +74,9 @@ namespace DrawingApp
             _drawingAppPresentationModel.HandleClearButtonClick();
             _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
             _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+            _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+            RefreshUI();
         }
 
         //HandleCanvasPointerPressed
@@ -67,6 +86,17 @@ namespace DrawingApp
             {
                 _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
             }
+            RefreshUI();
+        }
+
+        //HandleCanvasPointerMoved
+        public void HandleCanvasPointerMoved(object sender, PointerRoutedEventArgs e)
+        {
+            if (_shapeFlag != (int)ShapeFlag.Null)
+            {
+                _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
+            }
+            RefreshUI();
         }
 
         //HandleCanvasPointerReleased
@@ -78,22 +108,38 @@ namespace DrawingApp
                 _drawingAppPresentationModel.HandleCanvasPointerReleased();
                 _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
                 _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+                _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
                 _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
             }
-        }
-
-        //HandleCanvasPointerMoved
-        public void HandleCanvasPointerMoved(object sender, PointerRoutedEventArgs e)
-        {
-            if (_shapeFlag != (int)ShapeFlag.Null)
-            {
-                _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
-            }
+            RefreshUI();
         }
 
         //HandleModelChanged
         public void HandleModelChanged()
         {
+            _drawingAppPresentationModel.Draw(_iGraphics);
+        }
+
+        //UndoHandler
+        void UndoHandler(object sender, RoutedEventArgs e)
+        {
+            _drawingAppPresentationModel.Undo();
+            RefreshUI();
+        }
+
+        //RedoHandler
+        void RedoHandler(object sender, RoutedEventArgs e)
+        {
+            _drawingAppPresentationModel.Redo();
+            RefreshUI();
+        }
+
+        //RefreshUI
+        void RefreshUI()
+        {
+            // 更新redo與undo是否為enabled
+            _redo.IsEnabled = _drawingAppPresentationModel.IsRedoEnabled;
+            _undo.IsEnabled = _drawingAppPresentationModel.IsUndoEnabled;
             _drawingAppPresentationModel.Draw(_iGraphics);
         }
     }

@@ -76,7 +76,7 @@ namespace DrawingForm
             // prepare label
             //
             _label.Name = "_label";
-            _label.Text = "";
+            _label.Text = "Selected : None";
             _label.Height = HEIGHT;
             _label.Width = 2 * WIDTH;
             _label.Location = new Point(1100, 660);
@@ -146,6 +146,7 @@ namespace DrawingForm
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            RefreshUI();
         }
 
         //HandleCanvasPointerPressed

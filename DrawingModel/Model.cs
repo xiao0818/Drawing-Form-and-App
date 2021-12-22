@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace DrawingModel
 {
@@ -112,7 +113,11 @@ namespace DrawingModel
         public void Clear()
         {
             _isPressed = false;
-            _shapes.Clear();
+            int count = _shapes.Count();
+            for (int index = 0; index < count; index++)
+            {
+                this.Undo();
+            }
             NotifyModelChanged();
         }
 

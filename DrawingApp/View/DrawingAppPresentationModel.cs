@@ -8,6 +8,7 @@ namespace DrawingApp
         public delegate void DrawingAppPresentationModelChangedEventHandler();
         bool _isRectangleButtonEnabled = true;
         bool _isEllipseButtonEnabled = true;
+        bool _isLineButtonEnabled = true;
         int _shapeFlag = (int)ShapeFlag.Null;
         Model _model;
         public DrawingAppPresentationModel(Model model)
@@ -32,6 +33,14 @@ namespace DrawingApp
             }
         }
 
+        public bool IsLineButtonEnable
+        {
+            get
+            {
+                return _isLineButtonEnabled;
+            }
+        }
+
         public int GetShapeFlag
         {
             get
@@ -45,6 +54,7 @@ namespace DrawingApp
         {
             _isRectangleButtonEnabled = false;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Rectangle;
         }
 
@@ -53,7 +63,17 @@ namespace DrawingApp
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = false;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Ellipse;
+        }
+
+        //HandleLineButtonClick
+        public void HandleLineButtonClick()
+        {
+            _isRectangleButtonEnabled = true;
+            _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = false;
+            _shapeFlag = (int)ShapeFlag.Line;
         }
 
         //HandleClearButtonClick
@@ -61,6 +81,7 @@ namespace DrawingApp
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Null;
         }
 
@@ -69,6 +90,7 @@ namespace DrawingApp
         {
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
             _shapeFlag = (int)ShapeFlag.Null;
         }
 
@@ -103,6 +125,36 @@ namespace DrawingApp
         public void Draw(IGraphics graphics)
         {
             _model.Draw(graphics);
+        }
+
+        //Undo
+        public void Undo()
+        {
+            _model.Undo();
+        }
+
+        //Redo
+        public void Redo()
+        {
+            _model.Redo();
+        }
+
+        //IsRedoEnabled
+        public bool IsRedoEnabled
+        {
+            get
+            {
+                return _model.IsRedoEnabled;
+            }
+        }
+
+        //IsUndoEnabled
+        public bool IsUndoEnabled
+        {
+            get
+            {
+                return _model.IsUndoEnabled;
+            }
         }
 
         //NotifyModelChanged
