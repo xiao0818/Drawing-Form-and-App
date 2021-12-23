@@ -6,8 +6,9 @@
         double _y1;
         double _x2;
         double _y2;
-        Shape _shape1 = null;
-        Shape _shape2 = null;
+        Shape _shape1;
+        Shape _shape2;
+        const int TWO = 2;
 
         //X1
         public double X1
@@ -116,10 +117,10 @@
         //SetPointToShapeCenter
         public void SetPointToShapeCenter()
         {
-            _x1 = (_shape1.X1 + _shape1.X2) / 2;
-            _y1 = (_shape1.Y1 + _shape1.Y2) / 2;
-            _x2 = (_shape2.X1 + _shape2.X2) / 2;
-            _y2 = (_shape2.Y1 + _shape2.Y2) / 2;
+            _x1 = (_shape1.X1 + _shape1.X2) / TWO;
+            _y1 = (_shape1.Y1 + _shape1.Y2) / TWO;
+            _x2 = (_shape2.X1 + _shape2.X2) / TWO;
+            _y2 = (_shape2.Y1 + _shape2.Y2) / TWO;
         }
     }
 }

@@ -24,9 +24,12 @@
         }
 
         //CreateLine
-        public Line CreateLine()
+        public Line CreateLine
         {
-            return new Line();
+            get
+            {
+                return new Line();
+            }
         }
     }
 }

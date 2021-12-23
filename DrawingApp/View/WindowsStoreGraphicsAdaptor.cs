@@ -13,6 +13,10 @@ namespace DrawingApp
     public class WindowsStoreGraphicsAdaptor : IGraphics
     {
         Canvas _canvas;
+        const int CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL = 6;
+        const int CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER = 12;
+        const int THICKNESS = 3;
+        const int DASH_PIXEL = 2;
 
         public WindowsStoreGraphicsAdaptor(Canvas canvas)
         {
@@ -79,15 +83,18 @@ namespace DrawingApp
             dotRectangle.Width = x2 - x1;
             dotRectangle.Height = y2 - y1;
             dotRectangle.Stroke = new SolidColorBrush(Colors.Red);
-            dotRectangle.StrokeThickness = 3;
-            dotRectangle.StrokeDashArray = new DoubleCollection() { 2, 1, 1, 1 };
+            dotRectangle.StrokeThickness = THICKNESS;
+            dotRectangle.StrokeDashArray = new DoubleCollection()
+            { 
+                DASH_PIXEL, 1, 1, 1
+            };
             // 將圖形物件加入Children
             _canvas.Children.Add(dotRectangle);
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse1 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse1.Margin = new Windows.UI.Xaml.Thickness(x1 - 6, y1 - 6, 0, 0);
-            ellipse1.Width = 12;
-            ellipse1.Height = 12;
+            ellipse1.Margin = new Windows.UI.Xaml.Thickness(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
+            ellipse1.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse1.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
             ellipse1.Stroke = new SolidColorBrush(Colors.Black);
             ellipse1.StrokeThickness = 1;
             ellipse1.Fill = new SolidColorBrush(Colors.White);
@@ -95,9 +102,9 @@ namespace DrawingApp
             _canvas.Children.Add(ellipse1);
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse2 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse2.Margin = new Windows.UI.Xaml.Thickness(x1 - 6, y2 - 6, 0, 0);
-            ellipse2.Width = 12;
-            ellipse2.Height = 12;
+            ellipse2.Margin = new Windows.UI.Xaml.Thickness(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
+            ellipse2.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse2.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
             ellipse2.Stroke = new SolidColorBrush(Colors.Black);
             ellipse2.StrokeThickness = 1;
             ellipse2.Fill = new SolidColorBrush(Colors.White);
@@ -105,9 +112,9 @@ namespace DrawingApp
             _canvas.Children.Add(ellipse2);
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse3 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse3.Margin = new Windows.UI.Xaml.Thickness(x2 - 6, y1 - 6, 0, 0);
-            ellipse3.Width = 12;
-            ellipse3.Height = 12;
+            ellipse3.Margin = new Windows.UI.Xaml.Thickness(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
+            ellipse3.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse3.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
             ellipse3.Stroke = new SolidColorBrush(Colors.Black);
             ellipse3.StrokeThickness = 1;
             ellipse3.Fill = new SolidColorBrush(Colors.White);
@@ -115,9 +122,9 @@ namespace DrawingApp
             _canvas.Children.Add(ellipse3);
             // 先建立圖形物件
             Windows.UI.Xaml.Shapes.Ellipse ellipse4 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse4.Margin = new Windows.UI.Xaml.Thickness(x2 - 6, y2 - 6, 0, 0);
-            ellipse4.Width = 12;
-            ellipse4.Height = 12;
+            ellipse4.Margin = new Windows.UI.Xaml.Thickness(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
+            ellipse4.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse4.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
             ellipse4.Stroke = new SolidColorBrush(Colors.Black);
             ellipse4.StrokeThickness = 1;
             ellipse4.Fill = new SolidColorBrush(Colors.White);

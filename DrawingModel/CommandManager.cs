@@ -5,47 +5,49 @@ namespace DrawingModel
 {
     class CommandManager
     {
-        Stack<ICommand> undo = new Stack<ICommand>();
-        Stack<ICommand> redo = new Stack<ICommand>();
+        Stack<ICommand> _undo = new Stack<ICommand>();
+        Stack<ICommand> _redo = new Stack<ICommand>();
+        const string UNDO_EXCEPTION = "Cannot Undo exception\n";
+        const string REDO_EXCEPTION = "Cannot Redo exception\n";
 
         //Execute
-        public void Execute(ICommand cmd)
+        public void Execute(ICommand commandManager)
         {
-            cmd.Execute();
+            commandManager.Execute();
             // push command 進 undo stack
-            undo.Push(cmd);
+            _undo.Push(commandManager);
             // 清除redo stack
-            redo.Clear();
+            _redo.Clear();
         }
 
         //Undo
         public void Undo()
         {
-            if (undo.Count <= 0)
-                throw new Exception("Cannot Undo exception\n");
-            ICommand cmd = undo.Pop();
-            if(cmd.GetShape != ShapeFlag.DotRectangle)
+            if (_undo.Count <= 0)
+                throw new Exception(UNDO_EXCEPTION);
+            ICommand commandManager = _undo.Pop();
+            if (commandManager.GetShape != ShapeFlag.DotRectangle)
             {
-                redo.Push(cmd);
+                _redo.Push(commandManager);
             }
-            cmd.UnExecute();
+            commandManager.ExecuteBack();
         }
 
         //Redo
         public void Redo()
         {
-            if (redo.Count <= 0)
-                throw new Exception("Cannot Redo exception\n");
-            ICommand cmd = redo.Pop();
-            undo.Push(cmd);
-            cmd.Execute();
+            if (_redo.Count <= 0)
+                throw new Exception(REDO_EXCEPTION);
+            ICommand commandManager = _redo.Pop();
+            _undo.Push(commandManager);
+            commandManager.Execute();
         }
 
         public bool IsRedoEnabled
         {
             get
             {
-                return redo.Count != 0;
+                return _redo.Count != 0;
             }
         }
 
@@ -53,7 +55,7 @@ namespace DrawingModel
         {
             get
             {
-                return undo.Count != 0;
+                return _undo.Count != 0;
             }
         }
     }

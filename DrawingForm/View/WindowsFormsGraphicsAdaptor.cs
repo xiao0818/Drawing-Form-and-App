@@ -7,6 +7,8 @@ namespace DrawingForm
     {
         Graphics _graphics;
         const int THICKNESS = 3;
+        const int CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL = 4;
+        const int CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER = 4;
 
         public WindowsFormsGraphicsAdaptor(Graphics graphics)
         {
@@ -54,14 +56,14 @@ namespace DrawingForm
             Pen pen = new Pen(Color.Red, THICKNESS);
             pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             _graphics.DrawRectangle(pen, (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
-            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - 4, (float)y1 - 4, 8, 8);
-            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - 4, (float)y1 - 4, 8, 8);
-            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - 4, (float)y2 - 4, 8, 8);
-            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - 4, (float)y2 - 4, 8, 8);
-            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - 4, (float)y1 - 4, 8, 8);
-            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - 4, (float)y1 - 4, 8, 8);
-            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - 4, (float)y2 - 4, 8, 8);
-            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - 4, (float)y2 - 4, 8, 8);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, (float)y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER, CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER);
         }
     }
 }

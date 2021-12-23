@@ -16,7 +16,7 @@ namespace DrawingModel
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         Line _line;
         ShapeFactory _shapeFactory = new ShapeFactory();
-        CommandManager commandManager = new CommandManager();
+        CommandManager _commandManager = new CommandManager();
 
         //GetFirstPointX
         public double GetFirstPointX
@@ -83,7 +83,7 @@ namespace DrawingModel
                 _firstPointY = pointY;
                 if (_shapeFlag == ShapeFlag.Line)
                 {
-                    _line = _shapeFactory.CreateLine();
+                    _line = _shapeFactory.CreateLine;
                     _line.X1 = _firstPointX;
                     _line.Y1 = _firstPointY;
                     _line.Shape1 = shape1;
@@ -129,14 +129,14 @@ namespace DrawingModel
                     _line.Y2 = pointY;
                     _line.Shape2 = shape2;
                     _line.SetPointToShapeCenter();
-                    commandManager.Execute(new DrawCommand(this, _line.Copy()));
+                    _commandManager.Execute(new DrawCommand(this, _line.Copy()));
                 }
                 else
                 {
                     _hint.X2 = pointX;
                     _hint.Y2 = pointY;
                     _isPressed = false;
-                    commandManager.Execute(new DrawCommand(this, _hint.Copy()));
+                    _commandManager.Execute(new DrawCommand(this, _hint.Copy()));
                 }
                 NotifyModelChanged();
             }
@@ -161,7 +161,7 @@ namespace DrawingModel
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
             {
-                if(aShape.GetShape == ShapeFlag.Line)
+                if (aShape.GetShape == ShapeFlag.Line)
                 {
                     aShape.Draw(graphics);
                 }
@@ -203,14 +203,14 @@ namespace DrawingModel
         //Undo
         public void Undo()
         {
-            commandManager.Undo();
+            _commandManager.Undo();
             NotifyModelChanged();
         }
 
         //Redo
         public void Redo()
         {
-            commandManager.Redo();
+            _commandManager.Redo();
             NotifyModelChanged();
         }
 
@@ -218,7 +218,7 @@ namespace DrawingModel
         {
             get
             {
-                return commandManager.IsRedoEnabled;
+                return _commandManager.IsRedoEnabled;
             }
         }
 
@@ -226,7 +226,7 @@ namespace DrawingModel
         {
             get
             {
-                return commandManager.IsUndoEnabled;
+                return _commandManager.IsUndoEnabled;
             }
         }
 

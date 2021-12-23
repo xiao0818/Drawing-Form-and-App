@@ -15,26 +15,27 @@ namespace DrawingForm
         Button _line = new Button();
         Button _clear = new Button();
         Label _label = new Label();
-        ToolStripButton undo;
-        ToolStripButton redo;
+        ToolStripButton _undo;
+        ToolStripButton _redo;
         bool _isSelectMode = true;
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         const int HEIGHT = 40;
         const int WIDTH = 100;
         const int LOCATION_Y = 30;
+        const string LABEL_DEFAULT = "Selected : None";
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
             InitializeComponent();
-            ToolStrip ts = new ToolStrip();
+            ToolStrip toolStrip = new ToolStrip();
             //Controls.Add(ts);
-            ts.Parent = this;
-            undo = new ToolStripButton("Undo", null, UndoHandler);
-            undo.Enabled = false;
-            ts.Items.Add(undo);
-            redo = new ToolStripButton("Redo", null, RedoHandler);
-            redo.Enabled = false;
-            ts.Items.Add(redo);
+            toolStrip.Parent = this;
+            _undo = new ToolStripButton("Undo", null, UndoHandler);
+            _undo.Enabled = false;
+            toolStrip.Items.Add(_undo);
+            _redo = new ToolStripButton("Redo", null, RedoHandler);
+            _redo.Enabled = false;
+            toolStrip.Items.Add(_redo);
             //
             // prepare rectangle button
             //
@@ -79,7 +80,7 @@ namespace DrawingForm
             // prepare label
             //
             _label.Name = "_label";
-            _label.Text = "Selected : None";
+            _label.Text = LABEL_DEFAULT;
             _label.Height = 20;
             _label.Width = 250;
             _label.Location = new Point(1050, 680);
@@ -157,7 +158,7 @@ namespace DrawingForm
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             _isSelectMode = true;
             this.ResetSelection();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerPressed
@@ -165,9 +166,9 @@ namespace DrawingForm
         {
             if (_shapeFlag != ShapeFlag.Null)
             {
-                if(_shapeFlag == ShapeFlag.Line)
+                if (_shapeFlag == ShapeFlag.Line)
                 {
-                    if(IsInShape(e.X, e.Y) != null)
+                    if (IsInShape(e.X, e.Y) != null)
                     {
                         _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, IsInShape(e.X, e.Y));
                     }
@@ -179,7 +180,7 @@ namespace DrawingForm
                 _isSelectMode = false;
                 this.ResetSelection();
             }
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerMoved
@@ -189,7 +190,7 @@ namespace DrawingForm
             {
                 _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
             }
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerReleased
@@ -201,8 +202,8 @@ namespace DrawingForm
                 List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
                 for (int index = 0; index < shapes.Count; index++)
                 {
-                    Shape aShape = shapes[shapes.Count - index -1];
-                    if(((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
+                    Shape aShape = shapes[shapes.Count - index - 1];
+                    if (((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
                     {
                         _drawingFormPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle, null);
                         _drawingFormPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2, null);
@@ -215,9 +216,9 @@ namespace DrawingForm
             {
                 if (_shapeFlag != ShapeFlag.Null)
                 {
-                    if(_shapeFlag == ShapeFlag.Line)
+                    if (_shapeFlag == ShapeFlag.Line)
                     {
-                        if(_drawingFormPresentationModel.GetIsPressed == true)
+                        if (_drawingFormPresentationModel.GetIsPressed == true)
                         {
                             if (IsInShape(e.X, e.Y) != null)
                             {
@@ -227,7 +228,7 @@ namespace DrawingForm
                                 _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
                                 _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
                                 _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
-                                RefreshUI();
+                                RefreshUserInterface();
                                 _isSelectMode = true;
                             }
                             else
@@ -244,7 +245,7 @@ namespace DrawingForm
                         _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
                         _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
                         _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
-                        RefreshUI();
+                        RefreshUserInterface();
                         _isSelectMode = true;
                     }
                 }
@@ -271,7 +272,7 @@ namespace DrawingForm
         {
             this.ResetSelection();
             _drawingFormPresentationModel.Undo();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //RedoHandler
@@ -279,15 +280,15 @@ namespace DrawingForm
         {
             this.ResetSelection();
             _drawingFormPresentationModel.Redo();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
-        //RefreshUI
-        void RefreshUI()
+        //RefreshUserInterface
+        void RefreshUserInterface()
         {
             // 更新redo與undo是否為enabled
-            redo.Enabled = _drawingFormPresentationModel.IsRedoEnabled;
-            undo.Enabled = _drawingFormPresentationModel.IsUndoEnabled;
+            _redo.Enabled = _drawingFormPresentationModel.IsRedoEnabled;
+            _undo.Enabled = _drawingFormPresentationModel.IsUndoEnabled;
             Invalidate();
         }
 
@@ -320,19 +321,19 @@ namespace DrawingForm
                 if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
                 {
                     _drawingFormPresentationModel.Undo();
-                    _label.Text = "Selected : None";
+                    _label.Text = LABEL_DEFAULT;
                 }
             }
         }
 
         //IsInShape
-        public Shape IsInShape(double x, double y)
+        public Shape IsInShape(double pointX, double pointY)
         {
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
                 Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= x && aShape.X2 >= x) || (aShape.X1 >= x && aShape.X2 <= x)) && ((aShape.Y1 <= y && aShape.Y2 >= y) || (aShape.Y1 >= y && aShape.Y2 <= y))))
+                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY))))
                 {
                     return aShape;
                 }

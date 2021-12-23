@@ -18,6 +18,7 @@ namespace DrawingApp
         IGraphics _iGraphics;
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         bool _isSelectMode = true;
+        const string LABEL_DEFAULT = "Selected : None";
 
         public MainPage()
         {
@@ -87,7 +88,7 @@ namespace DrawingApp
             _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
             _isSelectMode = true;
             this.ResetSelection();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerPressed
@@ -109,7 +110,7 @@ namespace DrawingApp
                 _isSelectMode = false;
                 this.ResetSelection();
             }
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerMoved
@@ -119,7 +120,7 @@ namespace DrawingApp
             {
                 _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
             }
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //HandleCanvasPointerReleased
@@ -157,7 +158,7 @@ namespace DrawingApp
                                 _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
                                 _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
                                 _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
-                                RefreshUI();
+                                RefreshUserInterface();
                                 _isSelectMode = true;
                             }
                             else
@@ -174,7 +175,7 @@ namespace DrawingApp
                         _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
                         _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
                         _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
-                        RefreshUI();
+                        RefreshUserInterface();
                         _isSelectMode = true;
                     }
                 }
@@ -192,7 +193,7 @@ namespace DrawingApp
         {
             this.ResetSelection();
             _drawingAppPresentationModel.Undo();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
         //RedoHandler
@@ -200,11 +201,11 @@ namespace DrawingApp
         {
             this.ResetSelection();
             _drawingAppPresentationModel.Redo();
-            RefreshUI();
+            RefreshUserInterface();
         }
 
-        //RefreshUI
-        void RefreshUI()
+        //RefreshUserInterface
+        void RefreshUserInterface()
         {
             // 更新redo與undo是否為enabled
             _redo.IsEnabled = _drawingAppPresentationModel.IsRedoEnabled;
@@ -241,19 +242,19 @@ namespace DrawingApp
                 if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
                 {
                     _drawingAppPresentationModel.Undo();
-                    _label.Text = "Selected : None";
+                    _label.Text = LABEL_DEFAULT;
                 }
             }
         }
 
         //IsInShape
-        public Shape IsInShape(double x, double y)
+        public Shape IsInShape(double pointX, double pointY)
         {
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
                 Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= x && aShape.X2 >= x) || (aShape.X1 >= x && aShape.X2 <= x)) && ((aShape.Y1 <= y && aShape.Y2 >= y) || (aShape.Y1 >= y && aShape.Y2 <= y))))
+                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY))))
                 {
                     return aShape;
                 }
