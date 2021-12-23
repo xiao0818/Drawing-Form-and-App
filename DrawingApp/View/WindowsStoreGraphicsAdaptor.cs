@@ -80,8 +80,49 @@ namespace DrawingApp
             dotRectangle.Height = y2 - y1;
             dotRectangle.Stroke = new SolidColorBrush(Colors.Red);
             dotRectangle.StrokeThickness = 3;
+            dotRectangle.StrokeDashArray = new DoubleCollection() { 2, 1, 1, 1 };
             // 將圖形物件加入Children
             _canvas.Children.Add(dotRectangle);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Ellipse ellipse1 = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse1.Margin = new Windows.UI.Xaml.Thickness(x1 - 6, y1 - 6, 0, 0);
+            ellipse1.Width = 12;
+            ellipse1.Height = 12;
+            ellipse1.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse1.StrokeThickness = 1;
+            ellipse1.Fill = new SolidColorBrush(Colors.White);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(ellipse1);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Ellipse ellipse2 = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse2.Margin = new Windows.UI.Xaml.Thickness(x1 - 6, y2 - 6, 0, 0);
+            ellipse2.Width = 12;
+            ellipse2.Height = 12;
+            ellipse2.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse2.StrokeThickness = 1;
+            ellipse2.Fill = new SolidColorBrush(Colors.White);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(ellipse2);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Ellipse ellipse3 = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse3.Margin = new Windows.UI.Xaml.Thickness(x2 - 6, y1 - 6, 0, 0);
+            ellipse3.Width = 12;
+            ellipse3.Height = 12;
+            ellipse3.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse3.StrokeThickness = 1;
+            ellipse3.Fill = new SolidColorBrush(Colors.White);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(ellipse3);
+            // 先建立圖形物件
+            Windows.UI.Xaml.Shapes.Ellipse ellipse4 = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse4.Margin = new Windows.UI.Xaml.Thickness(x2 - 6, y2 - 6, 0, 0);
+            ellipse4.Width = 12;
+            ellipse4.Height = 12;
+            ellipse4.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse4.StrokeThickness = 1;
+            ellipse4.Fill = new SolidColorBrush(Colors.White);
+            // 將圖形物件加入Children
+            _canvas.Children.Add(ellipse4);
         }
     }
 }

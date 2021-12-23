@@ -83,7 +83,7 @@ namespace DrawingForm
             _label.Height = 20;
             _label.Width = 250;
             _label.Location = new Point(1050, 680);
-            _label.BackColor = Color.White;
+            _label.BackColor = Color.LightYellow;
             Controls.Add(_label);
             //
             // prepare canvas

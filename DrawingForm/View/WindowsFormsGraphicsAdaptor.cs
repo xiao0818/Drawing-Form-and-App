@@ -52,8 +52,16 @@ namespace DrawingForm
         public void DrawDotRectangle(double x1, double y1, double x2, double y2)
         {
             Pen pen = new Pen(Color.Red, THICKNESS);
-            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.Dash;
+            pen.DashStyle = System.Drawing.Drawing2D.DashStyle.DashDot;
             _graphics.DrawRectangle(pen, (float)x1, (float)y1, (float)x2 - (float)x1, (float)y2 - (float)y1);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - 4, (float)y1 - 4, 8, 8);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - 4, (float)y1 - 4, 8, 8);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x1 - 4, (float)y2 - 4, 8, 8);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x1 - 4, (float)y2 - 4, 8, 8);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - 4, (float)y1 - 4, 8, 8);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - 4, (float)y1 - 4, 8, 8);
+            _graphics.DrawEllipse(new Pen(Color.Black, THICKNESS), (float)x2 - 4, (float)y2 - 4, 8, 8);
+            _graphics.FillEllipse(new SolidBrush(Color.White), (float)x2 - 4, (float)y2 - 4, 8, 8);
         }
     }
 }
