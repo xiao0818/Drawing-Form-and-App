@@ -203,7 +203,7 @@ namespace DrawingApp
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (shapes[shapes.Count - 1].GetShape == "DotRectangle")
+                if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
                 {
                     _drawingAppPresentationModel.Undo();
                     _label.Text = "Selected : None";

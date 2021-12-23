@@ -77,11 +77,11 @@
         }
 
         //GetShape
-        public string GetShape
+        public ShapeFlag GetShape
         {
             get
             {
-                return "DotRectangle";
+                return ShapeFlag.DotRectangle;
             }
         }
 

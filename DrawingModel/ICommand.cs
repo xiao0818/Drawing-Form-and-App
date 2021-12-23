@@ -9,7 +9,7 @@
         void UnExecute();
 
         //GetShape
-        string GetShape
+        ShapeFlag GetShape
         {
             get;
         }

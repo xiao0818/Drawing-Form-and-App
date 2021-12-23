@@ -283,7 +283,7 @@ namespace DrawingForm
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (shapes[shapes.Count - 1].GetShape == "DotRectangle")
+                if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
                 {
                     _drawingFormPresentationModel.Undo();
                     _label.Text = "Selected : None";

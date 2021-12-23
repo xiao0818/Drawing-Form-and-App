@@ -118,14 +118,14 @@ namespace DrawingModel
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
             {
-                if(aShape.GetShape == "Line")
+                if(aShape.GetShape == ShapeFlag.Line)
                 {
                     aShape.Draw(graphics);
                 }
             }
             foreach (Shape aShape in _shapes)
             {
-                if (aShape.GetShape != "Line")
+                if (aShape.GetShape != ShapeFlag.Line)
                 {
                     aShape.Draw(graphics);
                 }

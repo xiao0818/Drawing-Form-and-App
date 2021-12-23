@@ -37,7 +37,7 @@
         Shape Copy();
 
         //GetShape
-        string GetShape
+        ShapeFlag GetShape
         {
             get;
         }

@@ -23,7 +23,7 @@
         }
 
         //GetShape
-        public string GetShape
+        public ShapeFlag GetShape
         {
             get
             {

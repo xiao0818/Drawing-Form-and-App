@@ -24,7 +24,7 @@ namespace DrawingModel
             if (undo.Count <= 0)
                 throw new Exception("Cannot Undo exception\n");
             ICommand cmd = undo.Pop();
-            if(cmd.GetShape != "DotRectangle")
+            if(cmd.GetShape != ShapeFlag.DotRectangle)
             {
                 redo.Push(cmd);
             }
