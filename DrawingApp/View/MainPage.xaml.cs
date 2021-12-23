@@ -15,7 +15,7 @@ namespace DrawingApp
     {
         DrawingAppPresentationModel _drawingAppPresentationModel;
         IGraphics _iGraphics;
-        int _shapeFlag = (int)ShapeFlag.Null;
+        ShapeFlag _shapeFlag = ShapeFlag.Null;
         bool _isSelectMode = true;
 
         public MainPage()
@@ -123,7 +123,7 @@ namespace DrawingApp
                     Shape aShape = shapes[shapes.Count - index - 1];
                     if (((aShape.X1 <= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 >= e.GetCurrentPoint(_canvas).Position.X) || (aShape.X1 >= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 <= e.GetCurrentPoint(_canvas).Position.X)) && ((aShape.Y1 <= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 >= e.GetCurrentPoint(_canvas).Position.Y) || (aShape.Y1 >= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 <= e.GetCurrentPoint(_canvas).Position.Y)))
                     {
-                        _drawingAppPresentationModel.PressedPointer(aShape.X1, aShape.Y1, (int)ShapeFlag.DotRectangle);
+                        _drawingAppPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle);
                         _drawingAppPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2);
                         _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
                         break;

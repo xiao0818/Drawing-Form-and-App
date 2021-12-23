@@ -10,7 +10,7 @@ namespace DrawingApp
         bool _isRectangleButtonEnabled = true;
         bool _isEllipseButtonEnabled = true;
         bool _isLineButtonEnabled = true;
-        int _shapeFlag = (int)ShapeFlag.Null;
+        ShapeFlag _shapeFlag = ShapeFlag.Null;
         Model _model;
         public DrawingAppPresentationModel(Model model)
         {
@@ -42,7 +42,7 @@ namespace DrawingApp
             }
         }
 
-        public int GetShapeFlag
+        public ShapeFlag GetShapeFlag
         {
             get
             {
@@ -65,7 +65,7 @@ namespace DrawingApp
             _isRectangleButtonEnabled = false;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Rectangle;
+            _shapeFlag = ShapeFlag.Rectangle;
         }
 
         //HandleEllipseButtonClick
@@ -74,7 +74,7 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = false;
             _isLineButtonEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Ellipse;
+            _shapeFlag = ShapeFlag.Ellipse;
         }
 
         //HandleLineButtonClick
@@ -83,7 +83,7 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = false;
-            _shapeFlag = (int)ShapeFlag.Line;
+            _shapeFlag = ShapeFlag.Line;
         }
 
         //HandleClearButtonClick
@@ -92,7 +92,7 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Null;
+            _shapeFlag = ShapeFlag.Null;
         }
 
         //HandleCanvasPointerReleased
@@ -105,7 +105,7 @@ namespace DrawingApp
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, int shapeFlag)
+        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag)
         {
             _model.PressedPointer(pointX, pointY, shapeFlag);
         }

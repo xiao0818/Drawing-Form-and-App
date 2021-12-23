@@ -18,7 +18,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void PressedPointerTestForRectangle()
         {
-            model.PressedPointer(10, 20, (int)ShapeFlag.Rectangle);
+            model.PressedPointer(10, 20, ShapeFlag.Rectangle);
             Assert.AreEqual(10, model.GetFirstPointX);
             Assert.AreEqual(20, model.GetFirstPointY);
             Assert.AreEqual(10, model.GetHint.X1);
@@ -30,7 +30,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void PressedPointerTestForEllipse()
         {
-            model.PressedPointer(10, 20, (int)ShapeFlag.Ellipse);
+            model.PressedPointer(10, 20, ShapeFlag.Ellipse);
             Assert.AreEqual(10, model.GetFirstPointX);
             Assert.AreEqual(20, model.GetFirstPointY);
             Assert.AreEqual(10, model.GetHint.X1);
@@ -42,7 +42,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void PressedPointerTestFail()
         {
-            model.PressedPointer(-10, -20, (int)ShapeFlag.Null);
+            model.PressedPointer(-10, -20, ShapeFlag.Null);
             Assert.AreEqual(0, model.GetFirstPointX);
             Assert.AreEqual(0, model.GetFirstPointY);
             Assert.IsFalse(model.IsPressed);
@@ -52,7 +52,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void MovedPointerTest()
         {
-            model.PressedPointer(10, 20, (int)ShapeFlag.Rectangle);
+            model.PressedPointer(10, 20, ShapeFlag.Rectangle);
             bool isNotifyObserverWork = false;
             model._modelChanged += () =>
             {
@@ -81,7 +81,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void ReleasedPointerTest()
         {
-            model.PressedPointer(10, 20, (int)ShapeFlag.Rectangle);
+            model.PressedPointer(10, 20, ShapeFlag.Rectangle);
             bool isNotifyObserverWork = false;
             model._modelChanged += () =>
             {
@@ -118,7 +118,7 @@ namespace DrawingModel.Tests.UnitTest
         [TestMethod()]
         public void ClearTest()
         {
-            model.PressedPointer(10, 20, (int)ShapeFlag.Rectangle);
+            model.PressedPointer(10, 20, ShapeFlag.Rectangle);
             model.ReleasedPointer(30, 40);
             bool isNotifyObserverWork = false;
             model._modelChanged += () =>

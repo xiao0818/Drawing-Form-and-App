@@ -13,6 +13,7 @@ namespace DrawingModel
         bool _isPressed = false;
         List<Shape> _shapes = new List<Shape>();
         Shape _hint;
+        ShapeFactory _shapeFactory = new ShapeFactory();
         CommandManager commandManager = new CommandManager();
 
         //GetFirstPointX
@@ -61,24 +62,9 @@ namespace DrawingModel
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, int shapeFlag)
+        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag)
         {
-            if (shapeFlag == (int)ShapeFlag.Rectangle)
-            {
-                _hint = new Rectangle();
-            }
-            else if (shapeFlag == (int)ShapeFlag.Ellipse)
-            {
-                _hint = new Ellipse();
-            }
-            else if (shapeFlag == (int)ShapeFlag.Line)
-            {
-                _hint = new Line();
-            }
-            else if (shapeFlag == (int)ShapeFlag.DotRectangle)
-            {
-                _hint = new DotRectangle();
-            }
+            _hint = _shapeFactory.CreateShape(shapeFlag);
             if (pointX > 0 && pointY > 0)
             {
                 _firstPointX = pointX;

@@ -146,6 +146,9 @@
     <Compile Include="..\DrawingModel\Shape.cs">
       <Link>Model\Shape.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\ShapeFactory.cs">
+      <Link>Model\ShapeFactory.cs</Link>
+    </Compile>
     <Compile Include="..\DrawingModel\ShapeFlag.cs">
       <Link>Model\ShapeFlag.cs</Link>
     </Compile>
