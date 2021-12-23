@@ -92,9 +92,19 @@ namespace DrawingApp
         //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            if (_shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != ShapeFlag.Null)
             {
-                _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag);
+                if (_shapeFlag == ShapeFlag.Line)
+                {
+                    if (IsInShape(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y) != null)
+                    {
+                        _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag, IsInShape(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y));
+                    }
+                }
+                else
+                {
+                    _drawingAppPresentationModel.PressedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, _shapeFlag, null);
+                }
                 _isSelectMode = false;
                 this.ResetSelection();
             }
@@ -104,7 +114,7 @@ namespace DrawingApp
         //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            if (_shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != ShapeFlag.Null)
             {
                 _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
             }
@@ -123,8 +133,8 @@ namespace DrawingApp
                     Shape aShape = shapes[shapes.Count - index - 1];
                     if (((aShape.X1 <= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 >= e.GetCurrentPoint(_canvas).Position.X) || (aShape.X1 >= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 <= e.GetCurrentPoint(_canvas).Position.X)) && ((aShape.Y1 <= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 >= e.GetCurrentPoint(_canvas).Position.Y) || (aShape.Y1 >= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 <= e.GetCurrentPoint(_canvas).Position.Y)))
                     {
-                        _drawingAppPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle);
-                        _drawingAppPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2);
+                        _drawingAppPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle, null);
+                        _drawingAppPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2, null);
                         _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
                         break;
                     }
@@ -132,17 +142,41 @@ namespace DrawingApp
             }
             else
             {
-                if (_shapeFlag != (int)ShapeFlag.Null)
+                if (_shapeFlag != ShapeFlag.Null)
                 {
-                    _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
-                    _drawingAppPresentationModel.HandleCanvasPointerReleased();
-                    _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
-                    _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
-                    _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
-                    _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+                    if (_shapeFlag == ShapeFlag.Line)
+                    {
+                        if (_drawingAppPresentationModel.GetIsPressed == true)
+                        {
+                            if (IsInShape(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y) != null)
+                            {
+                                _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, IsInShape(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y));
+                                _drawingAppPresentationModel.HandleCanvasPointerReleased();
+                                _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+                                _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+                                _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
+                                _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+                                RefreshUI();
+                                _isSelectMode = true;
+                            }
+                            else
+                            {
+                                _drawingAppPresentationModel.PressedCancel();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, null);
+                        _drawingAppPresentationModel.HandleCanvasPointerReleased();
+                        _rectangle.IsEnabled = _drawingAppPresentationModel.IsRectangleButtonEnable;
+                        _ellipse.IsEnabled = _drawingAppPresentationModel.IsEllipseButtonEnable;
+                        _line.IsEnabled = _drawingAppPresentationModel.IsLineButtonEnable;
+                        _shapeFlag = _drawingAppPresentationModel.GetShapeFlag;
+                        RefreshUI();
+                        _isSelectMode = true;
+                    }
                 }
-                RefreshUI();
-                _isSelectMode = true;
             }
         }
 
@@ -209,6 +243,21 @@ namespace DrawingApp
                     _label.Text = "Selected : None";
                 }
             }
+        }
+
+        //IsInShape
+        public Shape IsInShape(double x, double y)
+        {
+            List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
+            for (int index = 0; index < shapes.Count; index++)
+            {
+                Shape aShape = shapes[shapes.Count - index - 1];
+                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= x && aShape.X2 >= x) || (aShape.X1 >= x && aShape.X2 <= x)) && ((aShape.Y1 <= y && aShape.Y2 >= y) || (aShape.Y1 >= y && aShape.Y2 <= y))))
+                {
+                    return aShape;
+                }
+            }
+            return null;
         }
     }
 }

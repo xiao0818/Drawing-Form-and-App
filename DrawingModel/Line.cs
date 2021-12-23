@@ -6,6 +6,8 @@
         double _y1;
         double _x2;
         double _y2;
+        Shape _shape1 = null;
+        Shape _shape2 = null;
 
         //X1
         public double X1
@@ -59,6 +61,32 @@
             }
         }
 
+        //shape1
+        public Shape Shape1
+        {
+            get
+            {
+                return _shape1;
+            }
+            set
+            {
+                _shape1 = value;
+            }
+        }
+
+        //shape2
+        public Shape Shape2
+        {
+            get
+            {
+                return _shape2;
+            }
+            set
+            {
+                _shape2 = value;
+            }
+        }
+
         //Draw
         public void Draw(IGraphics graphics)
         {
@@ -83,6 +111,15 @@
             {
                 return ShapeFlag.Line;
             }
+        }
+
+        //SetPointToShapeCenter
+        public void SetPointToShapeCenter()
+        {
+            _x1 = (_shape1.X1 + _shape1.X2) / 2;
+            _y1 = (_shape1.Y1 + _shape1.Y2) / 2;
+            _x2 = (_shape2.X1 + _shape2.X2) / 2;
+            _y2 = (_shape2.Y1 + _shape2.Y2) / 2;
         }
     }
 }

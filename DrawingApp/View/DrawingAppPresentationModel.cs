@@ -66,6 +66,7 @@ namespace DrawingApp
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
             _shapeFlag = ShapeFlag.Rectangle;
+            _model.ShapeFlag = ShapeFlag.Rectangle;
         }
 
         //HandleEllipseButtonClick
@@ -75,6 +76,7 @@ namespace DrawingApp
             _isEllipseButtonEnabled = false;
             _isLineButtonEnabled = true;
             _shapeFlag = ShapeFlag.Ellipse;
+            _model.ShapeFlag = ShapeFlag.Ellipse;
         }
 
         //HandleLineButtonClick
@@ -84,6 +86,7 @@ namespace DrawingApp
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = false;
             _shapeFlag = ShapeFlag.Line;
+            _model.ShapeFlag = ShapeFlag.Line;
         }
 
         //HandleClearButtonClick
@@ -93,6 +96,7 @@ namespace DrawingApp
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
             _shapeFlag = ShapeFlag.Null;
+            _model.ShapeFlag = ShapeFlag.Null;
         }
 
         //HandleCanvasPointerReleased
@@ -101,13 +105,14 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
-            _shapeFlag = (int)ShapeFlag.Null;
+            _shapeFlag = ShapeFlag.Null;
+            _model.ShapeFlag = ShapeFlag.Null;
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag)
+        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag, Shape shape)
         {
-            _model.PressedPointer(pointX, pointY, shapeFlag);
+            _model.PressedPointer(pointX, pointY, shapeFlag, shape);
         }
 
         //PointerMoved
@@ -118,9 +123,9 @@ namespace DrawingApp
         }
 
         //PointerReleased
-        public void ReleasedPointer(double pointX, double pointY)
+        public void ReleasedPointer(double pointX, double pointY, Shape shape2)
         {
-            _model.ReleasedPointer(pointX, pointY);
+            _model.ReleasedPointer(pointX, pointY, shape2);
             NotifyModelChanged();
         }
 
@@ -170,6 +175,21 @@ namespace DrawingApp
             get
             {
                 return _model.IsUndoEnabled;
+            }
+        }
+
+        //PressedCancel
+        public void PressedCancel()
+        {
+            _model.PressedCancel();
+        }
+
+        //GetIsPressed
+        public bool GetIsPressed
+        {
+            get
+            {
+                return _model.GetIsPressed;
             }
         }
 

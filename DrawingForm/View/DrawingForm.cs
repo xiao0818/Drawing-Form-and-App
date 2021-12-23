@@ -163,9 +163,19 @@ namespace DrawingForm
         //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, MouseEventArgs e)
         {
-            if (_shapeFlag != (int)ShapeFlag.Null)
+            if (_shapeFlag != ShapeFlag.Null)
             {
-                _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag);
+                if(_shapeFlag == ShapeFlag.Line)
+                {
+                    if(IsInShape(e.X, e.Y) != null)
+                    {
+                        _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, IsInShape(e.X, e.Y));
+                    }
+                }
+                else
+                {
+                    _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, null);
+                }
                 _isSelectMode = false;
                 this.ResetSelection();
             }
@@ -194,8 +204,8 @@ namespace DrawingForm
                     Shape aShape = shapes[shapes.Count - index -1];
                     if(((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
                     {
-                        _drawingFormPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle);
-                        _drawingFormPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2);
+                        _drawingFormPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle, null);
+                        _drawingFormPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2, null);
                         _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
                         break;
                     }
@@ -203,17 +213,41 @@ namespace DrawingForm
             }
             else
             {
-                if (_shapeFlag != (int)ShapeFlag.Null)
+                if (_shapeFlag != ShapeFlag.Null)
                 {
-                    _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y);
-                    _drawingFormPresentationModel.HandleCanvasPointerReleased();
-                    _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-                    _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-                    _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-                    _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+                    if(_shapeFlag == ShapeFlag.Line)
+                    {
+                        if(_drawingFormPresentationModel.GetIsPressed == true)
+                        {
+                            if (IsInShape(e.X, e.Y) != null)
+                            {
+                                _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, IsInShape(e.X, e.Y));
+                                _drawingFormPresentationModel.HandleCanvasPointerReleased();
+                                _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+                                _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+                                _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
+                                _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+                                RefreshUI();
+                                _isSelectMode = true;
+                            }
+                            else
+                            {
+                                _drawingFormPresentationModel.PressedCancel();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, null);
+                        _drawingFormPresentationModel.HandleCanvasPointerReleased();
+                        _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+                        _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+                        _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
+                        _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+                        RefreshUI();
+                        _isSelectMode = true;
+                    }
                 }
-                RefreshUI();
-                _isSelectMode = true;
             }
         }
 
@@ -289,6 +323,21 @@ namespace DrawingForm
                     _label.Text = "Selected : None";
                 }
             }
+        }
+
+        //IsInShape
+        public Shape IsInShape(double x, double y)
+        {
+            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
+            for (int index = 0; index < shapes.Count; index++)
+            {
+                Shape aShape = shapes[shapes.Count - index - 1];
+                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= x && aShape.X2 >= x) || (aShape.X1 >= x && aShape.X2 <= x)) && ((aShape.Y1 <= y && aShape.Y2 >= y) || (aShape.Y1 >= y && aShape.Y2 <= y))))
+                {
+                    return aShape;
+                }
+            }
+            return null;
         }
     }
 }

@@ -17,14 +17,16 @@
             {
                 return new Ellipse();
             }
-            else if (shapeFlag == ShapeFlag.Line)
-            {
-                return new Line();
-            }
             else
             {
                 return new DotRectangle();
             }
+        }
+
+        //CreateLine
+        public Line CreateLine()
+        {
+            return new Line();
         }
     }
 }
