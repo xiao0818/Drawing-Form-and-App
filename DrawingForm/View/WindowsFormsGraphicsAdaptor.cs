@@ -8,7 +8,7 @@ namespace DrawingForm
         Graphics _graphics;
         const int THICKNESS = 3;
         const int CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL = 4;
-        const int CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER = 4;
+        const int CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER = 8;
 
         public WindowsFormsGraphicsAdaptor(Graphics graphics)
         {

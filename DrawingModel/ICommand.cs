@@ -7,11 +7,5 @@
 
         //UnExecute
         void ExecuteBack();
-
-        //GetShape
-        ShapeFlag GetShape
-        {
-            get;
-        }
     }
 }

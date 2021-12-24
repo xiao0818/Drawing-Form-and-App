@@ -6,7 +6,6 @@
         double _y1;
         double _x2;
         double _y2;
-
         //X1
         public double X1
         {

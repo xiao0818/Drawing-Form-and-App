@@ -142,6 +142,12 @@ namespace DrawingForm
             _model.Draw(graphics);
         }
 
+        //DrawShape
+        public void DrawShape(Shape shape)
+        {
+            _model.DrawShape(shape);
+        }
+
         //DeleteShape
         public void DeleteShape()
         {

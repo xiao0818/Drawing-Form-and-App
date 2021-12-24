@@ -120,7 +120,7 @@ namespace DrawingForm
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             _isSelectMode = false;
-            this.ResetSelection();
+            ResetSelection();
         }
 
         //HandleEllipseButtonClick
@@ -132,7 +132,7 @@ namespace DrawingForm
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             _isSelectMode = false;
-            this.ResetSelection();
+            ResetSelection();
         }
 
         //HandleLineButtonClick
@@ -144,12 +144,13 @@ namespace DrawingForm
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             _isSelectMode = false;
-            this.ResetSelection();
+            ResetSelection();
         }
 
         //HandleClearButtonClick
         public void HandleClearButtonClick(object sender, System.EventArgs e)
         {
+            ResetSelection();
             _drawingFormPresentationModel.Clear();
             _drawingFormPresentationModel.HandleClearButtonClick();
             _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
@@ -157,7 +158,6 @@ namespace DrawingForm
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
             _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
             _isSelectMode = true;
-            this.ResetSelection();
             RefreshUserInterface();
         }
 
@@ -178,7 +178,7 @@ namespace DrawingForm
                     _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, null);
                 }
                 _isSelectMode = false;
-                this.ResetSelection();
+                ResetSelection();
             }
             RefreshUserInterface();
         }
@@ -205,8 +205,12 @@ namespace DrawingForm
                     Shape aShape = shapes[shapes.Count - index - 1];
                     if (((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
                     {
-                        _drawingFormPresentationModel.PressedPointer(aShape.X1, aShape.Y1, ShapeFlag.DotRectangle, null);
-                        _drawingFormPresentationModel.ReleasedPointer(aShape.X2, aShape.Y2, null);
+                        DotRectangle dotRectangle = new DotRectangle();
+                        dotRectangle.X1 = aShape.X1;
+                        dotRectangle.Y1 = aShape.Y1;
+                        dotRectangle.X2 = aShape.X2;
+                        dotRectangle.Y2 = aShape.Y2;
+                        _drawingFormPresentationModel.DrawShape(dotRectangle);
                         _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
                         break;
                     }
@@ -320,7 +324,7 @@ namespace DrawingForm
             {
                 if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
                 {
-                    _drawingFormPresentationModel.Undo();
+                    _drawingFormPresentationModel.DeleteShape();
                     _label.Text = LABEL_DEFAULT;
                 }
             }

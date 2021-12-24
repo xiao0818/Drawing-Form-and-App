@@ -11,11 +11,11 @@ namespace DrawingModel
         const string REDO_EXCEPTION = "Cannot Redo exception\n";
 
         //Execute
-        public void Execute(ICommand commandManager)
+        public void Execute(ICommand command)
         {
-            commandManager.Execute();
+            command.Execute();
             // push command 進 undo stack
-            _undo.Push(commandManager);
+            _undo.Push(command);
             // 清除redo stack
             _redo.Clear();
         }
@@ -25,12 +25,9 @@ namespace DrawingModel
         {
             if (_undo.Count <= 0)
                 throw new Exception(UNDO_EXCEPTION);
-            ICommand commandManager = _undo.Pop();
-            if (commandManager.GetShape != ShapeFlag.DotRectangle)
-            {
-                _redo.Push(commandManager);
-            }
-            commandManager.ExecuteBack();
+            ICommand command = _undo.Pop();
+            _redo.Push(command);
+            command.ExecuteBack();
         }
 
         //Redo
@@ -38,9 +35,9 @@ namespace DrawingModel
         {
             if (_redo.Count <= 0)
                 throw new Exception(REDO_EXCEPTION);
-            ICommand commandManager = _redo.Pop();
-            _undo.Push(commandManager);
-            commandManager.Execute();
+            ICommand command = _redo.Pop();
+            _undo.Push(command);
+            command.Execute();
         }
 
         public bool IsRedoEnabled

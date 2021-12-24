@@ -21,14 +21,5 @@
         {
             _model.DeleteShape();
         }
-
-        //GetShape
-        public ShapeFlag GetShape
-        {
-            get
-            {
-                return _shape.GetShape;
-            }
-        }
     }
 }
