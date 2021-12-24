@@ -54,6 +54,15 @@ namespace DrawingModel
             }
         }
 
+        //SetShapes
+        public List<Shape> SetShapes
+        {
+            set
+            {
+                _shapes = value;
+            }
+        }
+
         //GetHint
         public Shape GetHint
         {
@@ -146,12 +155,7 @@ namespace DrawingModel
         public void Clear()
         {
             _isPressed = false;
-            int count = _shapes.Count();
-            for (int index = 0; index < count; index++)
-            {
-                this.Undo();
-            }
-            //_shapes.Clear();
+            _commandManager.Execute(new ClearCommand(this, _shapes));
             NotifyModelChanged();
         }
 
@@ -190,6 +194,13 @@ namespace DrawingModel
         public void DrawShape(Shape shape)
         {
             _shapes.Add(shape);
+            NotifyModelChanged();
+        }
+
+        //ClearAll
+        public void ClearAll()
+        {
+            _shapes.Clear();
             NotifyModelChanged();
         }
 

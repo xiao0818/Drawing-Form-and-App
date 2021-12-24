@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="CommandManager.cs" />
     <Compile Include="DotRectangle.cs" />
+    <Compile Include="ClearCommand.cs" />
     <Compile Include="DrawCommand.cs" />
     <Compile Include="Ellipse.cs" />
     <Compile Include="ICommand.cs" />
