@@ -136,10 +136,7 @@ namespace DrawingApp
                     if (((aShape.X1 <= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 >= e.GetCurrentPoint(_canvas).Position.X) || (aShape.X1 >= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 <= e.GetCurrentPoint(_canvas).Position.X)) && ((aShape.Y1 <= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 >= e.GetCurrentPoint(_canvas).Position.Y) || (aShape.Y1 >= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 <= e.GetCurrentPoint(_canvas).Position.Y)))
                     {
                         DotRectangle dotRectangle = new DotRectangle();
-                        dotRectangle.X1 = aShape.X1;
-                        dotRectangle.Y1 = aShape.Y1;
-                        dotRectangle.X2 = aShape.X2;
-                        dotRectangle.Y2 = aShape.Y2;
+                        dotRectangle.Shape = aShape;
                         _drawingAppPresentationModel.DrawShape(dotRectangle);
                         _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
                         break;

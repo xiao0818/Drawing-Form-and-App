@@ -6,6 +6,7 @@
         double _y1;
         double _x2;
         double _y2;
+        Shape _shape;
         //X1
         public double X1
         {
@@ -55,6 +56,19 @@
             set
             {
                 _y2 = value;
+            }
+        }
+
+        //Shape
+        public Shape Shape
+        {
+            set
+            {
+                _shape = value;
+                _x1 = _shape.X1;
+                _y1 = _shape.Y1;
+                _x2 = _shape.X2;
+                _y2 = _shape.Y2;
             }
         }
 
