@@ -44,7 +44,7 @@ namespace DrawingForm.Tests
             };
         }
 
-        // clean up
+        // CleanUp
         public void CleanUp()
         {
             SwitchTo(_root);
@@ -52,7 +52,7 @@ namespace DrawingForm.Tests
             _driver.Dispose();
         }
 
-        // test
+        // SwitchTo
         public void SwitchTo(string formId)
         {
             if (_windowHandles.ContainsKey(formId))
@@ -63,7 +63,7 @@ namespace DrawingForm.Tests
             }
         }
 
-        // test
+        // SwitchWithNotContain
         private void SwitchWithNotContain(string formId)
         {
             foreach (var windowHandle in _driver.WindowHandles)
@@ -81,40 +81,40 @@ namespace DrawingForm.Tests
             }
         }
 
-        // test
+        // Sleep
         public void Sleep(Double time)
         {
             Thread.Sleep(TimeSpan.FromSeconds(time));
         }
 
-        // test
+        // ClickButton
         public void ClickButton(string name)
         {
             _driver.FindElementByName(name).Click();
         }
 
-        // test
+        // AssertEnableByName
         public void AssertEnableByName(string name, bool state)
         {
             WindowsElement element = _driver.FindElementByName(name);
             Assert.AreEqual(state, element.Enabled);
         }
 
-        // get
+        // GetEnable
         public bool GetEnable(string name)
         {
             WindowsElement element = _driver.FindElementByName(name);
             return element.Enabled;
         }
 
-        // test
+        // AssertEnableById
         public void AssertEnableById(string id, bool state)
         {
             WindowsElement element = _driver.FindElementByAccessibilityId(id);
             Assert.AreEqual(state, element.Enabled);
         }
 
-        // drag
+        // DragAndDrop
         public void DragAndDrop(int x1, int y1, int x2, int y2)
         {
             WindowsElement element = _driver.FindElementByAccessibilityId(CANVAS_ID);
@@ -127,15 +127,22 @@ namespace DrawingForm.Tests
             action.Perform();
         }
 
-        // test
+        // ClickPosition
         public void ClickPosition(int x, int y)
         {
-            WindowsElement element = _driver.FindElementByAccessibilityId("_canvas");
+            WindowsElement element = _driver.FindElementByAccessibilityId(CANVAS_ID);
             Actions action = new Actions(_driver);
             action.MoveToElement(element);
             action.MoveByOffset(x, y);
             action.Click();
             action.Perform();
+        }
+
+        // AssertLabelText
+        public void AssertLabelText(string name, string text)
+        {
+            WindowsElement element = _driver.FindElementByAccessibilityId(name);
+            Assert.AreEqual(text, element.Text);
         }
     }
 }

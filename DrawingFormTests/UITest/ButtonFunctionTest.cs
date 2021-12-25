@@ -11,6 +11,8 @@ namespace DrawingForm.Tests
         Robot _robot;
         private string targetAppPath;
         private const string DRAWING_FORM = "DrawingForm";
+        const int centerX = 674;
+        const int centerY = 363;
 
         //Initialize
         [TestInitialize]
@@ -35,7 +37,8 @@ namespace DrawingForm.Tests
         {
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-100, -100, 100, 100);
-            _robot.Sleep(1);
+            _robot.ClickPosition(0, 0);
+            _robot.AssertLabelText("_label", "Selected : Rectangle (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
         }
 
         //DrawEllipse
@@ -44,7 +47,22 @@ namespace DrawingForm.Tests
         {
             _robot.ClickButton("Ellipse");
             _robot.DragAndDrop(-100, -100, 100, 100);
-            _robot.Sleep(1);
+            _robot.ClickPosition(0, 0);
+            _robot.AssertLabelText("_label", "Selected : Ellipse (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
+        }
+
+        //DrawLine
+        [TestMethod]
+        public void DrawLine()
+        {
+            _robot.ClickButton("Rectangle");
+            _robot.DragAndDrop(-150, -150, -50, -50);
+            _robot.ClickButton("Ellipse");
+            _robot.DragAndDrop(50, 50, 150, 150);
+            _robot.ClickButton("Line");
+            _robot.DragAndDrop(-100, -100, 100, 100);
+            _robot.ClickPosition(0, 0);
+            _robot.AssertLabelText("_label", "Selected : Line (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
         }
 
         //Clear
@@ -55,8 +73,11 @@ namespace DrawingForm.Tests
             _robot.DragAndDrop(-100, -100, 100, 100);
             _robot.ClickButton("Ellipse");
             _robot.DragAndDrop(-100, -100, 100, 100);
+            _robot.ClickButton("Line");
+            _robot.DragAndDrop(-50, -50, 50, 50);
             _robot.ClickButton("Clear");
-            _robot.Sleep(1);
+            _robot.ClickPosition(0, 0);
+            _robot.AssertLabelText("_label", "Selected : None");
         }
     }
 }

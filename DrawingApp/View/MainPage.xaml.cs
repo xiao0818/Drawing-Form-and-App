@@ -138,7 +138,14 @@ namespace DrawingApp
                         DotRectangle dotRectangle = new DotRectangle();
                         dotRectangle.Shape = aShape;
                         _drawingAppPresentationModel.DrawShape(dotRectangle);
-                        _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
+                        if (aShape.GetShape == ShapeFlag.Line)
+                        {
+                            _label.Text = "Selected : " + aShape.GetShape + " (" + Math.Round(aShape.X1, 0) + ", " + Math.Round(aShape.Y1, 0) + ", " + Math.Round(aShape.X2, 0) + ", " + Math.Round(aShape.Y2, 0) + ")";
+                        }
+                        else
+                        {
+                            _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
+                        }
                         break;
                     }
                 }

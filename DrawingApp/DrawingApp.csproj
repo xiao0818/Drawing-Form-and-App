@@ -117,7 +117,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="..\DrawingModel\ClearCommand.cs">
-      <Link>View\ClearCommand.cs</Link>
+      <Link>Model\ClearCommand.cs</Link>
     </Compile>
     <Compile Include="..\DrawingModel\CommandManager.cs">
       <Link>Model\CommandManager.cs</Link>
