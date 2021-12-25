@@ -90,46 +90,23 @@ namespace DrawingApp
             };
             // 將圖形物件加入Children
             _canvas.Children.Add(dotRectangle);
-            // 先建立圖形物件
-            Windows.UI.Xaml.Shapes.Ellipse ellipse1 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse1.Margin = new Windows.UI.Xaml.Thickness(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
-            ellipse1.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse1.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse1.Stroke = new SolidColorBrush(Colors.Black);
-            ellipse1.StrokeThickness = 1;
-            ellipse1.Fill = new SolidColorBrush(Colors.White);
-            // 將圖形物件加入Children
-            _canvas.Children.Add(ellipse1);
-            // 先建立圖形物件
-            Windows.UI.Xaml.Shapes.Ellipse ellipse2 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse2.Margin = new Windows.UI.Xaml.Thickness(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
-            ellipse2.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse2.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse2.Stroke = new SolidColorBrush(Colors.Black);
-            ellipse2.StrokeThickness = 1;
-            ellipse2.Fill = new SolidColorBrush(Colors.White);
-            // 將圖形物件加入Children
-            _canvas.Children.Add(ellipse2);
-            // 先建立圖形物件
-            Windows.UI.Xaml.Shapes.Ellipse ellipse3 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse3.Margin = new Windows.UI.Xaml.Thickness(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
-            ellipse3.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse3.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse3.Stroke = new SolidColorBrush(Colors.Black);
-            ellipse3.StrokeThickness = 1;
-            ellipse3.Fill = new SolidColorBrush(Colors.White);
-            // 將圖形物件加入Children
-            _canvas.Children.Add(ellipse3);
-            // 先建立圖形物件
-            Windows.UI.Xaml.Shapes.Ellipse ellipse4 = new Windows.UI.Xaml.Shapes.Ellipse();
-            ellipse4.Margin = new Windows.UI.Xaml.Thickness(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, 0, 0);
-            ellipse4.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse4.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
-            ellipse4.Stroke = new SolidColorBrush(Colors.Black);
-            ellipse4.StrokeThickness = 1;
-            ellipse4.Fill = new SolidColorBrush(Colors.White);
-            // 將圖形物件加入Children
-            _canvas.Children.Add(ellipse4);
+            _canvas.Children.Add(AngleCircle(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL));
+            _canvas.Children.Add(AngleCircle(x1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL));
+            _canvas.Children.Add(AngleCircle(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y1 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL));
+            _canvas.Children.Add(AngleCircle(x2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL, y2 - CIRCLE_FOR_RECTANGLE_ANGLE_PIXEL));
+        }
+
+        //AngleCircle
+        private Windows.UI.Xaml.Shapes.Ellipse AngleCircle(double pointX, double pointY)
+        {
+            Windows.UI.Xaml.Shapes.Ellipse ellipse = new Windows.UI.Xaml.Shapes.Ellipse();
+            ellipse.Margin = new Windows.UI.Xaml.Thickness(pointX, pointY, 0, 0);
+            ellipse.Width = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse.Height = CIRCLE_FOR_RECTANGLE_ANGLE_DIAMETER;
+            ellipse.Stroke = new SolidColorBrush(Colors.Black);
+            ellipse.StrokeThickness = 1;
+            ellipse.Fill = new SolidColorBrush(Colors.White);
+            return ellipse;
         }
     }
 }

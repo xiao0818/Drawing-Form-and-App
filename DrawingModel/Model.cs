@@ -99,19 +99,31 @@ namespace DrawingModel
                 _firstPointY = pointY;
                 if (_shapeFlag == ShapeFlag.Line)
                 {
-                    _line = _shapeFactory.CreateLine;
-                    _line.X1 = _firstPointX;
-                    _line.Y1 = _firstPointY;
-                    _line.Shape1 = shape1;
+                    PressedPointerForLine(pointX, pointY, shape1);
                 }
                 else
                 {
-                    _hint = _shapeFactory.CreateShape(_shapeFlag);
-                    _hint.X1 = _firstPointX;
-                    _hint.Y1 = _firstPointY;
+                    PressedPointerForShapes(pointX, pointY, shape1);
                 }
                 _isPressed = true;
             }
+        }
+
+        //PressedPointerForLine
+        private void PressedPointerForLine(double pointX, double pointY, Shape shape1)
+        {
+            _line = _shapeFactory.CreateLine;
+            _line.X1 = _firstPointX;
+            _line.Y1 = _firstPointY;
+            _line.Shape1 = shape1;
+        }
+
+        //PressedPointerForShapes
+        private void PressedPointerForShapes(double pointX, double pointY, Shape shape1)
+        {
+            _hint = _shapeFactory.CreateShape(_shapeFlag);
+            _hint.X1 = _firstPointX;
+            _hint.Y1 = _firstPointY;
         }
 
         //PointerMoved
@@ -141,21 +153,33 @@ namespace DrawingModel
                 _isPressed = false;
                 if (_shapeFlag == ShapeFlag.Line)
                 {
-                    _line.X2 = pointX;
-                    _line.Y2 = pointY;
-                    _line.Shape2 = shape2;
-                    _line.SetPointToShapeCenter();
-                    _commandManager.Execute(new DrawCommand(this, _line.Copy()));
+                    ReleasedPointerForLine(pointX, pointY, shape2);
                 }
                 else
                 {
-                    _hint.X2 = pointX;
-                    _hint.Y2 = pointY;
-                    _isPressed = false;
-                    _commandManager.Execute(new DrawCommand(this, _hint.Copy()));
+                    ReleasedPointerForShapes(pointX, pointY, shape2);
                 }
                 NotifyModelChanged();
             }
+        }
+
+        //ReleasedPointerForLine
+        private void ReleasedPointerForLine(double pointX, double pointY, Shape shape2)
+        {
+            _line.X2 = pointX;
+            _line.Y2 = pointY;
+            _line.Shape2 = shape2;
+            _line.SetPointToShapeCenter();
+            _commandManager.Execute(new DrawCommand(this, _line.Copy()));
+        }
+
+        //ReleasedPointerForShapes
+        private void ReleasedPointerForShapes(double pointX, double pointY, Shape shape2)
+        {
+            _hint.X2 = pointX;
+            _hint.Y2 = pointY;
+            _isPressed = false;
+            _commandManager.Execute(new DrawCommand(this, _hint.Copy()));
         }
 
         //Clear
@@ -170,6 +194,13 @@ namespace DrawingModel
         public void Draw(IGraphics graphics)
         {
             graphics.ClearAll();
+            DrawShapes(graphics);
+            DrawHint(graphics);
+        }
+
+        //DrawShapes
+        private void DrawShapes(IGraphics graphics)
+        {
             foreach (Shape aShape in _shapes)
             {
                 if (aShape.GetShape == ShapeFlag.Line)
@@ -184,6 +215,11 @@ namespace DrawingModel
                     aShape.Draw(graphics);
                 }
             }
+        }
+
+        //DrawHint
+        private void DrawHint(IGraphics graphics)
+        {
             if (_isPressed)
             {
                 if (_shapeFlag == ShapeFlag.Line)

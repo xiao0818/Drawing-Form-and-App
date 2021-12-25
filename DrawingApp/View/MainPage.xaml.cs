@@ -19,6 +19,10 @@ namespace DrawingApp
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         bool _isSelectMode = true;
         const string LABEL_DEFAULT = "Selected : None";
+        const string LABEL_HEAD = "Selected : ";
+        const string LABEL_COMMA = "Selected : ";
+        const string LABEL_LEFT_BRACKET = " (";
+        const string LABEL_RIGHT_BRACKET = ")";
 
         public MainPage()
         {
@@ -140,11 +144,11 @@ namespace DrawingApp
                         _drawingAppPresentationModel.DrawShape(dotRectangle);
                         if (aShape.GetShape == ShapeFlag.Line)
                         {
-                            _label.Text = "Selected : " + aShape.GetShape + " (" + Math.Round(aShape.X1, 0) + ", " + Math.Round(aShape.Y1, 0) + ", " + Math.Round(aShape.X2, 0) + ", " + Math.Round(aShape.Y2, 0) + ")";
+                            _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + Math.Round(aShape.X1, 0) + LABEL_COMMA + Math.Round(aShape.Y1, 0) + LABEL_COMMA + Math.Round(aShape.X2, 0) + LABEL_COMMA + Math.Round(aShape.Y2, 0) + LABEL_RIGHT_BRACKET;
                         }
                         else
                         {
-                            _label.Text = "Selected : " + aShape.GetShape + " (" + TakeSmall(aShape.X1, aShape.X2) + ", " + TakeSmall(aShape.Y1, aShape.Y2) + ", " + TakeLarge(aShape.X1, aShape.X2) + ", " + TakeLarge(aShape.Y1, aShape.Y2) + ")";
+                            _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(aShape.X1, aShape.X2) + LABEL_COMMA + TakeSmall(aShape.Y1, aShape.Y2) + LABEL_COMMA + TakeLarge(aShape.X1, aShape.X2) + LABEL_COMMA + TakeLarge(aShape.Y1, aShape.Y2) + LABEL_RIGHT_BRACKET;
                         }
                         break;
                     }

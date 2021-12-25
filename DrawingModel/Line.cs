@@ -103,7 +103,7 @@
             hint.Y1 = _y1;
             hint.X2 = _x2;
             hint.Y2 = _y2;
-            if(_shape1 != null)
+            if (_shape1 != null)
             {
                 hint.Shape1 = _shape1;
             }

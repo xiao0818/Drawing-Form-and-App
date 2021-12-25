@@ -128,12 +128,12 @@ namespace DrawingForm.Tests
         }
 
         // ClickPosition
-        public void ClickPosition(int x, int y)
+        public void ClickPosition(int pointX, int pointY)
         {
             WindowsElement element = _driver.FindElementByAccessibilityId(CANVAS_ID);
             Actions action = new Actions(_driver);
             action.MoveToElement(element);
-            action.MoveByOffset(x, y);
+            action.MoveByOffset(pointX, pointY);
             action.Click();
             action.Perform();
         }
