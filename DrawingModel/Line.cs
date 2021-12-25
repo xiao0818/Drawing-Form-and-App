@@ -6,8 +6,8 @@
         double _y1;
         double _x2;
         double _y2;
-        Shape _shape1;
-        Shape _shape2;
+        Shape _shape1 = null;
+        Shape _shape2 = null;
         const int TWO = 2;
 
         //X1
@@ -102,6 +102,14 @@
             hint.Y1 = _y1;
             hint.X2 = _x2;
             hint.Y2 = _y2;
+            if(_shape1 != null)
+            {
+                hint.Shape1 = _shape1;
+            }
+            if (_shape2 != null)
+            {
+                hint.Shape2 = _shape2;
+            }
             return hint;
         }
 

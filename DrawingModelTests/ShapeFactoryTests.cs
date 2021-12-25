@@ -5,18 +5,41 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class ShapeFactoryTests
     {
-        //ShapeFactoryTest
-        [TestMethod()]
-        public void ShapeFactoryTest()
+        ShapeFactory shapeFactory;
+
+        //Initialize
+        [TestInitialize()]
+        public void SetUp()
         {
-            Assert.Fail();
+            shapeFactory = new ShapeFactory();
         }
 
-        //CreateShapeTest
+        //CreateShapeTestForRectangle
         [TestMethod()]
-        public void CreateShapeTest()
+        public void CreateShapeTestForRectangle()
         {
-            Assert.Fail();
+            Assert.AreEqual(ShapeFlag.Rectangle, shapeFactory.CreateShape(ShapeFlag.Rectangle).GetShape);
+        }
+
+        //CreateShapeTestForEllipse
+        [TestMethod()]
+        public void CreateShapeTestForEllipse()
+        {
+            Assert.AreEqual(ShapeFlag.Ellipse, shapeFactory.CreateShape(ShapeFlag.Ellipse).GetShape);
+        }
+
+        //CreateShapeTestForDotRectangle
+        [TestMethod()]
+        public void CreateShapeTestForDotRectangle()
+        {
+            Assert.AreEqual(ShapeFlag.DotRectangle, shapeFactory.CreateShape(ShapeFlag.DotRectangle).GetShape);
+        }
+
+        //CreateLineTest
+        [TestMethod()]
+        public void CreateLineTest()
+        {
+            Assert.AreEqual(ShapeFlag.Line, shapeFactory.CreateLine.GetShape);
         }
     }
 }

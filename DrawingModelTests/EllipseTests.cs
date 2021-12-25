@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingModel.Tests.UnitTest
+namespace DrawingModel.Tests
 {
     [TestClass()]
     public class EllipseTests
@@ -27,6 +27,13 @@ namespace DrawingModel.Tests.UnitTest
             Assert.AreEqual(ellipse.Y1, ellipseCopy.Y1);
             Assert.AreEqual(ellipse.X2, ellipseCopy.X2);
             Assert.AreEqual(ellipse.Y2, ellipseCopy.Y2);
+        }
+
+        //GetShapeTest
+        [TestMethod()]
+        public void GetShapeTest()
+        {
+            Assert.AreEqual(ShapeFlag.Ellipse, ellipse.GetShape);
         }
 
         //TakeLargeTest1

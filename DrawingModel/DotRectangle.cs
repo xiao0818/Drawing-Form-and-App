@@ -6,12 +6,16 @@
         double _y1;
         double _x2;
         double _y2;
-        Shape _shape;
+        Shape _shape = null;
         //X1
         public double X1
         {
             get
             {
+                if(_shape != null)
+                {
+                    _x1 = _shape.X1;
+                }
                 return _x1;
             }
             set
@@ -25,6 +29,10 @@
         {
             get
             {
+                if (_shape != null)
+                {
+                    _y1 = _shape.Y1;
+                }
                 return _y1;
             }
             set
@@ -38,6 +46,10 @@
         {
             get
             {
+                if (_shape != null)
+                {
+                    _x2 = _shape.X2;
+                }
                 return _x2;
             }
             set
@@ -51,6 +63,10 @@
         {
             get
             {
+                if (_shape != null)
+                {
+                    _y2 = _shape.Y2;
+                }
                 return _y2;
             }
             set
@@ -62,6 +78,10 @@
         //Shape
         public Shape Shape
         {
+            get
+            {
+                return _shape;
+            }
             set
             {
                 _shape = value;
@@ -75,6 +95,13 @@
         //Draw
         public void Draw(IGraphics graphics)
         {
+            if (_shape != null)
+            {
+                _x1 = _shape.X1;
+                _y1 = _shape.Y1;
+                _x2 = _shape.X2;
+                _y2 = _shape.Y2;
+            }
             graphics.DrawDotRectangle(TakeSmall(_x1, _x2), TakeSmall(_y1, _y2), TakeLarge(_x1, _x2), TakeLarge(_y1, _y2));
         }
 
@@ -86,6 +113,10 @@
             hint.Y1 = _y1;
             hint.X2 = _x2;
             hint.Y2 = _y2;
+            if (_shape != null)
+            {
+                hint.Shape = _shape;
+            }
             return hint;
         }
 

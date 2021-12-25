@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 
-namespace DrawingForm.Tests.UITest
+namespace DrawingForm.Tests
 {
     [TestClass()]
     public class ButtonFunctionTest

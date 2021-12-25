@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace DrawingModel.Tests.UnitTest
+namespace DrawingModel.Tests
 {
     [TestClass()]
     public class RectangleTests
@@ -22,10 +22,18 @@ namespace DrawingModel.Tests.UnitTest
             rectangle.Y1 = 20;
             rectangle.X2 = 30;
             rectangle.Y2 = 40;
-            Assert.AreEqual(rectangle.X1, rectangle.Copy().X1);
-            Assert.AreEqual(rectangle.Y1, rectangle.Copy().Y1);
-            Assert.AreEqual(rectangle.X2, rectangle.Copy().X2);
-            Assert.AreEqual(rectangle.Y2, rectangle.Copy().Y2);
+            Shape rectangleCopy = rectangle.Copy();
+            Assert.AreEqual(rectangle.X1, rectangleCopy.X1);
+            Assert.AreEqual(rectangle.Y1, rectangleCopy.Y1);
+            Assert.AreEqual(rectangle.X2, rectangleCopy.X2);
+            Assert.AreEqual(rectangle.Y2, rectangleCopy.Y2);
+        }
+
+        //GetShapeTest
+        [TestMethod()]
+        public void GetShapeTest()
+        {
+            Assert.AreEqual(ShapeFlag.Rectangle, rectangle.GetShape);
         }
 
         //TakeLargeTest1

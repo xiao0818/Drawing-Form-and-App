@@ -2,10 +2,6 @@
 {
     public class ShapeFactory
     {
-        public ShapeFactory()
-        {
-        }
-
         //CreateShape
         public Shape CreateShape(ShapeFlag shapeFlag)
         {

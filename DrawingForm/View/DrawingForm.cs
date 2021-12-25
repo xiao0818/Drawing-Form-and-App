@@ -298,9 +298,9 @@ namespace DrawingForm
         {
             if (number1 > number2)
             {
-                return number1;
+                return Math.Round(number1, 0);
             }
-            return number2;
+            return Math.Round(number2, 0);
         }
 
         //TakeSmaller
@@ -308,9 +308,9 @@ namespace DrawingForm
         {
             if (number1 < number2)
             {
-                return number1;
+                return Math.Round(number1, 0);
             }
-            return number2;
+            return Math.Round(number2, 0);
         }
 
         //ReserSelection

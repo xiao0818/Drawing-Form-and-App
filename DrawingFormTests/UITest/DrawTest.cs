@@ -2,7 +2,7 @@
 using System;
 using System.IO;
 
-namespace DrawingForm.Tests.UITest
+namespace DrawingForm.Tests
 {
     [TestClass()]
     public class DrawTest
