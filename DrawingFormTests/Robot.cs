@@ -126,5 +126,16 @@ namespace DrawingForm.Tests
             action.Release();
             action.Perform();
         }
+
+        // test
+        public void ClickPosition(int x, int y)
+        {
+            WindowsElement element = _driver.FindElementByAccessibilityId("_canvas");
+            Actions action = new Actions(_driver);
+            action.MoveToElement(element);
+            action.MoveByOffset(x, y);
+            action.Click();
+            action.Perform();
+        }
     }
 }

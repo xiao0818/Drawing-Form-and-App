@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace DrawingModel
 {
-    class CommandManager
+    public class CommandManager
     {
         Stack<ICommand> _undo = new Stack<ICommand>();
         Stack<ICommand> _redo = new Stack<ICommand>();

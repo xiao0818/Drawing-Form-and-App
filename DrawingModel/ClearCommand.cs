@@ -2,7 +2,7 @@
 
 namespace DrawingModel
 {
-    class ClearCommand : ICommand
+    public class ClearCommand : ICommand
     {
         List<Shape> _shapes;
         Model _model;

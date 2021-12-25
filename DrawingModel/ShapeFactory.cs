@@ -1,6 +1,6 @@
 ﻿namespace DrawingModel
 {
-    class ShapeFactory
+    public class ShapeFactory
     {
         public ShapeFactory()
         {

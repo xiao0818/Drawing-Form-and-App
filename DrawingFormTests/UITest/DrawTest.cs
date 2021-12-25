@@ -32,6 +32,7 @@ namespace DrawingForm.Tests.UITest
         [TestMethod]
         public void DrawSnowman()
         {
+
             _robot.ClickButton("Ellipse");
             _robot.DragAndDrop(-150, 25, 150, 325);
             _robot.ClickButton("Ellipse");
