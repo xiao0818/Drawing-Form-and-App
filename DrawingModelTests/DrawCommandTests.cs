@@ -5,25 +5,35 @@ namespace DrawingModel.Tests
     [TestClass()]
     public class DrawCommandTests
     {
-        //DrawCommandTest
-        [TestMethod()]
-        public void DrawCommandTest()
+        Model model;
+        Rectangle rectangle;
+        DrawCommand drawCommand;
+
+        //Initialize
+        [TestInitialize()]
+        public void SetUp()
         {
-            Assert.Fail();
+            model = new Model();
+            rectangle = new Rectangle();
+            drawCommand = new DrawCommand(model, rectangle);
         }
 
         //ExecuteTest
         [TestMethod()]
         public void ExecuteTest()
         {
-            Assert.Fail();
+            drawCommand.Execute();
+            Assert.AreEqual(1, model.GetShapes.Count);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.GetShapes[0].GetShape);
         }
 
         //ExecuteBackTest
         [TestMethod()]
         public void ExecuteBackTest()
         {
-            Assert.Fail();
+            drawCommand.Execute();
+            drawCommand.ExecuteBack();
+            Assert.AreEqual(0, model.GetShapes.Count);
         }
     }
 }
