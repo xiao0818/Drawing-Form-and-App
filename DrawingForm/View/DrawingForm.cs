@@ -24,7 +24,7 @@ namespace DrawingForm
         const int LOCATION_Y = 30;
         const string LABEL_DEFAULT = "Selected : None";
         const string LABEL_HEAD = "Selected : ";
-        const string LABEL_COMMA = "Selected : ";
+        const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
 
@@ -119,10 +119,7 @@ namespace DrawingForm
         public void HandleRectangleButtonClick(object sender, System.EventArgs e)
         {
             _drawingFormPresentationModel.HandleRectangleButtonClick();
-            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            RefreshButton();
             _isSelectMode = false;
             ResetSelection();
         }
@@ -131,10 +128,7 @@ namespace DrawingForm
         public void HandleEllipseButtonClick(object sender, System.EventArgs e)
         {
             _drawingFormPresentationModel.HandleEllipseButtonClick();
-            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            RefreshButton();
             _isSelectMode = false;
             ResetSelection();
         }
@@ -143,10 +137,7 @@ namespace DrawingForm
         public void HandleLineButtonClick(object sender, System.EventArgs e)
         {
             _drawingFormPresentationModel.HandleLineButtonClick();
-            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            RefreshButton();
             _isSelectMode = false;
             ResetSelection();
         }
@@ -157,10 +148,7 @@ namespace DrawingForm
             ResetSelection();
             _drawingFormPresentationModel.Clear();
             _drawingFormPresentationModel.HandleClearButtonClick();
-            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
+            RefreshButton();
             _isSelectMode = true;
             RefreshUserInterface();
         }
@@ -203,65 +191,88 @@ namespace DrawingForm
             this.ResetSelection();
             if (_isSelectMode == true)
             {
-                List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
-                for (int index = 0; index < shapes.Count; index++)
-                {
-                    Shape aShape = shapes[shapes.Count - index - 1];
-                    if (((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
-                    {
-                        DotRectangle dotRectangle = new DotRectangle();
-                        dotRectangle.Shape = aShape;
-                        _drawingFormPresentationModel.DrawShape(dotRectangle);
-                        if (aShape.GetShape == ShapeFlag.Line)
-                        {
-                            _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + Math.Round(aShape.X1, 0) + LABEL_COMMA + Math.Round(aShape.Y1, 0) + LABEL_COMMA + Math.Round(aShape.X2, 0) + LABEL_COMMA + Math.Round(aShape.Y2, 0) + LABEL_RIGHT_BRACKET;
-                        }
-                        else
-                        {
-                            _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(aShape.X1, aShape.X2) + LABEL_COMMA + TakeSmall(aShape.Y1, aShape.Y2) + LABEL_COMMA + TakeLarge(aShape.X1, aShape.X2) + LABEL_COMMA + TakeLarge(aShape.Y1, aShape.Y2) + LABEL_RIGHT_BRACKET;
-                        }
-                        break;
-                    }
-                }
+                HandleCanvasPointerReleasedForSelected(e);
             }
             else
             {
                 if (_shapeFlag != ShapeFlag.Null)
                 {
-                    if (_shapeFlag == ShapeFlag.Line)
-                    {
-                        if (_drawingFormPresentationModel.GetIsPressed == true)
-                        {
-                            if (IsInShape(e.X, e.Y) != null)
-                            {
-                                _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, IsInShape(e.X, e.Y));
-                                _drawingFormPresentationModel.HandleCanvasPointerReleased();
-                                _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-                                _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-                                _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-                                _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
-                                RefreshUserInterface();
-                                _isSelectMode = true;
-                            }
-                            else
-                            {
-                                _drawingFormPresentationModel.PressedCancel();
-                            }
-                        }
-                    }
-                    else
-                    {
-                        _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, null);
-                        _drawingFormPresentationModel.HandleCanvasPointerReleased();
-                        _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
-                        _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
-                        _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-                        _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
-                        RefreshUserInterface();
-                        _isSelectMode = true;
-                    }
+                    HandleCanvasPointerReleasedForShapes(e);
                 }
             }
+        }
+
+        //HandleCanvasPointerReleasedForSelected
+        private void HandleCanvasPointerReleasedForSelected(MouseEventArgs e)
+        {
+            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
+            for (int index = 0; index < shapes.Count; index++)
+            {
+                Shape aShape = shapes[shapes.Count - index - 1];
+                if (((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
+                {
+                    HandleCanvasPointerReleasedForSelectedTrue(aShape);
+                    break;
+                }
+            }
+        }
+
+        //HandleCanvasPointerReleasedForSelectedTrue
+        private void HandleCanvasPointerReleasedForSelectedTrue(Shape aShape)
+        {
+            DotRectangle dotRectangle = new DotRectangle();
+            dotRectangle.Shape = aShape;
+            _drawingFormPresentationModel.DrawShape(dotRectangle);
+            if (aShape.GetShape == ShapeFlag.Line)
+            {
+                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + Math.Round(aShape.X1, 0) + LABEL_COMMA + Math.Round(aShape.Y1, 0) + LABEL_COMMA + Math.Round(aShape.X2, 0) + LABEL_COMMA + Math.Round(aShape.Y2, 0) + LABEL_RIGHT_BRACKET;
+            }
+            else
+            {
+                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(aShape.X1, aShape.X2) + LABEL_COMMA + TakeSmall(aShape.Y1, aShape.Y2) + LABEL_COMMA + TakeLarge(aShape.X1, aShape.X2) + LABEL_COMMA + TakeLarge(aShape.Y1, aShape.Y2) + LABEL_RIGHT_BRACKET;
+            }
+        }
+
+        //HandleCanvasPointerReleasedForShapes
+        private void HandleCanvasPointerReleasedForShapes(MouseEventArgs e)
+        {
+            if (_shapeFlag == ShapeFlag.Line)
+            {
+                HandleCanvasPointerReleasedForLine(e);
+            }
+            else
+            {
+                HandleCanvasPointerReleasedForOtherShapes(e);
+            }
+            RefreshButton();
+            RefreshUserInterface();
+        }
+
+        //HandleCanvasPointerReleasedForLine
+        private void HandleCanvasPointerReleasedForLine(MouseEventArgs e)
+        {
+            if (_drawingFormPresentationModel.GetIsPressed == true)
+            {
+                Shape isInShapes = IsInShape(e.X, e.Y);
+                if (isInShapes != null)
+                {
+                    _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, isInShapes);
+                    _drawingFormPresentationModel.HandleCanvasPointerReleased();
+                    _isSelectMode = true;
+                }
+                else
+                {
+                    _drawingFormPresentationModel.PressedCancel();
+                }
+            }
+        }
+
+        //HandleCanvasPointerReleasedForOtherShapes
+        private void HandleCanvasPointerReleasedForOtherShapes(MouseEventArgs e)
+        {
+            _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, null);
+            _drawingFormPresentationModel.HandleCanvasPointerReleased();
+            _isSelectMode = true;
         }
 
         //HandleCanvasPaint
@@ -293,6 +304,15 @@ namespace DrawingForm
             this.ResetSelection();
             _drawingFormPresentationModel.Redo();
             RefreshUserInterface();
+        }
+
+        //RefreshButton
+        void RefreshButton()
+        {
+            _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
+            _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
+            _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
+            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
         //RefreshUserInterface

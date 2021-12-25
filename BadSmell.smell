@@ -188,38 +188,6 @@
           <Reviews>
             <Smell>
               <Id>1</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.DrawingForm.HandleCanvasPointerReleased.65object sender;MouseEventArgs e;</HashCode>
-              <Severity>Red</Severity>
-              <Weight>65</Weight>
-              <Project>DrawingForm</Project>
-              <File>DrawingForm.cs</File>
-              <Line>201</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>2</Id>
-              <SmellType>Long method(過長函式)</SmellType>
-              <HashCode>LongMethod.MainPage.HandleCanvasPointerReleased.65object sender;PointerRoutedEventArgs e;</HashCode>
-              <Severity>Red</Severity>
-              <Weight>65</Weight>
-              <Project>DrawingApp</Project>
-              <File>MainPage.xaml.cs</File>
-              <Line>131</Line>
-              <StartLine>0</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>0</EndLine>
-              <EndCol>0</EndCol>
-              <Comment />
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>3</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>208 目前物件 DrawingModel.Model，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShape</HashCode>
               <Severity>Warning</Severity>
@@ -235,7 +203,7 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>4</Id>
+              <Id>2</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
               <HashCode>215 目前物件 DrawingModel.Model，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Shape.Draw(DrawingModel.IGraphics) 以及 DrawingModel.Shape.GetShape</HashCode>
               <Severity>Warning</Severity>
@@ -251,561 +219,273 @@
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>5</Id>
+              <Id>3</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>208 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
+              <HashCode>210 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>208</Line>
-              <StartLine>208</StartLine>
-              <StartCol>26</StartCol>
-              <EndLine>208</EndLine>
-              <EndCol>67</EndCol>
+              <Line>210</Line>
+              <StartLine>210</StartLine>
+              <StartCol>22</StartCol>
+              <EndLine>210</EndLine>
+              <EndCol>63</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>211 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
+              <Line>211</Line>
+              <StartLine>211</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>211</EndLine>
+              <EndCol>188</EndCol>
+              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>260 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.HandleCanvasPointerReleased() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
+              <Line>260</Line>
+              <StartLine>259</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>260</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.HandleCanvasPointerReleased() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>6</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>209 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
-              <Severity>Red</Severity>
+              <HashCode>265 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.PressedCancel() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
+              <Severity>Warning</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>209</Line>
-              <StartLine>209</StartLine>
-              <StartCol>24</StartCol>
-              <EndLine>209</EndLine>
-              <EndCol>192</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
+              <Line>265</Line>
+              <StartLine>264</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>265</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.PressedCancel() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>7</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>213 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
+              <HashCode>352 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>213</Line>
-              <StartLine>212</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>213</EndLine>
-              <EndCol>0</EndCol>
+              <Line>352</Line>
+              <StartLine>352</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>352</EndLine>
+              <EndCol>79</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
               <Id>8</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>214 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.DrawShape(DrawingModel.Shape) 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>214</Line>
-              <StartLine>213</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>214</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.DrawShape(DrawingModel.Shape) 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>9</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>214 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <HashCode>355 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.DeleteShape() 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>214</Line>
-              <StartLine>214</StartLine>
-              <StartCol>28</StartCol>
-              <EndLine>214</EndLine>
-              <EndCol>61</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>10</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>217 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：7次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：14次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>217</Line>
-              <StartLine>216</StartLine>
+              <Line>355</Line>
+              <StartLine>354</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>217</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：7次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：14次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>11</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>221 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：11次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：18次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>221</Line>
-              <StartLine>220</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>221</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：11次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：18次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>12</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>237 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.ReleasedPointer(double, double, DrawingModel.Shape) 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>237</Line>
-              <StartLine>236</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>237</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.ReleasedPointer(double, double, DrawingModel.Shape) 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>13</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>238 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.HandleCanvasPointerReleased() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>238</Line>
-              <StartLine>237</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>238</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.HandleCanvasPointerReleased() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>14</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>239 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsRectangleButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>239</Line>
-              <StartLine>238</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>239</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsRectangleButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>15</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>240 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsEllipseButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>240</Line>
-              <StartLine>239</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>240</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsEllipseButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>16</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>241 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsLineButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>241</Line>
-              <StartLine>240</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>241</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.IsLineButtonEnable 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>17</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>242 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapeFlag 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>242</Line>
-              <StartLine>241</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>242</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapeFlag 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>18</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>248 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.PressedCancel() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>248</Line>
-              <StartLine>247</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>248</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.PressedCancel() 以及 DrawingForm.DrawingFormPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>19</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>332 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>332</Line>
-              <StartLine>332</StartLine>
-              <StartCol>20</StartCol>
-              <EndLine>332</EndLine>
-              <EndCol>79</EndCol>
-              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>20</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>335 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.DeleteShape() 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingForm</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>335</Line>
-              <StartLine>334</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>335</EndLine>
+              <EndLine>355</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.DeleteShape() 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>21</Id>
+              <Id>9</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>346 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
+              <HashCode>366 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>346</Line>
-              <StartLine>346</StartLine>
+              <Line>366</Line>
+              <StartLine>366</StartLine>
               <StartCol>22</StartCol>
-              <EndLine>346</EndLine>
+              <EndLine>366</EndLine>
               <EndCol>63</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>22</Id>
+              <Id>10</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>347 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <HashCode>367 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>347</Line>
-              <StartLine>347</StartLine>
+              <Line>367</Line>
+              <StartLine>367</StartLine>
               <StartCol>20</StartCol>
-              <EndLine>347</EndLine>
+              <EndLine>367</EndLine>
               <EndCol>253</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>23</Id>
+              <Id>11</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>350 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
+              <HashCode>370 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingForm</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
-              <Line>350</Line>
-              <StartLine>349</StartLine>
+              <Line>370</Line>
+              <StartLine>369</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>350</EndLine>
+              <EndLine>370</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>24</Id>
+              <Id>12</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>138 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
+              <HashCode>140 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingApp</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>138</Line>
-              <StartLine>138</StartLine>
-              <StartCol>26</StartCol>
-              <EndLine>138</EndLine>
-              <EndCol>67</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>25</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>143 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>143</Line>
-              <StartLine>142</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>143</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>26</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>144 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DrawShape(DrawingModel.Shape) 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>144</Line>
-              <StartLine>143</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>144</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DrawShape(DrawingModel.Shape) 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>27</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>144 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>144</Line>
-              <StartLine>144</StartLine>
-              <StartCol>28</StartCol>
-              <EndLine>144</EndLine>
-              <EndCol>61</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>28</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>167 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.ReleasedPointer(double, double, DrawingModel.Shape) 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>167</Line>
-              <StartLine>166</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>167</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.ReleasedPointer(double, double, DrawingModel.Shape) 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>29</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>168 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.HandleCanvasPointerReleased() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>168</Line>
-              <StartLine>167</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>168</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.HandleCanvasPointerReleased() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>30</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>169 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsRectangleButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>169</Line>
-              <StartLine>168</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>169</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsRectangleButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>31</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>170 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsEllipseButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>170</Line>
-              <StartLine>169</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>170</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsEllipseButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>32</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>171 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsLineButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>171</Line>
-              <StartLine>170</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>171</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.IsLineButtonEnable 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>33</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>172 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapeFlag 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>172</Line>
-              <StartLine>171</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>172</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapeFlag 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>34</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>178 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.PressedCancel() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
-              <Severity>Warning</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>178</Line>
-              <StartLine>177</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>178</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.PressedCancel() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>35</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>253 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>253</Line>
-              <StartLine>253</StartLine>
-              <StartCol>20</StartCol>
-              <EndLine>253</EndLine>
-              <EndCol>79</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>36</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>256 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DeleteShape() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>256</Line>
-              <StartLine>255</StartLine>
-              <StartCol>0</StartCol>
-              <EndLine>256</EndLine>
-              <EndCol>0</EndCol>
-              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DeleteShape() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
-              <Auto>false</Auto>
-            </Smell>
-            <Smell>
-              <Id>37</Id>
-              <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>267 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
-              <Severity>Red</Severity>
-              <Weight>1</Weight>
-              <Project>DrawingApp</Project>
-              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>267</Line>
-              <StartLine>267</StartLine>
+              <Line>140</Line>
+              <StartLine>140</StartLine>
               <StartCol>22</StartCol>
-              <EndLine>267</EndLine>
+              <EndLine>140</EndLine>
               <EndCol>63</EndCol>
               <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>38</Id>
+              <Id>13</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>268 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <HashCode>190 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.HandleCanvasPointerReleased() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>190</Line>
+              <StartLine>189</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>190</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.HandleCanvasPointerReleased() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>195 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.PressedCancel() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>195</Line>
+              <StartLine>194</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>195</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.PressedCancel() 以及 DrawingApp.DrawingAppPresentationModel.GetIsPressed</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>15</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>273 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingApp</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>268</Line>
-              <StartLine>268</StartLine>
+              <Line>273</Line>
+              <StartLine>273</StartLine>
               <StartCol>20</StartCol>
-              <EndLine>268</EndLine>
+              <EndLine>273</EndLine>
+              <EndCol>79</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>16</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>276 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DeleteShape() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>276</Line>
+              <StartLine>275</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>276</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：4次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.DeleteShape() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>17</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>287 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>287</Line>
+              <StartLine>287</StartLine>
+              <StartCol>22</StartCol>
+              <EndLine>287</EndLine>
+              <EndCol>63</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>18</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>288 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>288</Line>
+              <StartLine>288</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>288</EndLine>
               <EndCol>253</EndCol>
               <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
               <Auto>false</Auto>
             </Smell>
             <Smell>
-              <Id>39</Id>
+              <Id>19</Id>
               <SmellType>Feature Envy(依戀情節)</SmellType>
-              <HashCode>271 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
+              <HashCode>291 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
               <Severity>Red</Severity>
               <Weight>1</Weight>
               <Project>DrawingApp</Project>
               <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
-              <Line>271</Line>
-              <StartLine>270</StartLine>
+              <Line>291</Line>
+              <StartLine>290</StartLine>
               <StartCol>0</StartCol>
-              <EndLine>271</EndLine>
+              <EndLine>291</EndLine>
               <EndCol>0</EndCol>
               <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
               <Auto>false</Auto>
@@ -1027,7 +707,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2751</ProductionLoc>
+          <ProductionLoc>2791</ProductionLoc>
           <TestLoc>1108</TestLoc>
         </CodeReview>
       </Data>
