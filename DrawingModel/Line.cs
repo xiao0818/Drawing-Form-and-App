@@ -91,6 +91,7 @@
         //Draw
         public void Draw(IGraphics graphics)
         {
+            SetPointToShapeCenter();
             graphics.DrawLine(_x1, _y1, _x2, _y2);
         }
 
@@ -125,10 +126,13 @@
         //SetPointToShapeCenter
         public void SetPointToShapeCenter()
         {
-            _x1 = (_shape1.X1 + _shape1.X2) / TWO;
-            _y1 = (_shape1.Y1 + _shape1.Y2) / TWO;
-            _x2 = (_shape2.X1 + _shape2.X2) / TWO;
-            _y2 = (_shape2.Y1 + _shape2.Y2) / TWO;
+            if (_shape1 != null && _shape2 != null)
+            {
+                _x1 = (_shape1.X1 + _shape1.X2) / TWO;
+                _y1 = (_shape1.Y1 + _shape1.Y2) / TWO;
+                _x2 = (_shape2.X1 + _shape2.X2) / TWO;
+                _y2 = (_shape2.Y1 + _shape2.Y2) / TWO;
+            }
         }
     }
 }

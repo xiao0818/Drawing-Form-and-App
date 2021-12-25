@@ -12,10 +12,7 @@
         {
             get
             {
-                if(_shape != null)
-                {
-                    _x1 = _shape.X1;
-                }
+                SetPointToReferenceShape();
                 return _x1;
             }
             set
@@ -29,10 +26,7 @@
         {
             get
             {
-                if (_shape != null)
-                {
-                    _y1 = _shape.Y1;
-                }
+                SetPointToReferenceShape();
                 return _y1;
             }
             set
@@ -46,10 +40,7 @@
         {
             get
             {
-                if (_shape != null)
-                {
-                    _x2 = _shape.X2;
-                }
+                SetPointToReferenceShape();
                 return _x2;
             }
             set
@@ -63,10 +54,7 @@
         {
             get
             {
-                if (_shape != null)
-                {
-                    _y2 = _shape.Y2;
-                }
+                SetPointToReferenceShape();
                 return _y2;
             }
             set
@@ -85,23 +73,14 @@
             set
             {
                 _shape = value;
-                _x1 = _shape.X1;
-                _y1 = _shape.Y1;
-                _x2 = _shape.X2;
-                _y2 = _shape.Y2;
+                SetPointToReferenceShape();
             }
         }
 
         //Draw
         public void Draw(IGraphics graphics)
         {
-            if (_shape != null)
-            {
-                _x1 = _shape.X1;
-                _y1 = _shape.Y1;
-                _x2 = _shape.X2;
-                _y2 = _shape.Y2;
-            }
+            SetPointToReferenceShape();
             graphics.DrawDotRectangle(TakeSmall(_x1, _x2), TakeSmall(_y1, _y2), TakeLarge(_x1, _x2), TakeLarge(_y1, _y2));
         }
 
@@ -147,6 +126,18 @@
                 return number1;
             }
             return number2;
+        }
+
+        //SetPointToReferenceShape
+        public void SetPointToReferenceShape()
+        {
+            if (_shape != null)
+            {
+                _x1 = _shape.X1;
+                _y1 = _shape.Y1;
+                _x2 = _shape.X2;
+                _y2 = _shape.Y2;
+            }
         }
     }
 }

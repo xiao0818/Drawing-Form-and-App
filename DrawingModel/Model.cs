@@ -11,8 +11,8 @@ namespace DrawingModel
         bool _isPressed = false;
         List<Shape> _shapes = new List<Shape>();
         Shape _hint;
-        ShapeFlag _shapeFlag = ShapeFlag.Null;
         Line _line;
+        ShapeFlag _shapeFlag = ShapeFlag.Null;
         ShapeFactory _shapeFactory = new ShapeFactory();
         CommandManager _commandManager = new CommandManager();
 
@@ -61,12 +61,21 @@ namespace DrawingModel
             }
         }
 
-        //GetHint
-        public Shape GetHint
+        //GetShapeHint
+        public Shape GetShapeHint
         {
             get
             {
                 return _hint;
+            }
+        }
+
+        //GetLineHint
+        public Shape GetLineHint
+        {
+            get
+            {
+                return _line;
             }
         }
 
@@ -80,7 +89,7 @@ namespace DrawingModel
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag, Shape shape1)
+        public void PressedPointer(double pointX, double pointY, Shape shape1)
         {
             _hint = null;
             _line = null;
@@ -97,7 +106,7 @@ namespace DrawingModel
                 }
                 else
                 {
-                    _hint = _shapeFactory.CreateShape(shapeFlag);
+                    _hint = _shapeFactory.CreateShape(_shapeFlag);
                     _hint.X1 = _firstPointX;
                     _hint.Y1 = _firstPointY;
                 }

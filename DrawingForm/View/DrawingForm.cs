@@ -170,12 +170,12 @@ namespace DrawingForm
                 {
                     if (IsInShape(e.X, e.Y) != null)
                     {
-                        _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, IsInShape(e.X, e.Y));
+                        _drawingFormPresentationModel.PressedPointer(e.X, e.Y, IsInShape(e.X, e.Y));
                     }
                 }
                 else
                 {
-                    _drawingFormPresentationModel.PressedPointer(e.X, e.Y, _shapeFlag, null);
+                    _drawingFormPresentationModel.PressedPointer(e.X, e.Y, null);
                 }
                 _isSelectMode = false;
                 ResetSelection();

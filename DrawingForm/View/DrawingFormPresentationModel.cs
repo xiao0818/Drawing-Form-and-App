@@ -110,9 +110,9 @@ namespace DrawingForm
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, ShapeFlag shapeFlag, Shape shape)
+        public void PressedPointer(double pointX, double pointY, Shape shape)
         {
-            _model.PressedPointer(pointX, pointY, shapeFlag, shape);
+            _model.PressedPointer(pointX, pointY, shape);
         }
 
         //PointerMoved
