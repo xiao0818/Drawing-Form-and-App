@@ -20,10 +20,7 @@ namespace DrawingModel.Tests
         {
             Rectangle rectangle = new Rectangle();
             line.Shape1 = rectangle;
-            rectangle.X1 = 10;
-            rectangle.Y1 = 20;
-            rectangle.X2 = 30;
-            rectangle.Y2 = 40;
+            SetShape1(rectangle);
             Assert.AreEqual(rectangle.X1, line.Shape1.X1);
             Assert.AreEqual(rectangle.Y1, line.Shape1.Y1);
             Assert.AreEqual(rectangle.X2, line.Shape1.X2);
@@ -37,10 +34,7 @@ namespace DrawingModel.Tests
         {
             Ellipse ellipse = new Ellipse();
             line.Shape2 = ellipse;
-            ellipse.X1 = 10;
-            ellipse.Y1 = 20;
-            ellipse.X2 = 30;
-            ellipse.Y2 = 40;
+            SetShape2(ellipse);
             Assert.AreEqual(ellipse.X1, line.Shape2.X1);
             Assert.AreEqual(ellipse.Y1, line.Shape2.Y1);
             Assert.AreEqual(ellipse.X2, line.Shape2.X2);
@@ -56,18 +50,12 @@ namespace DrawingModel.Tests
             line.Y1 = 20;
             line.X2 = 30;
             line.Y2 = 40;
-            Rectangle rectangle = new Rectangle();
-            line.Shape1 = rectangle;
-            rectangle.X1 = 400;
-            rectangle.Y1 = 300;
-            rectangle.X2 = 200;
-            rectangle.Y2 = 100;
-            Ellipse ellipse = new Ellipse();
-            line.Shape2 = ellipse;
-            ellipse.X1 = 100;
-            ellipse.Y1 = 200;
-            ellipse.X2 = 300;
-            ellipse.Y2 = 400;
+            Rectangle rectangle1 = new Rectangle();
+            line.Shape1 = rectangle1;
+            SetShape1(rectangle1);
+            Rectangle rectangle2 = new Rectangle();
+            line.Shape2 = rectangle2;
+            SetShape2(rectangle2);
             Shape lineCopy = line.Copy();
             Assert.AreEqual(line.X1, lineCopy.X1);
             Assert.AreEqual(line.Y1, lineCopy.Y1);
@@ -105,23 +93,35 @@ namespace DrawingModel.Tests
             line.Y1 = 20;
             line.X2 = 30;
             line.Y2 = 40;
-            Rectangle rectangle = new Rectangle();
-            line.Shape1 = rectangle;
-            rectangle.X1 = 400;
-            rectangle.Y1 = 300;
-            rectangle.X2 = 200;
-            rectangle.Y2 = 100;
-            Ellipse ellipse = new Ellipse();
-            line.Shape2 = ellipse;
-            ellipse.X1 = 100;
-            ellipse.Y1 = 200;
-            ellipse.X2 = 300;
-            ellipse.Y2 = 400;
+            Ellipse ellipse1 = new Ellipse();
+            line.Shape1 = ellipse1;
+            SetShape1(ellipse1);
+            Ellipse ellipse2 = new Ellipse();
+            line.Shape2 = ellipse2;
+            SetShape2(ellipse2);
             line.SetPointToShapeCenter();
-            Assert.AreEqual((rectangle.X1 + rectangle.X2) / 2, line.X1);
-            Assert.AreEqual((rectangle.Y1 + rectangle.Y2) / 2, line.Y1);
-            Assert.AreEqual((ellipse.X1 + ellipse.X2) / 2, line.X2);
-            Assert.AreEqual((ellipse.Y1 + ellipse.Y2) / 2, line.Y2);
+            Assert.AreEqual((ellipse1.X1 + ellipse1.X2) / 2, line.X1);
+            Assert.AreEqual((ellipse1.Y1 + ellipse1.Y2) / 2, line.Y1);
+            Assert.AreEqual((ellipse2.X1 + ellipse2.X2) / 2, line.X2);
+            Assert.AreEqual((ellipse2.Y1 + ellipse2.Y2) / 2, line.Y2);
+        }
+
+        //setShape1
+        private void SetShape1(Shape shape)
+        {
+            shape.X1 = 400;
+            shape.Y1 = 300;
+            shape.X2 = 200;
+            shape.Y2 = 100;
+        }
+
+        //setShape2
+        private void SetShape2(Shape shape)
+        {
+            shape.X1 = 100;
+            shape.Y1 = 200;
+            shape.X2 = 300;
+            shape.Y2 = 400;
         }
     }
 }

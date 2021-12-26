@@ -20,10 +20,7 @@ namespace DrawingModel.Tests
         {
             Rectangle rectangle = new Rectangle();
             dotRectangle.Shape = rectangle;
-            rectangle.X1 = 10;
-            rectangle.Y1 = 20;
-            rectangle.X2 = 30;
-            rectangle.Y2 = 40;
+            SetShape(rectangle);
             Assert.AreEqual(rectangle.X1, dotRectangle.X1);
             Assert.AreEqual(rectangle.Y1, dotRectangle.Y1);
             Assert.AreEqual(rectangle.X2, dotRectangle.X2);
@@ -49,21 +46,14 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void CopyTestForShapeReference()
         {
-            dotRectangle.X1 = 10;
-            dotRectangle.Y1 = 20;
-            dotRectangle.X2 = 30;
-            dotRectangle.Y2 = 40;
             Rectangle rectangle = new Rectangle();
             dotRectangle.Shape = rectangle;
-            rectangle.X1 = 100;
-            rectangle.Y1 = 200;
-            rectangle.X2 = 300;
-            rectangle.Y2 = 400;
+            SetShape(rectangle);
             Shape dotRectangleCopy = dotRectangle.Copy();
-            Assert.AreEqual(dotRectangle.X1, dotRectangleCopy.X1);
-            Assert.AreEqual(dotRectangle.Y1, dotRectangleCopy.Y1);
-            Assert.AreEqual(dotRectangle.X2, dotRectangleCopy.X2);
-            Assert.AreEqual(dotRectangle.Y2, dotRectangleCopy.Y2);
+            Assert.AreEqual(rectangle.X1, dotRectangleCopy.X1);
+            Assert.AreEqual(rectangle.Y1, dotRectangleCopy.Y1);
+            Assert.AreEqual(rectangle.X2, dotRectangleCopy.X2);
+            Assert.AreEqual(rectangle.Y2, dotRectangleCopy.Y2);
         }
 
         //GetShapeTest
@@ -107,6 +97,15 @@ namespace DrawingModel.Tests
             dotRectangle.X1 = 30;
             dotRectangle.X2 = 10;
             Assert.AreEqual(10, dotRectangle.TakeSmall(dotRectangle.X1, dotRectangle.X2));
+        }
+
+        //setShape
+        private void SetShape(Shape shape)
+        {
+            shape.X1 = 10;
+            shape.Y1 = 20;
+            shape.X2 = 30;
+            shape.Y2 = 40;
         }
     }
 }

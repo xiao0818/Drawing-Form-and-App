@@ -41,44 +41,26 @@ namespace DrawingForm
             _redo.Enabled = false;
             toolStrip.Items.Add(_redo);
             //
-            // prepare rectangle button
+            // prepare button
             //
             _rectangle.Text = "Rectangle";
-            _rectangle.AutoSize = false;
-            _rectangle.Height = HEIGHT;
-            _rectangle.Width = WIDTH;
-            _rectangle.Location = new Point(100, LOCATION_Y);
-            _rectangle.Click += HandleRectangleButtonClick;
-            Controls.Add(_rectangle);
-            //
-            // prepare ellipse button
-            //
             _ellipse.Text = "Ellipse";
-            _ellipse.AutoSize = false;
-            _ellipse.Height = HEIGHT;
-            _ellipse.Width = WIDTH;
-            _ellipse.Location = new Point(450, LOCATION_Y);
-            _ellipse.Click += HandleEllipseButtonClick;
-            Controls.Add(_ellipse);
-            //
-            // prepare line button
-            //
             _line.Text = "Line";
-            _line.AutoSize = false;
-            _line.Height = HEIGHT;
-            _line.Width = WIDTH;
-            _line.Location = new Point(800, LOCATION_Y);
-            _line.Click += HandleLineButtonClick;
-            Controls.Add(_line);
-            //
-            // prepare clear button
-            //
             _clear.Text = "Clear";
-            _clear.AutoSize = false;
-            _clear.Height = HEIGHT;
-            _clear.Width = WIDTH;
+            _rectangle.AutoSize = _ellipse.AutoSize = _line.AutoSize = _clear.AutoSize = false;
+            _rectangle.Height = _ellipse.Height = _line.Height = _clear.Height = HEIGHT;
+            _rectangle.Width = _ellipse.Width = _line.Width = _clear.Width = WIDTH;
+            _rectangle.Location = new Point(100, LOCATION_Y);
+            _ellipse.Location = new Point(450, LOCATION_Y);
+            _line.Location = new Point(800, LOCATION_Y);
             _clear.Location = new Point(1150, LOCATION_Y);
+            _rectangle.Click += HandleRectangleButtonClick;
+            _ellipse.Click += HandleEllipseButtonClick;
+            _line.Click += HandleLineButtonClick;
             _clear.Click += HandleClearButtonClick;
+            Controls.Add(_rectangle);
+            Controls.Add(_ellipse);
+            Controls.Add(_line);
             Controls.Add(_clear);
             //
             // prepare label

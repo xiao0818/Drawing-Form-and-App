@@ -56,15 +56,9 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.MovedPointer(30, 40);
             Assert.AreEqual(30, model.GetShapeHint.X2);
             Assert.AreEqual(40, model.GetShapeHint.Y2);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //MovedPointerTestForLine
@@ -73,15 +67,9 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Line;
             model.PressedPointer(10, 20, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.MovedPointer(30, 40);
             Assert.AreEqual(30, model.GetLineHint.X2);
             Assert.AreEqual(40, model.GetLineHint.Y2);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //MovedPointerTestFail
@@ -103,23 +91,13 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.ReleasedPointer(30, 40, null);
-            Assert.AreEqual(10, model.GetShapeHint.X1);
-            Assert.AreEqual(20, model.GetShapeHint.Y1);
-            Assert.AreEqual(30, model.GetShapeHint.X2);
-            Assert.AreEqual(40, model.GetShapeHint.Y2);
             Assert.AreEqual(1, model.GetShapes.Count);
             Assert.AreEqual(model.GetShapeHint.X1, model.GetShapes[0].X1);
             Assert.AreEqual(model.GetShapeHint.Y1, model.GetShapes[0].Y1);
             Assert.AreEqual(model.GetShapeHint.X2, model.GetShapes[0].X2);
             Assert.AreEqual(model.GetShapeHint.Y2, model.GetShapes[0].Y2);
             Assert.IsFalse(model.IsPressed);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //ReleasedPointerTestForLine
@@ -128,23 +106,13 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Line;
             model.PressedPointer(10, 20, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.ReleasedPointer(30, 40, null);
-            Assert.AreEqual(10, model.GetLineHint.X1);
-            Assert.AreEqual(20, model.GetLineHint.Y1);
-            Assert.AreEqual(30, model.GetLineHint.X2);
-            Assert.AreEqual(40, model.GetLineHint.Y2);
             Assert.AreEqual(1, model.GetShapes.Count);
             Assert.AreEqual(model.GetLineHint.X1, model.GetShapes[0].X1);
             Assert.AreEqual(model.GetLineHint.Y1, model.GetShapes[0].Y1);
             Assert.AreEqual(model.GetLineHint.X2, model.GetShapes[0].X2);
             Assert.AreEqual(model.GetLineHint.Y2, model.GetShapes[0].Y2);
             Assert.IsFalse(model.IsPressed);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //ReleasedPointerTestFail
@@ -167,15 +135,9 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.Clear();
             Assert.AreEqual(0, model.GetShapes.Count);
             Assert.IsFalse(model.IsPressed);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //DrawShapeTest
@@ -183,14 +145,8 @@ namespace DrawingModel.Tests
         public void DrawShapeTest()
         {
             Rectangle rectangle = new Rectangle();
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.DrawShape(rectangle);
             Assert.AreEqual(1, model.GetShapes.Count);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //ClearAllTest
@@ -201,14 +157,8 @@ namespace DrawingModel.Tests
             Ellipse ellipse = new Ellipse();
             model.DrawShape(rectangle);
             model.DrawShape(ellipse);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.ClearAll();
             Assert.AreEqual(0, model.GetShapes.Count);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //DeleteShapeTest
@@ -217,14 +167,8 @@ namespace DrawingModel.Tests
         {
             Rectangle rectangle = new Rectangle();
             model.DrawShape(rectangle);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.DeleteShape();
             Assert.AreEqual(0, model.GetShapes.Count);
-            Assert.IsTrue(isNotifyObserverWork);
         }
 
         //UndoTest
@@ -234,14 +178,8 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.Undo();
             Assert.AreEqual(0, model.GetShapes.Count);
-            Assert.IsTrue(isNotifyObserverWork);
             Assert.IsFalse(model.IsUndoEnabled);
             Assert.IsTrue(model.IsRedoEnabled);
         }
@@ -253,11 +191,6 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
-            bool isNotifyObserverWork = false;
-            model._modelChanged += () =>
-            {
-                isNotifyObserverWork = true;
-            };
             model.Undo();
             model.Redo();
             Assert.AreEqual(1, model.GetShapes.Count);
@@ -265,7 +198,6 @@ namespace DrawingModel.Tests
             Assert.AreEqual(model.GetShapeHint.Y1, model.GetShapes[0].Y1);
             Assert.AreEqual(model.GetShapeHint.X2, model.GetShapes[0].X2);
             Assert.AreEqual(model.GetShapeHint.Y2, model.GetShapes[0].Y2);
-            Assert.IsTrue(isNotifyObserverWork);
             Assert.IsTrue(model.IsUndoEnabled);
             Assert.IsFalse(model.IsRedoEnabled);
         }
