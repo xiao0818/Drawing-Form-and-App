@@ -190,8 +190,8 @@ namespace DrawingForm
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
-                Shape aShape = shapes[shapes.Count - index - 1];
-                if (((aShape.X1 <= e.X && aShape.X2 >= e.X) || (aShape.X1 >= e.X && aShape.X2 <= e.X)) && ((aShape.Y1 <= e.Y && aShape.Y2 >= e.Y) || (aShape.Y1 >= e.Y && aShape.Y2 <= e.Y)))
+                Shape aShape = GetShapeWithIndex(shapes, index);
+                if (((GetShapePointX1(aShape) <= e.X && GetShapePointX2(aShape) >= e.X) || (GetShapePointX1(aShape) >= e.X && GetShapePointX2(aShape) <= e.X)) && ((GetShapePointY1(aShape) <= e.Y && GetShapePointY2(aShape) >= e.Y) || (GetShapePointY1(aShape) >= e.Y && GetShapePointY2(aShape) <= e.Y)))
                 {
                     HandleCanvasPointerReleasedForSelectedTrue(aShape);
                     break;
@@ -239,12 +239,11 @@ namespace DrawingForm
                 if (isInShapes != null)
                 {
                     _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, isInShapes);
-                    _drawingFormPresentationModel.HandleCanvasPointerReleased();
                     _isSelectMode = true;
                 }
                 else
                 {
-                    _drawingFormPresentationModel.PressedCancel();
+                    PressCancel();
                 }
             }
         }
@@ -253,7 +252,6 @@ namespace DrawingForm
         private void HandleCanvasPointerReleasedForOtherShapes(MouseEventArgs e)
         {
             _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, null);
-            _drawingFormPresentationModel.HandleCanvasPointerReleased();
             _isSelectMode = true;
         }
 
@@ -332,9 +330,9 @@ namespace DrawingForm
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
+                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
                 {
-                    _drawingFormPresentationModel.DeleteShape();
+                    ClearSelection();
                     _label.Text = LABEL_DEFAULT;
                 }
             }
@@ -346,13 +344,55 @@ namespace DrawingForm
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
-                Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY))))
+                Shape aShape = GetShapeWithIndex(shapes, index);
+                if ((aShape.GetShape != ShapeFlag.Line) && (((GetShapePointX1(aShape) <= pointX && GetShapePointX2(aShape) >= pointX) || (GetShapePointX1(aShape) >= pointX && GetShapePointX2(aShape) <= pointX)) && ((GetShapePointY1(aShape) <= pointY && GetShapePointY2(aShape) >= pointY) || (GetShapePointY1(aShape) >= pointY && GetShapePointY2(aShape) <= pointY))))
                 {
                     return aShape;
                 }
             }
             return null;
+        }
+
+        //PressCancel
+        private void PressCancel()
+        {
+            _drawingFormPresentationModel.PressedCancel();
+        }
+
+        //ClearSelection
+        private void ClearSelection()
+        {
+            _drawingFormPresentationModel.DeleteShape();
+        }
+
+        //GetShapeWithIndex
+        private Shape GetShapeWithIndex(List<Shape> shapes, int index)
+        {
+            return shapes[shapes.Count - index - 1];
+        }
+
+        //GetShapePointX1
+        private double GetShapePointX1(Shape shape)
+        {
+            return shape.X1;
+        }
+
+        //GetShapePointY1
+        private double GetShapePointY1(Shape shape)
+        {
+            return shape.Y1;
+        }
+
+        //GetShapePointX2
+        private double GetShapePointX2(Shape shape)
+        {
+            return shape.X2;
+        }
+
+        //GetShapePointY2
+        private double GetShapePointY2(Shape shape)
+        {
+            return shape.Y2;
         }
     }
 }

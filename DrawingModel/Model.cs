@@ -194,27 +194,27 @@ namespace DrawingModel
         public void Draw(IGraphics graphics)
         {
             graphics.ClearAll();
-            DrawShapes(graphics);
-            DrawHint(graphics);
-        }
-
-        //DrawShapes
-        private void DrawShapes(IGraphics graphics)
-        {
             foreach (Shape aShape in _shapes)
             {
                 if (aShape.GetShape == ShapeFlag.Line)
                 {
-                    aShape.Draw(graphics);
+                    DrawShapes(aShape, graphics);
                 }
             }
             foreach (Shape aShape in _shapes)
             {
                 if (aShape.GetShape != ShapeFlag.Line)
                 {
-                    aShape.Draw(graphics);
+                    DrawShapes(aShape, graphics);
                 }
             }
+            DrawHint(graphics);
+        }
+
+        //DrawShapes
+        private void DrawShapes(Shape aShape, IGraphics graphics)
+        {
+            aShape.Draw(graphics);
         }
 
         //DrawHint

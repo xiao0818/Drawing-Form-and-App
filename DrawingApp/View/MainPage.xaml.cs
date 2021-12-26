@@ -138,8 +138,8 @@ namespace DrawingApp
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
-                Shape aShape = shapes[shapes.Count - index - 1];
-                if (((aShape.X1 <= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 >= e.GetCurrentPoint(_canvas).Position.X) || (aShape.X1 >= e.GetCurrentPoint(_canvas).Position.X && aShape.X2 <= e.GetCurrentPoint(_canvas).Position.X)) && ((aShape.Y1 <= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 >= e.GetCurrentPoint(_canvas).Position.Y) || (aShape.Y1 >= e.GetCurrentPoint(_canvas).Position.Y && aShape.Y2 <= e.GetCurrentPoint(_canvas).Position.Y)))
+                Shape aShape = GetShapeWithIndex(shapes, index);
+                if (((GetShapePointX1(aShape) <= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(aShape) >= e.GetCurrentPoint(_canvas).Position.X) || (GetShapePointX1(aShape) >= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(aShape) <= e.GetCurrentPoint(_canvas).Position.X)) && ((GetShapePointY1(aShape) <= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(aShape) >= e.GetCurrentPoint(_canvas).Position.Y) || (GetShapePointY1(aShape) >= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(aShape) <= e.GetCurrentPoint(_canvas).Position.Y)))
                 {
                     HandleCanvasPointerReleasedForSelectedTrue(aShape);
                     break;
@@ -187,12 +187,11 @@ namespace DrawingApp
                 if (isInShapes != null)
                 {
                     _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, isInShapes);
-                    _drawingAppPresentationModel.HandleCanvasPointerReleased();
                     _isSelectMode = true;
                 }
                 else
                 {
-                    _drawingAppPresentationModel.PressedCancel();
+                    PressCancel();
                 }
             }
         }
@@ -201,7 +200,6 @@ namespace DrawingApp
         private void HandleCanvasPointerReleasedForOtherShapes(PointerRoutedEventArgs e)
         {
             _drawingAppPresentationModel.ReleasedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y, null);
-            _drawingAppPresentationModel.HandleCanvasPointerReleased();
             _isSelectMode = true;
         }
 
@@ -271,9 +269,9 @@ namespace DrawingApp
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (shapes[shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
+                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
                 {
-                    _drawingAppPresentationModel.DeleteShape();
+                    ClearSelection();
                     _label.Text = LABEL_DEFAULT;
                 }
             }
@@ -285,13 +283,55 @@ namespace DrawingApp
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             for (int index = 0; index < shapes.Count; index++)
             {
-                Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY))))
+                Shape aShape = GetShapeWithIndex(shapes, index);
+                if ((aShape.GetShape != ShapeFlag.Line) && (((GetShapePointX1(aShape) <= pointX && GetShapePointX2(aShape) >= pointX) || (GetShapePointX1(aShape) >= pointX && GetShapePointX2(aShape) <= pointX)) && ((GetShapePointY1(aShape) <= pointY && GetShapePointY2(aShape) >= pointY) || (GetShapePointY1(aShape) >= pointY && GetShapePointY2(aShape) <= pointY))))
                 {
                     return aShape;
                 }
             }
             return null;
+        }
+
+        //PressCancel
+        private void PressCancel()
+        {
+            _drawingAppPresentationModel.PressedCancel();
+        }
+
+        //ClearSelection
+        private void ClearSelection()
+        {
+            _drawingAppPresentationModel.DeleteShape();
+        }
+
+        //GetShapeWithIndex
+        private Shape GetShapeWithIndex(List<Shape> shapes, int index)
+        {
+            return shapes[shapes.Count - index - 1];
+        }
+
+        //GetShapePointX1
+        private double GetShapePointX1(Shape shape)
+        {
+            return shape.X1;
+        }
+
+        //GetShapePointY1
+        private double GetShapePointY1(Shape shape)
+        {
+            return shape.Y1;
+        }
+
+        //GetShapePointX2
+        private double GetShapePointX2(Shape shape)
+        {
+            return shape.X2;
+        }
+
+        //GetShapePointY2
+        private double GetShapePointY2(Shape shape)
+        {
+            return shape.Y2;
         }
     }
 }

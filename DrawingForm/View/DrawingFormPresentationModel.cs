@@ -99,16 +99,6 @@ namespace DrawingForm
             _model.ShapeFlag = ShapeFlag.Null;
         }
 
-        //HandleCanvasPointerReleased
-        public void HandleCanvasPointerReleased()
-        {
-            _isRectangleButtonEnabled = true;
-            _isEllipseButtonEnabled = true;
-            _isLineButtonEnabled = true;
-            _shapeFlag = ShapeFlag.Null;
-            _model.ShapeFlag = ShapeFlag.Null;
-        }
-
         //PointerPressed
         public void PressedPointer(double pointX, double pointY, Shape shape)
         {
@@ -127,6 +117,11 @@ namespace DrawingForm
         {
             _model.ReleasedPointer(pointX, pointY, shape2);
             NotifyModelChanged();
+            _isRectangleButtonEnabled = true;
+            _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
+            _shapeFlag = ShapeFlag.Null;
+            _model.ShapeFlag = ShapeFlag.Null;
         }
 
         //Clear
