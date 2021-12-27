@@ -207,7 +207,7 @@ namespace DrawingForm
             _drawingFormPresentationModel.DrawShape(dotRectangle);
             if (aShape.GetShape == ShapeFlag.Line)
             {
-                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + Math.Round(aShape.X1, 0) + LABEL_COMMA + Math.Round(aShape.Y1, 0) + LABEL_COMMA + Math.Round(aShape.X2, 0) + LABEL_COMMA + Math.Round(aShape.Y2, 0) + LABEL_RIGHT_BRACKET;
+                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + aShape.X1 + LABEL_COMMA + aShape.Y1 + LABEL_COMMA + aShape.X2 + LABEL_COMMA + aShape.Y2 + LABEL_RIGHT_BRACKET;
             }
             else
             {
@@ -309,9 +309,9 @@ namespace DrawingForm
         {
             if (number1 > number2)
             {
-                return Math.Round(number1, 0);
+                return number1;
             }
-            return Math.Round(number2, 0);
+            return number2;
         }
 
         //TakeSmaller
@@ -319,9 +319,9 @@ namespace DrawingForm
         {
             if (number1 < number2)
             {
-                return Math.Round(number1, 0);
+                return number1;
             }
-            return Math.Round(number2, 0);
+            return number2;
         }
 
         //ReserSelection

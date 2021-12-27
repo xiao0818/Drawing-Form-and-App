@@ -12,7 +12,7 @@ namespace DrawingForm.Tests
         private string targetAppPath;
         private const string DRAWING_FORM = "DrawingForm";
         const int centerX = 674;
-        const int centerY = 363;
+        const int centerY = 364;
 
         //Initialize
         [TestInitialize]
