@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace DrawingModel
 {
@@ -15,6 +17,7 @@ namespace DrawingModel
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         ShapeFactory _shapeFactory = new ShapeFactory();
         CommandManager _commandManager = new CommandManager();
+        DotRectangle _target;
 
         //GetFirstPointX
         public double GetFirstPointX
@@ -297,6 +300,30 @@ namespace DrawingModel
             {
                 return _isPressed;
             }
+        }
+
+        ////DrawDotRectangle
+        public void DrawDotRectangle(DotRectangle shape)
+        {
+            _target = shape;
+            _shapes.Add(shape);
+            NotifyModelChanged();
+        }
+
+        //HandleMove
+        public void HandleMove(double XChange, double YChange)
+        {
+            _target.Shape.X1 += XChange;
+            _target.Shape.X2 += XChange;
+            _target.Shape.Y1 += YChange;
+            _target.Shape.Y2 += YChange;
+            NotifyModelChanged();
+        }
+
+        //GetDotRectangle
+        public DotRectangle GetDotRectangle()
+        {
+            return _target;
         }
 
         //NotifyModelChanged

@@ -23,6 +23,9 @@ namespace DrawingApp
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
+        double _movementX = 0;
+        double _movementY = 0;
+        bool _isMoving = false;
 
         public MainPage()
         {
@@ -86,7 +89,25 @@ namespace DrawingApp
         //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, PointerRoutedEventArgs e)
         {
-            if (_shapeFlag != ShapeFlag.Null)
+            List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
+            if (shapes.Count != 0 && _shapeFlag == ShapeFlag.Null)
+            {
+                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
+                {
+                    DotRectangle target = (DotRectangle)shapes[shapes.Count - 1];
+                    if (((GetShapePointX1(target) <= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(target) >= e.GetCurrentPoint(_canvas).Position.X) || (GetShapePointX1(target) >= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(target) <= e.GetCurrentPoint(_canvas).Position.X)) && ((GetShapePointY1(target) <= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(target) >= e.GetCurrentPoint(_canvas).Position.Y) || (GetShapePointY1(target) >= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(target) <= e.GetCurrentPoint(_canvas).Position.Y)))
+                    {
+                        _movementX = e.GetCurrentPoint(_canvas).Position.X;
+                        _movementY = e.GetCurrentPoint(_canvas).Position.Y;
+                        _isMoving = true;
+                    }
+                    else
+                    {
+                        ResetSelection();
+                    }
+                }
+            }
+            else if (_shapeFlag != ShapeFlag.Null)
             {
                 if (_shapeFlag == ShapeFlag.Line)
                 {
@@ -108,7 +129,15 @@ namespace DrawingApp
         //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, PointerRoutedEventArgs e)
         {
-            if (_shapeFlag != ShapeFlag.Null)
+            if (_isMoving == true)
+            {
+                _drawingAppPresentationModel.HandleMove(e.GetCurrentPoint(_canvas).Position.X - _movementX, e.GetCurrentPoint(_canvas).Position.Y - _movementY);
+                DotRectangle target = _drawingAppPresentationModel.GetDotRectangle();
+                _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(target.X1, target.X2) + LABEL_COMMA + TakeSmall(target.Y1, target.Y2) + LABEL_COMMA + TakeLarge(target.X1, target.X2) + LABEL_COMMA + TakeLarge(target.Y1, target.Y2) + LABEL_RIGHT_BRACKET;
+                _movementX = e.GetCurrentPoint(_canvas).Position.X;
+                _movementY = e.GetCurrentPoint(_canvas).Position.Y;
+            }
+            else if (_shapeFlag != ShapeFlag.Null)
             {
                 _drawingAppPresentationModel.MovedPointer(e.GetCurrentPoint(_canvas).Position.X, e.GetCurrentPoint(_canvas).Position.Y);
             }
@@ -118,13 +147,18 @@ namespace DrawingApp
         //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, PointerRoutedEventArgs e)
         {
-            this.ResetSelection();
-            if (_isSelectMode == true)
+            if (_isMoving == true)
             {
+                _isMoving = false;
+            }
+            else if (_isSelectMode == true)
+            {
+                this.ResetSelection();
                 HandleCanvasPointerReleasedForSelected(e);
             }
             else
             {
+                this.ResetSelection();
                 if (_shapeFlag != ShapeFlag.Null)
                 {
                     HandleCanvasPointerReleasedForShapes(e);
@@ -152,7 +186,7 @@ namespace DrawingApp
         {
             DotRectangle dotRectangle = new DotRectangle();
             dotRectangle.Shape = aShape;
-            _drawingAppPresentationModel.DrawShape(dotRectangle);
+            _drawingAppPresentationModel.DrawDotRectangle(dotRectangle);
             if (aShape.GetShape == ShapeFlag.Line)
             {
                 _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + Math.Round(aShape.X1, 0) + LABEL_COMMA + Math.Round(aShape.Y1, 0) + LABEL_COMMA + Math.Round(aShape.X2, 0) + LABEL_COMMA + Math.Round(aShape.Y2, 0) + LABEL_RIGHT_BRACKET;

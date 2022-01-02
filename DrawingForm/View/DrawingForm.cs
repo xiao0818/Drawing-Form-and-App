@@ -27,6 +27,9 @@ namespace DrawingForm
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
+        double _movementX = 0;
+        double _movementY = 0;
+        bool _isMoving = false;
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -138,7 +141,25 @@ namespace DrawingForm
         //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, MouseEventArgs e)
         {
-            if (_shapeFlag != ShapeFlag.Null)
+            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
+            if (shapes.Count != 0 && _shapeFlag == ShapeFlag.Null)
+            {
+                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
+                {
+                    DotRectangle target = _drawingFormPresentationModel.GetDotRectangle();
+                    if(((GetShapePointX1(target) <= e.X && GetShapePointX2(target) >= e.X) || (GetShapePointX1(target) >= e.X && GetShapePointX2(target) <= e.X)) && ((GetShapePointY1(target) <= e.Y && GetShapePointY2(target) >= e.Y) || (GetShapePointY1(target) >= e.Y && GetShapePointY2(target) <= e.Y)))
+                    {
+                        _movementX = e.X;
+                        _movementY = e.Y;
+                        _isMoving = true;
+                    }
+                    else
+                    {
+                        ResetSelection();
+                    }
+                }
+            }
+            else if (_shapeFlag != ShapeFlag.Null)
             {
                 if (_shapeFlag == ShapeFlag.Line)
                 {
@@ -160,7 +181,15 @@ namespace DrawingForm
         //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, MouseEventArgs e)
         {
-            if (_shapeFlag != ShapeFlag.Null)
+            if(_isMoving == true)
+            {
+                _drawingFormPresentationModel.HandleMove(e.X - _movementX, e.Y - _movementY);
+                DotRectangle target = _drawingFormPresentationModel.GetDotRectangle();
+                _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(target.X1, target.X2) + LABEL_COMMA + TakeSmall(target.Y1, target.Y2) + LABEL_COMMA + TakeLarge(target.X1, target.X2) + LABEL_COMMA + TakeLarge(target.Y1, target.Y2) + LABEL_RIGHT_BRACKET;
+                _movementX = e.X;
+                _movementY = e.Y;
+            }
+            else if (_shapeFlag != ShapeFlag.Null)
             {
                 _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
             }
@@ -170,13 +199,18 @@ namespace DrawingForm
         //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, MouseEventArgs e)
         {
-            this.ResetSelection();
-            if (_isSelectMode == true)
+            if (_isMoving == true)
             {
+                _isMoving = false;
+            }
+            else if (_isSelectMode == true)
+            {
+                this.ResetSelection();
                 HandleCanvasPointerReleasedForSelected(e);
             }
             else
             {
+                this.ResetSelection();
                 if (_shapeFlag != ShapeFlag.Null)
                 {
                     HandleCanvasPointerReleasedForShapes(e);
@@ -204,7 +238,7 @@ namespace DrawingForm
         {
             DotRectangle dotRectangle = new DotRectangle();
             dotRectangle.Shape = aShape;
-            _drawingFormPresentationModel.DrawShape(dotRectangle);
+            _drawingFormPresentationModel.DrawDotRectangle(dotRectangle);
             if (aShape.GetShape == ShapeFlag.Line)
             {
                 _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + aShape.X1 + LABEL_COMMA + aShape.Y1 + LABEL_COMMA + aShape.X2 + LABEL_COMMA + aShape.Y2 + LABEL_RIGHT_BRACKET;

@@ -137,10 +137,10 @@ namespace DrawingApp
             _model.Draw(graphics);
         }
 
-        //DrawShape
-        public void DrawShape(Shape shape)
+        //DrawDotRectangle
+        public void DrawDotRectangle(DotRectangle shape)
         {
-            _model.DrawShape(shape);
+            _model.DrawDotRectangle(shape);
         }
 
         //DeleteShape
@@ -192,6 +192,18 @@ namespace DrawingApp
             {
                 return _model.GetIsPressed;
             }
+        }
+
+        //HandleMove
+        public void HandleMove(double XChange, double YChange)
+        {
+            _model.HandleMove(XChange, YChange);
+        }
+
+        //GetDotRectangle
+        public DotRectangle GetDotRectangle()
+        {
+            return _model.GetDotRectangle();
         }
 
         //NotifyModelChanged
