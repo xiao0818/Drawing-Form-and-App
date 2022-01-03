@@ -206,6 +206,12 @@ namespace DrawingApp
             return _model.GetDotRectangle();
         }
 
+        //HandleMoveCommand
+        public void HandleMoveCommand(double XChange, double YChange)
+        {
+            _model.HandleMoveCommand(XChange, YChange);
+        }
+
         //NotifyModelChanged
         public void NotifyModelChanged()
         {

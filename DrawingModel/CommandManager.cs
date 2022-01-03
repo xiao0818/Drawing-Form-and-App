@@ -55,5 +55,12 @@ namespace DrawingModel
                 return _undo.Count != 0;
             }
         }
+
+        //AddCommand
+        public void AddCommand(ICommand command)
+        {
+            _undo.Push(command);
+            _redo.Clear();
+        }
     }
 }

@@ -30,6 +30,8 @@ namespace DrawingForm
         double _movementX = 0;
         double _movementY = 0;
         bool _isMoving = false;
+        double _moveInitialX = 0;
+        double _moveInitialY = 0;
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -149,6 +151,8 @@ namespace DrawingForm
                     DotRectangle target = _drawingFormPresentationModel.GetDotRectangle();
                     if(((GetShapePointX1(target) <= e.X && GetShapePointX2(target) >= e.X) || (GetShapePointX1(target) >= e.X && GetShapePointX2(target) <= e.X)) && ((GetShapePointY1(target) <= e.Y && GetShapePointY2(target) >= e.Y) || (GetShapePointY1(target) >= e.Y && GetShapePointY2(target) <= e.Y)))
                     {
+                        _moveInitialX = e.X;
+                        _moveInitialY = e.Y;
                         _movementX = e.X;
                         _movementY = e.Y;
                         _isMoving = true;
@@ -201,6 +205,7 @@ namespace DrawingForm
         {
             if (_isMoving == true)
             {
+                _drawingFormPresentationModel.HandleMoveCommand(e.X - _moveInitialX, e.Y - _moveInitialY);
                 _isMoving = false;
             }
             else if (_isSelectMode == true)

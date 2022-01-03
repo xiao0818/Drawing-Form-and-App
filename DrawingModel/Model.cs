@@ -326,6 +326,12 @@ namespace DrawingModel
             return _target;
         }
 
+        //HandleMoveCommand
+        public void HandleMoveCommand(double XChange, double YChange)
+        {
+            _commandManager.AddCommand(new MoveCommand(this, _target.Shape, XChange, YChange));
+        }
+
         //NotifyModelChanged
         public void NotifyModelChanged()
         {

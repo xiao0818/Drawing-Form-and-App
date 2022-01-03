@@ -26,6 +26,8 @@ namespace DrawingApp
         double _movementX = 0;
         double _movementY = 0;
         bool _isMoving = false;
+        double _moveInitialX = 0;
+        double _moveInitialY = 0;
 
         public MainPage()
         {
@@ -97,6 +99,8 @@ namespace DrawingApp
                     DotRectangle target = (DotRectangle)shapes[shapes.Count - 1];
                     if (((GetShapePointX1(target) <= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(target) >= e.GetCurrentPoint(_canvas).Position.X) || (GetShapePointX1(target) >= e.GetCurrentPoint(_canvas).Position.X && GetShapePointX2(target) <= e.GetCurrentPoint(_canvas).Position.X)) && ((GetShapePointY1(target) <= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(target) >= e.GetCurrentPoint(_canvas).Position.Y) || (GetShapePointY1(target) >= e.GetCurrentPoint(_canvas).Position.Y && GetShapePointY2(target) <= e.GetCurrentPoint(_canvas).Position.Y)))
                     {
+                        _moveInitialX = e.GetCurrentPoint(_canvas).Position.X;
+                        _moveInitialY = e.GetCurrentPoint(_canvas).Position.Y;
                         _movementX = e.GetCurrentPoint(_canvas).Position.X;
                         _movementY = e.GetCurrentPoint(_canvas).Position.Y;
                         _isMoving = true;
@@ -149,6 +153,7 @@ namespace DrawingApp
         {
             if (_isMoving == true)
             {
+                _drawingAppPresentationModel.HandleMoveCommand(e.GetCurrentPoint(_canvas).Position.X - _moveInitialX, e.GetCurrentPoint(_canvas).Position.Y - _moveInitialY);
                 _isMoving = false;
             }
             else if (_isSelectMode == true)
