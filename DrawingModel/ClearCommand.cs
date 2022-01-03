@@ -21,7 +21,7 @@ namespace DrawingModel
         //UnExecute
         public void ExecuteBack()
         {
-            _model.SetShapes = _shapes;
+            _model.SetShapes = new List<Shape>(_shapes);
         }
     }
 }
