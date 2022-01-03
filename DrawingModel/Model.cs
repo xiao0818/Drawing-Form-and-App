@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 
 namespace DrawingModel
 {
@@ -18,6 +16,12 @@ namespace DrawingModel
         ShapeFactory _shapeFactory = new ShapeFactory();
         CommandManager _commandManager = new CommandManager();
         DotRectangle _target;
+        bool _isSelectMode = true;
+        double _movementX = 0;
+        double _movementY = 0;
+        bool _isMoving = false;
+        double _moveInitialX = 0;
+        double _moveInitialY = 0;
 
         //GetFirstPointX
         public double GetFirstPointX
@@ -92,97 +96,160 @@ namespace DrawingModel
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, Shape shape1)
+        public void PressedPointer(double pointX, double pointY)
         {
             _hint = null;
             _line = null;
             if (pointX > 0 && pointY > 0)
             {
-                _firstPointX = pointX;
-                _firstPointY = pointY;
-                if (_shapeFlag == ShapeFlag.Line)
+                if (_shapes.Count != 0 && _shapeFlag == ShapeFlag.Null)
                 {
-                    PressedPointerForLine(pointX, pointY, shape1);
+                    if (_shapes[_shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
+                    {
+                        if (((_target.X1 <= pointX && _target.X2 >= pointX) || (_target.X1 >= pointX && _target.X2 <= pointX)) && ((_target.Y1 <= pointY && _target.Y2 >= pointY) || (_target.Y1 >= pointY && _target.Y2 <= pointY)))
+                        {
+                            _moveInitialX = pointX;
+                            _moveInitialY = pointY;
+                            _movementX = pointX;
+                            _movementY = pointY;
+                            _isMoving = true;
+                        }
+                        else
+                        {
+                            ResetSelection();
+                        }
+                    }
                 }
-                else
+                else if (_shapeFlag != ShapeFlag.Null)
                 {
-                    PressedPointerForShapes(pointX, pointY, shape1);
+                    _firstPointX = pointX;
+                    _firstPointY = pointY;
+                    if (_shapeFlag == ShapeFlag.Line)
+                    {
+                        if (IsInShape(pointX, pointY) != null)
+                        {
+                            _line = _shapeFactory.CreateLine;
+                            _line.X1 = _firstPointX;
+                            _line.Y1 = _firstPointY;
+                            _line.Shape1 = IsInShape(pointX, pointY);
+                            _isPressed = true;
+                        }
+                    }
+                    else
+                    {
+                        _hint = _shapeFactory.CreateShape(_shapeFlag);
+                        _hint.X1 = _firstPointX;
+                        _hint.Y1 = _firstPointY;
+                        _isPressed = true;
+                    }
+                    _isSelectMode = false;
+                    ResetSelection();
                 }
-                _isPressed = true;
             }
-        }
-
-        //PressedPointerForLine
-        private void PressedPointerForLine(double pointX, double pointY, Shape shape1)
-        {
-            _line = _shapeFactory.CreateLine;
-            _line.X1 = _firstPointX;
-            _line.Y1 = _firstPointY;
-            _line.Shape1 = shape1;
-        }
-
-        //PressedPointerForShapes
-        private void PressedPointerForShapes(double pointX, double pointY, Shape shape1)
-        {
-            _hint = _shapeFactory.CreateShape(_shapeFlag);
-            _hint.X1 = _firstPointX;
-            _hint.Y1 = _firstPointY;
         }
 
         //PointerMoved
         public void MovedPointer(double pointX, double pointY)
         {
-            if (_isPressed)
+            if (_isMoving == true)
             {
-                if (_shapeFlag == ShapeFlag.Line)
-                {
-                    _line.X2 = pointX;
-                    _line.Y2 = pointY;
-                }
-                else
-                {
-                    _hint.X2 = pointX;
-                    _hint.Y2 = pointY;
-                }
-                NotifyModelChanged();
+                HandleMove(pointX - _movementX, pointY - _movementY);
+                _movementX = pointX;
+                _movementY = pointY;
             }
+            else if (_shapeFlag != ShapeFlag.Null)
+            {
+                if (_isPressed == true)
+                {
+                    if (_shapeFlag == ShapeFlag.Line)
+                    {
+                        _line.X2 = pointX;
+                        _line.Y2 = pointY;
+                    }
+                    else
+                    {
+                        _hint.X2 = pointX;
+                        _hint.Y2 = pointY;
+                    }
+                }
+            }
+            NotifyModelChanged();
         }
 
         //PointerReleased
-        public void ReleasedPointer(double pointX, double pointY, Shape shape2)
+        public void ReleasedPointer(double pointX, double pointY)
         {
-            if (_isPressed)
+            if (_isMoving == true)
             {
-                _isPressed = false;
-                if (_shapeFlag == ShapeFlag.Line)
-                {
-                    ReleasedPointerForLine(pointX, pointY, shape2);
-                }
-                else
-                {
-                    ReleasedPointerForShapes(pointX, pointY, shape2);
-                }
-                NotifyModelChanged();
+                _commandManager.AddCommand(new MoveCommand(this, _target.Shape, pointX - _moveInitialX, pointY - _moveInitialY));
+                _isMoving = false;
             }
-        }
-
-        //ReleasedPointerForLine
-        private void ReleasedPointerForLine(double pointX, double pointY, Shape shape2)
-        {
-            _line.X2 = pointX;
-            _line.Y2 = pointY;
-            _line.Shape2 = shape2;
-            _line.SetPointToShapeCenter();
-            _commandManager.Execute(new DrawCommand(this, _line.Copy()));
-        }
-
-        //ReleasedPointerForShapes
-        private void ReleasedPointerForShapes(double pointX, double pointY, Shape shape2)
-        {
-            _hint.X2 = pointX;
-            _hint.Y2 = pointY;
-            _isPressed = false;
-            _commandManager.Execute(new DrawCommand(this, _hint.Copy()));
+            else if (_isSelectMode == true)
+            {
+                ResetSelection();
+                for (int index = 0; index < _shapes.Count; index++)
+                {
+                    Shape aShape = _shapes[_shapes.Count - index - 1];
+                    if (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
+                    {
+                        DotRectangle dotRectangle = new DotRectangle();
+                        dotRectangle.Shape = aShape;
+                        DrawDotRectangle(dotRectangle);
+                        break;
+                    }
+                }
+            }
+            else
+            {
+                ResetSelection();
+                if (_shapeFlag != ShapeFlag.Null)
+                {
+                    if (_shapeFlag == ShapeFlag.Line)
+                    {
+                        if (_isPressed == true)
+                        {
+                            Shape isInShapes = IsInShape(pointX, pointY);
+                            if (isInShapes != null)
+                            {
+                                if(_line.Shape1 != isInShapes)
+                                {
+                                    _isPressed = false;
+                                    _line.X2 = pointX;
+                                    _line.Y2 = pointY;
+                                    _line.Shape2 = isInShapes;
+                                    _line.SetPointToShapeCenter();
+                                    _commandManager.Execute(new DrawCommand(this, _line.Copy()));
+                                    _isSelectMode = true;
+                                    _shapeFlag = ShapeFlag.Null;
+                                    NotifyModelChanged();
+                                }
+                                else
+                                {
+                                    _isPressed = false;
+                                }
+                            }
+                            else
+                            {
+                                _isPressed = false;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        if (_isPressed)
+                        {
+                            _isPressed = false;
+                            _hint.X2 = pointX;
+                            _hint.Y2 = pointY;
+                            _isPressed = false;
+                            _commandManager.Execute(new DrawCommand(this, _hint.Copy()));
+                            NotifyModelChanged();
+                        }
+                        _shapeFlag = ShapeFlag.Null;
+                        _isSelectMode = true;
+                    }
+                }
+            }
         }
 
         //Clear
@@ -287,23 +354,8 @@ namespace DrawingModel
             }
         }
 
-        //PressedCancel
-        public void PressedCancel()
-        {
-            _isPressed = false;
-        }
-
-        //GetIsPressed
-        public bool GetIsPressed
-        {
-            get
-            {
-                return _isPressed;
-            }
-        }
-
-        ////DrawDotRectangle
-        public void DrawDotRectangle(DotRectangle shape)
+        //DrawDotRectangle
+        private void DrawDotRectangle(DotRectangle shape)
         {
             _target = shape;
             _shapes.Add(shape);
@@ -311,7 +363,7 @@ namespace DrawingModel
         }
 
         //HandleMove
-        public void HandleMove(double XChange, double YChange)
+        private void HandleMove(double XChange, double YChange)
         {
             _target.Shape.X1 += XChange;
             _target.Shape.X2 += XChange;
@@ -320,16 +372,54 @@ namespace DrawingModel
             NotifyModelChanged();
         }
 
-        //GetDotRectangle
-        public DotRectangle GetDotRectangle()
+        //ToDrawMode
+        public void ToDrawMode()
+        {
+            _isSelectMode = false;
+        }
+
+        //ToSelectMode
+        public void ToSelectMode()
+        {
+            _isSelectMode = true;
+        }
+
+        //IsInShape
+        private Shape IsInShape(double pointX, double pointY)
+        {
+            for (int index = 0; index < _shapes.Count; index++)
+            {
+                Shape aShape = _shapes[_shapes.Count - index - 1];
+                if ((aShape.GetShape != ShapeFlag.Line) && (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY))))
+                {
+                    return aShape;
+                }
+            }
+            return null;
+        }
+
+        //ReserSelection
+        private void ResetSelection()
+        {
+            if (_shapes.Count != 0)
+            {
+                if (_shapes[_shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
+                {
+                    DeleteShape();
+                }
+            }
+        }
+
+        //GetTarget
+        public DotRectangle GetTarget()
         {
             return _target;
         }
 
-        //HandleMoveCommand
-        public void HandleMoveCommand(double XChange, double YChange)
+        //GetIsSelectMode
+        public bool GetIsSelectMode()
         {
-            _commandManager.AddCommand(new MoveCommand(this, _target.Shape, XChange, YChange));
+            return _isSelectMode;
         }
 
         //NotifyModelChanged

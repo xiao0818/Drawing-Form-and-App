@@ -10,7 +10,6 @@ namespace DrawingApp
         bool _isRectangleButtonEnabled = true;
         bool _isEllipseButtonEnabled = true;
         bool _isLineButtonEnabled = true;
-        ShapeFlag _shapeFlag = ShapeFlag.Null;
         Model _model;
         public DrawingAppPresentationModel(Model model)
         {
@@ -42,14 +41,6 @@ namespace DrawingApp
             }
         }
 
-        public ShapeFlag GetShapeFlag
-        {
-            get
-            {
-                return _shapeFlag;
-            }
-        }
-
         //GetShapes
         public List<Shape> GetShapes
         {
@@ -65,8 +56,8 @@ namespace DrawingApp
             _isRectangleButtonEnabled = false;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
-            _shapeFlag = ShapeFlag.Rectangle;
             _model.ShapeFlag = ShapeFlag.Rectangle;
+            _model.ToDrawMode();
         }
 
         //HandleEllipseButtonClick
@@ -75,8 +66,8 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = false;
             _isLineButtonEnabled = true;
-            _shapeFlag = ShapeFlag.Ellipse;
             _model.ShapeFlag = ShapeFlag.Ellipse;
+            _model.ToDrawMode();
         }
 
         //HandleLineButtonClick
@@ -85,8 +76,8 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = false;
-            _shapeFlag = ShapeFlag.Line;
             _model.ShapeFlag = ShapeFlag.Line;
+            _model.ToDrawMode();
         }
 
         //HandleClearButtonClick
@@ -95,14 +86,14 @@ namespace DrawingApp
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
-            _shapeFlag = ShapeFlag.Null;
             _model.ShapeFlag = ShapeFlag.Null;
+            _model.ToSelectMode();
         }
 
         //PointerPressed
-        public void PressedPointer(double pointX, double pointY, Shape shape)
+        public void PressedPointer(double pointX, double pointY)
         {
-            _model.PressedPointer(pointX, pointY, shape);
+            _model.PressedPointer(pointX, pointY);
         }
 
         //PointerMoved
@@ -113,15 +104,13 @@ namespace DrawingApp
         }
 
         //PointerReleased
-        public void ReleasedPointer(double pointX, double pointY, Shape shape2)
+        public void ReleasedPointer(double pointX, double pointY)
         {
-            _model.ReleasedPointer(pointX, pointY, shape2);
-            NotifyModelChanged();
+            _model.ReleasedPointer(pointX, pointY);
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
-            _isLineButtonEnabled = true;
-            _shapeFlag = ShapeFlag.Null;
-            _model.ShapeFlag = ShapeFlag.Null;
+            _isLineButtonEnabled = _model.GetIsSelectMode();
+            NotifyModelChanged();
         }
 
         //Clear
@@ -135,12 +124,6 @@ namespace DrawingApp
         public void Draw(IGraphics graphics)
         {
             _model.Draw(graphics);
-        }
-
-        //DrawDotRectangle
-        public void DrawDotRectangle(DotRectangle shape)
-        {
-            _model.DrawDotRectangle(shape);
         }
 
         //DeleteShape
@@ -179,37 +162,10 @@ namespace DrawingApp
             }
         }
 
-        //PressedCancel
-        public void PressedCancel()
+        //GetTarget
+        public DotRectangle GetTarget()
         {
-            _model.PressedCancel();
-        }
-
-        //GetIsPressed
-        public bool GetIsPressed
-        {
-            get
-            {
-                return _model.GetIsPressed;
-            }
-        }
-
-        //HandleMove
-        public void HandleMove(double XChange, double YChange)
-        {
-            _model.HandleMove(XChange, YChange);
-        }
-
-        //GetDotRectangle
-        public DotRectangle GetDotRectangle()
-        {
-            return _model.GetDotRectangle();
-        }
-
-        //HandleMoveCommand
-        public void HandleMoveCommand(double XChange, double YChange)
-        {
-            _model.HandleMoveCommand(XChange, YChange);
+            return _model.GetTarget();
         }
 
         //NotifyModelChanged

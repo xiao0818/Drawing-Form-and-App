@@ -1,5 +1,4 @@
 ﻿using DrawingModel;
-using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
@@ -17,8 +16,6 @@ namespace DrawingForm
         Label _label = new Label();
         ToolStripButton _undo;
         ToolStripButton _redo;
-        bool _isSelectMode = true;
-        ShapeFlag _shapeFlag = ShapeFlag.Null;
         const int HEIGHT = 40;
         const int WIDTH = 100;
         const int LOCATION_Y = 30;
@@ -27,11 +24,6 @@ namespace DrawingForm
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
-        double _movementX = 0;
-        double _movementY = 0;
-        bool _isMoving = false;
-        double _moveInitialX = 0;
-        double _moveInitialY = 0;
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -94,6 +86,7 @@ namespace DrawingForm
             //
             _drawingFormPresentationModel = drawingFormPresentationModel;
             _drawingFormPresentationModel._drawingFormPresentationModelChanged += HandleModelChanged;
+            _drawingFormPresentationModel._drawingFormPresentationModelChanged += UpdateLabel;
             //
             // Use Double buffer
             //
@@ -107,7 +100,6 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleRectangleButtonClick();
             RefreshButton();
-            _isSelectMode = false;
             ResetSelection();
         }
 
@@ -116,7 +108,6 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleEllipseButtonClick();
             RefreshButton();
-            _isSelectMode = false;
             ResetSelection();
         }
 
@@ -125,173 +116,39 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleLineButtonClick();
             RefreshButton();
-            _isSelectMode = false;
             ResetSelection();
         }
 
         //HandleClearButtonClick
         public void HandleClearButtonClick(object sender, System.EventArgs e)
         {
-            ResetSelection();
             _drawingFormPresentationModel.Clear();
             _drawingFormPresentationModel.HandleClearButtonClick();
             RefreshButton();
-            _isSelectMode = true;
+            ResetSelection();
             RefreshUserInterface();
         }
 
         //HandleCanvasPointerPressed
         public void HandleCanvasPointerPressed(object sender, MouseEventArgs e)
         {
-            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
-            if (shapes.Count != 0 && _shapeFlag == ShapeFlag.Null)
-            {
-                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
-                {
-                    DotRectangle target = _drawingFormPresentationModel.GetDotRectangle();
-                    if(((GetShapePointX1(target) <= e.X && GetShapePointX2(target) >= e.X) || (GetShapePointX1(target) >= e.X && GetShapePointX2(target) <= e.X)) && ((GetShapePointY1(target) <= e.Y && GetShapePointY2(target) >= e.Y) || (GetShapePointY1(target) >= e.Y && GetShapePointY2(target) <= e.Y)))
-                    {
-                        _moveInitialX = e.X;
-                        _moveInitialY = e.Y;
-                        _movementX = e.X;
-                        _movementY = e.Y;
-                        _isMoving = true;
-                    }
-                    else
-                    {
-                        ResetSelection();
-                    }
-                }
-            }
-            else if (_shapeFlag != ShapeFlag.Null)
-            {
-                if (_shapeFlag == ShapeFlag.Line)
-                {
-                    if (IsInShape(e.X, e.Y) != null)
-                    {
-                        _drawingFormPresentationModel.PressedPointer(e.X, e.Y, IsInShape(e.X, e.Y));
-                    }
-                }
-                else
-                {
-                    _drawingFormPresentationModel.PressedPointer(e.X, e.Y, null);
-                }
-                _isSelectMode = false;
-                ResetSelection();
-            }
+            _drawingFormPresentationModel.PressedPointer(e.X, e.Y);
             RefreshUserInterface();
         }
 
         //HandleCanvasPointerMoved
         public void HandleCanvasPointerMoved(object sender, MouseEventArgs e)
         {
-            if(_isMoving == true)
-            {
-                _drawingFormPresentationModel.HandleMove(e.X - _movementX, e.Y - _movementY);
-                DotRectangle target = _drawingFormPresentationModel.GetDotRectangle();
-                _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(target.X1, target.X2) + LABEL_COMMA + TakeSmall(target.Y1, target.Y2) + LABEL_COMMA + TakeLarge(target.X1, target.X2) + LABEL_COMMA + TakeLarge(target.Y1, target.Y2) + LABEL_RIGHT_BRACKET;
-                _movementX = e.X;
-                _movementY = e.Y;
-            }
-            else if (_shapeFlag != ShapeFlag.Null)
-            {
-                _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
-            }
+            _drawingFormPresentationModel.MovedPointer(e.X, e.Y);
             RefreshUserInterface();
         }
 
         //HandleCanvasPointerReleased
         public void HandleCanvasPointerReleased(object sender, MouseEventArgs e)
         {
-            if (_isMoving == true)
-            {
-                _drawingFormPresentationModel.HandleMoveCommand(e.X - _moveInitialX, e.Y - _moveInitialY);
-                _isMoving = false;
-            }
-            else if (_isSelectMode == true)
-            {
-                this.ResetSelection();
-                HandleCanvasPointerReleasedForSelected(e);
-            }
-            else
-            {
-                this.ResetSelection();
-                if (_shapeFlag != ShapeFlag.Null)
-                {
-                    HandleCanvasPointerReleasedForShapes(e);
-                }
-            }
-        }
-
-        //HandleCanvasPointerReleasedForSelected
-        private void HandleCanvasPointerReleasedForSelected(MouseEventArgs e)
-        {
-            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
-            for (int index = 0; index < shapes.Count; index++)
-            {
-                Shape aShape = GetShapeWithIndex(shapes, index);
-                if (((GetShapePointX1(aShape) <= e.X && GetShapePointX2(aShape) >= e.X) || (GetShapePointX1(aShape) >= e.X && GetShapePointX2(aShape) <= e.X)) && ((GetShapePointY1(aShape) <= e.Y && GetShapePointY2(aShape) >= e.Y) || (GetShapePointY1(aShape) >= e.Y && GetShapePointY2(aShape) <= e.Y)))
-                {
-                    HandleCanvasPointerReleasedForSelectedTrue(aShape);
-                    break;
-                }
-            }
-        }
-
-        //HandleCanvasPointerReleasedForSelectedTrue
-        private void HandleCanvasPointerReleasedForSelectedTrue(Shape aShape)
-        {
-            DotRectangle dotRectangle = new DotRectangle();
-            dotRectangle.Shape = aShape;
-            _drawingFormPresentationModel.DrawDotRectangle(dotRectangle);
-            if (aShape.GetShape == ShapeFlag.Line)
-            {
-                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + aShape.X1 + LABEL_COMMA + aShape.Y1 + LABEL_COMMA + aShape.X2 + LABEL_COMMA + aShape.Y2 + LABEL_RIGHT_BRACKET;
-            }
-            else
-            {
-                _label.Text = LABEL_HEAD + aShape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(aShape.X1, aShape.X2) + LABEL_COMMA + TakeSmall(aShape.Y1, aShape.Y2) + LABEL_COMMA + TakeLarge(aShape.X1, aShape.X2) + LABEL_COMMA + TakeLarge(aShape.Y1, aShape.Y2) + LABEL_RIGHT_BRACKET;
-            }
-        }
-
-        //HandleCanvasPointerReleasedForShapes
-        private void HandleCanvasPointerReleasedForShapes(MouseEventArgs e)
-        {
-            if (_shapeFlag == ShapeFlag.Line)
-            {
-                HandleCanvasPointerReleasedForLine(e);
-            }
-            else
-            {
-                HandleCanvasPointerReleasedForOtherShapes(e);
-            }
+            _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y);
             RefreshButton();
             RefreshUserInterface();
-        }
-
-        //HandleCanvasPointerReleasedForLine
-        private void HandleCanvasPointerReleasedForLine(MouseEventArgs e)
-        {
-            if (_drawingFormPresentationModel.GetIsPressed == true)
-            {
-                Shape isInShapes = IsInShape(e.X, e.Y);
-                if (isInShapes != null)
-                {
-                    _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, isInShapes);
-                    _isSelectMode = true;
-                }
-                else
-                {
-                    PressCancel();
-                }
-            }
-        }
-
-        //HandleCanvasPointerReleasedForOtherShapes
-        private void HandleCanvasPointerReleasedForOtherShapes(MouseEventArgs e)
-        {
-            _drawingFormPresentationModel.ReleasedPointer(e.X, e.Y, null);
-            _isSelectMode = true;
         }
 
         //HandleCanvasPaint
@@ -312,7 +169,7 @@ namespace DrawingForm
         //UndoHandler
         void UndoHandler(object sender, System.EventArgs e)
         {
-            this.ResetSelection();
+            ResetSelection();
             _drawingFormPresentationModel.Undo();
             RefreshUserInterface();
         }
@@ -320,7 +177,7 @@ namespace DrawingForm
         //RedoHandler
         void RedoHandler(object sender, System.EventArgs e)
         {
-            this.ResetSelection();
+            ResetSelection();
             _drawingFormPresentationModel.Redo();
             RefreshUserInterface();
         }
@@ -331,7 +188,6 @@ namespace DrawingForm
             _rectangle.Enabled = _drawingFormPresentationModel.IsRectangleButtonEnable;
             _ellipse.Enabled = _drawingFormPresentationModel.IsEllipseButtonEnable;
             _line.Enabled = _drawingFormPresentationModel.IsLineButtonEnable;
-            _shapeFlag = _drawingFormPresentationModel.GetShapeFlag;
         }
 
         //RefreshUserInterface
@@ -377,27 +233,6 @@ namespace DrawingForm
             }
         }
 
-        //IsInShape
-        public Shape IsInShape(double pointX, double pointY)
-        {
-            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
-            for (int index = 0; index < shapes.Count; index++)
-            {
-                Shape aShape = GetShapeWithIndex(shapes, index);
-                if ((aShape.GetShape != ShapeFlag.Line) && (((GetShapePointX1(aShape) <= pointX && GetShapePointX2(aShape) >= pointX) || (GetShapePointX1(aShape) >= pointX && GetShapePointX2(aShape) <= pointX)) && ((GetShapePointY1(aShape) <= pointY && GetShapePointY2(aShape) >= pointY) || (GetShapePointY1(aShape) >= pointY && GetShapePointY2(aShape) <= pointY))))
-                {
-                    return aShape;
-                }
-            }
-            return null;
-        }
-
-        //PressCancel
-        private void PressCancel()
-        {
-            _drawingFormPresentationModel.PressedCancel();
-        }
-
         //ClearSelection
         private void ClearSelection()
         {
@@ -432,6 +267,28 @@ namespace DrawingForm
         private double GetShapePointY2(Shape shape)
         {
             return shape.Y2;
+        }
+
+        //UpdateLabel
+        public void UpdateLabel()
+        {
+            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
+            if (shapes.Count != 0)
+            {
+                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
+                {
+                    DotRectangle target = _drawingFormPresentationModel.GetTarget();
+                    _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
+                }
+                else
+                {
+                    _label.Text = LABEL_DEFAULT;
+                }
+            }
+            else
+            {
+                _label.Text = LABEL_DEFAULT;
+            }
         }
     }
 }
