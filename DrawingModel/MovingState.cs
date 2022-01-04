@@ -59,12 +59,12 @@
         }
 
         //HandleMove
-        private void HandleMove(double XChange, double YChange)
+        private void HandleMove(double xChange, double yChange)
         {
-            _target.Shape.X1 += XChange;
-            _target.Shape.X2 += XChange;
-            _target.Shape.Y1 += YChange;
-            _target.Shape.Y2 += YChange;
+            _target.Shape.X1 += xChange;
+            _target.Shape.X2 += xChange;
+            _target.Shape.Y1 += yChange;
+            _target.Shape.Y2 += yChange;
         }
 
         //GetHint

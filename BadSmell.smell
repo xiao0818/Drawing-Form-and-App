@@ -185,7 +185,440 @@
     <div class="data">
       <Data id="ReviewPalData">
         <CodeReview xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-          <Reviews />
+          <Reviews>
+            <Smell>
+              <Id>1</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingLineState.GetHint</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>DrawingLineState.cs</File>
+              <Line>64</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>2</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingLineState.GetStateFlag</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>DrawingLineState.cs</File>
+              <Line>70</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>3</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingState.GetHint</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>DrawingState.cs</File>
+              <Line>56</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>4</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingState.GetStateFlag</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>DrawingState.cs</File>
+              <Line>62</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>5</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.Model.GetTarget</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>188</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>6</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.Model.GetIsSelectMode</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>194</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>7</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.Model.GetStateFlag</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>Model.cs</File>
+              <Line>236</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>8</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.MovingState.GetHint</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>MovingState.cs</File>
+              <Line>71</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>9</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.MovingState.GetStateFlag</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>MovingState.cs</File>
+              <Line>77</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>10</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.PointerState.GetHint</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>PointerState.cs</File>
+              <Line>45</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>11</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.PointerState.GetStateFlag</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>PointerState.cs</File>
+              <Line>51</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>12</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingFormPresentationModel.GetTarget</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>DrawingFormPresentationModel.cs</File>
+              <Line>176</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>13</Id>
+              <SmellType>ICS(函式-5)</SmellType>
+              <HashCode>Method5.DrawingAppPresentationModel.GetTarget</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>DrawingAppPresentationModel.cs</File>
+              <Line>176</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>ICS(函式-5) Getter 與 setter 一律使用 property</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>14</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>129 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>XamlTypeInfo.g.cs</File>
+              <Line>129</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByType(System.Type)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>15</Id>
+              <SmellType>Lack of comments(缺乏註解)</SmellType>
+              <HashCode>134 DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>XamlTypeInfo.g.cs</File>
+              <Line>134</Line>
+              <StartLine>0</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>0</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>DrawingApp.DrawingApp_XamlTypeInfo.XamlTypeInfoProvider.GetXamlTypeByName(string)</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>16</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>31 目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\PointerState.cs</File>
+              <Line>31</Line>
+              <StartLine>31</StartLine>
+              <StartCol>22</StartCol>
+              <EndLine>31</EndLine>
+              <EndCol>63</EndCol>
+              <Comment>目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>17</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>32 目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\PointerState.cs</File>
+              <Line>32</Line>
+              <StartLine>32</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>32</EndLine>
+              <EndCol>212</EndCol>
+              <Comment>目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>18</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>36 目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\PointerState.cs</File>
+              <Line>36</Line>
+              <StartLine>35</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>36</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>19</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>37 目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Model.DrawDotRectangle(DrawingModel.DotRectangle) 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\PointerState.cs</File>
+              <Line>37</Line>
+              <StartLine>36</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>37</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Model.DrawDotRectangle(DrawingModel.DotRectangle) 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>20</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>38 目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Model.SetMovingState() 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\PointerState.cs</File>
+              <Line>38</Line>
+              <StartLine>37</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>38</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.PointerState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Model.SetMovingState() 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>21</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>20 目前物件 DrawingModel.MovingState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.DotRectangle，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.DotRectangle.X1 以及 DrawingModel.DotRectangle.X2 以及 DrawingModel.DotRectangle.X1 以及 DrawingModel.DotRectangle.X2 以及 DrawingModel.DotRectangle.Y1 以及 DrawingModel.DotRectangle.Y2 以及 DrawingModel.DotRectangle.Y1 以及 DrawingModel.DotRectangle.Y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\MovingState.cs</File>
+              <Line>20</Line>
+              <StartLine>20</StartLine>
+              <StartCol>16</StartCol>
+              <EndLine>20</EndLine>
+              <EndCol>216</EndCol>
+              <Comment>目前物件 DrawingModel.MovingState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.DotRectangle，使用物件方法或屬性次數：8次，使用到的方法或屬性為以下：DrawingModel.DotRectangle.X1 以及 DrawingModel.DotRectangle.X2 以及 DrawingModel.DotRectangle.X1 以及 DrawingModel.DotRectangle.X2 以及 DrawingModel.DotRectangle.Y1 以及 DrawingModel.DotRectangle.Y2 以及 DrawingModel.DotRectangle.Y1 以及 DrawingModel.DotRectangle.Y2</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>22</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>52 目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Line，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Line.Copy() 以及 DrawingModel.Line.Shape1</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\DrawingLineState.cs</File>
+              <Line>52</Line>
+              <StartLine>51</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>52</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Line，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingModel.Line.Copy() 以及 DrawingModel.Line.Shape1</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>23</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>80 目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\DrawingLineState.cs</File>
+              <Line>80</Line>
+              <StartLine>80</StartLine>
+              <StartCol>22</StartCol>
+              <EndLine>80</EndLine>
+              <EndCol>63</EndCol>
+              <Comment>目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>24</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>81 目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\DrawingLineState.cs</File>
+              <Line>81</Line>
+              <StartLine>81</StartLine>
+              <StartCol>20</StartCol>
+              <EndLine>81</EndLine>
+              <EndCol>251</EndCol>
+              <Comment>目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Shape，使用物件方法或屬性次數：9次，使用到的方法或屬性為以下：DrawingModel.Shape.GetShape 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.X1 以及 DrawingModel.Shape.X2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2 以及 DrawingModel.Shape.Y1 以及 DrawingModel.Shape.Y2</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>25</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>84 目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</HashCode>
+              <Severity>Red</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingModel</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingModel\DrawingLineState.cs</File>
+              <Line>84</Line>
+              <StartLine>83</StartLine>
+              <StartCol>0</StartCol>
+              <EndLine>84</EndLine>
+              <EndCol>0</EndCol>
+              <Comment>目前物件 DrawingModel.DrawingLineState，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingModel.Model，使用物件方法或屬性次數：3次，使用到的方法或屬性為以下：DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes 以及 DrawingModel.Model.Shapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>26</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>253 目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetTarget() 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingForm</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingForm\View\DrawingForm.cs</File>
+              <Line>253</Line>
+              <StartLine>253</StartLine>
+              <StartCol>33</StartCol>
+              <EndLine>253</EndLine>
+              <EndCol>83</EndCol>
+              <Comment>目前物件 DrawingForm.DrawingForm，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingForm.DrawingFormPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingForm.DrawingFormPresentationModel.GetTarget() 以及 DrawingForm.DrawingFormPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+            <Smell>
+              <Id>27</Id>
+              <SmellType>Feature Envy(依戀情節)</SmellType>
+              <HashCode>192 目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetTarget() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</HashCode>
+              <Severity>Warning</Severity>
+              <Weight>1</Weight>
+              <Project>DrawingApp</Project>
+              <File>D:\Desktop\110-1\WindowsProgramming\Drawing - Form and App\DrawingApp\View\MainPage.xaml.cs</File>
+              <Line>192</Line>
+              <StartLine>192</StartLine>
+              <StartCol>33</StartCol>
+              <EndLine>192</EndLine>
+              <EndCol>82</EndCol>
+              <Comment>目前物件 DrawingApp.MainPage，使用物件的方法或屬性次數：0次，Envy到對象物件 DrawingApp.DrawingAppPresentationModel，使用物件方法或屬性次數：2次，使用到的方法或屬性為以下：DrawingApp.DrawingAppPresentationModel.GetTarget() 以及 DrawingApp.DrawingAppPresentationModel.GetShapes</Comment>
+              <Auto>false</Auto>
+            </Smell>
+          </Reviews>
           <HashCodeIgnoreList />
           <HashCodeRequestIgnoreList />
           <AnalysisFileManager>
@@ -211,6 +644,16 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>DrawingLineState.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>DrawingState.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Ellipse.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
@@ -226,12 +669,32 @@
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>IState.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>Line.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Model.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>MoveCommand.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>MovingState.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>PointerState.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -257,6 +720,11 @@
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>ShapeFlag.cs</RelativePath>
+                <ProjectName>DrawingModel</ProjectName>
+                <AnalysisFileType>Model</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>StateFlag.cs</RelativePath>
                 <ProjectName>DrawingModel</ProjectName>
                 <AnalysisFileType>Model</AnalysisFileType>
               </AnalysisFile>
@@ -402,7 +870,7 @@
               </AnalysisFile>
             </AnalysisFiles>
           </AnalysisFileManager>
-          <ProductionLoc>2843</ProductionLoc>
+          <ProductionLoc>2859</ProductionLoc>
           <TestLoc>1039</TestLoc>
         </CodeReview>
       </Data>

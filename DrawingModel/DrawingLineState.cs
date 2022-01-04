@@ -46,11 +46,9 @@ namespace DrawingModel
                 Shape isInShapes = IsInShape(pointX, pointY);
                 if (isInShapes != null && _line.Shape1 != isInShapes)
                 {
-                    _isPressed = false;
                     _line.X2 = pointX;
                     _line.Y2 = pointY;
                     _line.Shape2 = isInShapes;
-                    _line.SetPointToShapeCenter();
                     _model.ExecuteCommand(new DrawCommand(_model, _line.Copy()));
                     _model.ShapeFlag = ShapeFlag.Null;
                     _model.SetPointerState();
@@ -58,7 +56,6 @@ namespace DrawingModel
                 else
                 {
                     _model.SetDrawingLineState();
-                    _isPressed = false;
                 }
             }
         }

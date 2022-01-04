@@ -111,20 +111,14 @@ namespace DrawingApp
         public void ReleasedPointer(double pointX, double pointY)
         {
             _model.ReleasedPointer(pointX, pointY);
-            if (_model.GetStateFlag() == StateFlag.DrawingState)
+            if (_model.GetStateFlag() != StateFlag.DrawingLineState)
             {
                 _isLineButtonEnabled = true;
             }
-            else if (_model.GetStateFlag() == StateFlag.DrawingLineState)
+            if (_model.GetStateFlag() != StateFlag.DrawingState)
             {
                 _isRectangleButtonEnabled = true;
                 _isEllipseButtonEnabled = true;
-            }
-            else
-            {
-                _isRectangleButtonEnabled = true;
-                _isEllipseButtonEnabled = true;
-                _isLineButtonEnabled = true;
             }
             NotifyModelChanged();
         }
