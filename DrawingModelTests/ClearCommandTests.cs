@@ -31,7 +31,7 @@ namespace DrawingModel.Tests
         {
             clearCommand.ExecuteBack();
             clearCommand.Execute();
-            Assert.AreEqual(0, model.GetShapes.Count);
+            Assert.AreEqual(0, model.Shapes.Count);
         }
 
         //ExecuteBackTest
@@ -39,9 +39,9 @@ namespace DrawingModel.Tests
         public void ExecuteBackTest()
         {
             clearCommand.ExecuteBack();
-            Assert.AreEqual(2, model.GetShapes.Count);
-            Assert.AreEqual(ShapeFlag.Rectangle, model.GetShapes[0].GetShape);
-            Assert.AreEqual(ShapeFlag.Ellipse, model.GetShapes[1].GetShape);
+            Assert.AreEqual(2, model.Shapes.Count);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].GetShape);
+            Assert.AreEqual(ShapeFlag.Ellipse, model.Shapes[1].GetShape);
         }
     }
 }

@@ -46,48 +46,52 @@ namespace DrawingForm
         {
             get
             {
-                return _model.GetShapes;
+                return _model.Shapes;
             }
         }
 
         //HandleRectangleButtonClick
         public void HandleRectangleButtonClick()
         {
+            _model.ResetSelection();
             _isRectangleButtonEnabled = false;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
             _model.ShapeFlag = ShapeFlag.Rectangle;
-            _model.ToDrawMode();
+            _model.SetDrawingState();
         }
 
         //HandleEllipseButtonClick
         public void HandleEllipseButtonClick()
         {
+            _model.ResetSelection();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = false;
             _isLineButtonEnabled = true;
             _model.ShapeFlag = ShapeFlag.Ellipse;
-            _model.ToDrawMode();
+            _model.SetDrawingState();
         }
 
         //HandleLineButtonClick
         public void HandleLineButtonClick()
         {
+            _model.ResetSelection();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = false;
             _model.ShapeFlag = ShapeFlag.Line;
-            _model.ToDrawMode();
+            _model.SetDrawingLineState();
         }
 
         //HandleClearButtonClick
         public void HandleClearButtonClick()
         {
+            _model.ResetSelection();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
             _model.ShapeFlag = ShapeFlag.Null;
-            _model.ToSelectMode();
+            _model.SetPointerState();
         }
 
         //PointerPressed
@@ -107,9 +111,21 @@ namespace DrawingForm
         public void ReleasedPointer(double pointX, double pointY)
         {
             _model.ReleasedPointer(pointX, pointY);
-            _isRectangleButtonEnabled = true;
-            _isEllipseButtonEnabled = true;
-            _isLineButtonEnabled = _model.GetIsSelectMode();
+            if (_model.GetStateFlag() == StateFlag.DrawingState)
+            {
+                _isLineButtonEnabled = true;
+            }
+            else if (_model.GetStateFlag() == StateFlag.DrawingLineState)
+            {
+                _isRectangleButtonEnabled = true;
+                _isEllipseButtonEnabled = true;
+            }
+            else
+            {
+                _isRectangleButtonEnabled = true;
+                _isEllipseButtonEnabled = true;
+                _isLineButtonEnabled = true;
+            }
             NotifyModelChanged();
         }
 

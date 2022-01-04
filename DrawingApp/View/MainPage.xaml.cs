@@ -48,7 +48,6 @@ namespace DrawingApp
         {
             _drawingAppPresentationModel.HandleRectangleButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleEllipseButtonClick
@@ -56,7 +55,6 @@ namespace DrawingApp
         {
             _drawingAppPresentationModel.HandleEllipseButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleLineButtonClick
@@ -64,7 +62,6 @@ namespace DrawingApp
         {
             _drawingAppPresentationModel.HandleLineButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleClearButtonClick
@@ -73,7 +70,6 @@ namespace DrawingApp
             _drawingAppPresentationModel.Clear();
             _drawingAppPresentationModel.HandleClearButtonClick();
             RefreshButton();
-            ResetSelection();
             RefreshUserInterface();
         }
 
@@ -108,7 +104,6 @@ namespace DrawingApp
         //UndoHandler
         void UndoHandler(object sender, RoutedEventArgs e)
         {
-            ResetSelection();
             _drawingAppPresentationModel.Undo();
             RefreshUserInterface();
         }
@@ -116,7 +111,6 @@ namespace DrawingApp
         //RedoHandler
         void RedoHandler(object sender, RoutedEventArgs e)
         {
-            ResetSelection();
             _drawingAppPresentationModel.Redo();
             RefreshUserInterface();
         }
@@ -156,26 +150,6 @@ namespace DrawingApp
                 return Math.Round(number1, 0);
             }
             return Math.Round(number2, 0);
-        }
-
-        //ReserSelection
-        public void ResetSelection()
-        {
-            List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
-            if (shapes.Count != 0)
-            {
-                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
-                {
-                    ClearSelection();
-                    _label.Text = LABEL_DEFAULT;
-                }
-            }
-        }
-
-        //ClearSelection
-        private void ClearSelection()
-        {
-            _drawingAppPresentationModel.DeleteShape();
         }
 
         //GetShapeWithIndex

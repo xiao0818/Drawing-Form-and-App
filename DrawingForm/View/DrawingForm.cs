@@ -100,7 +100,6 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleRectangleButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleEllipseButtonClick
@@ -108,7 +107,6 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleEllipseButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleLineButtonClick
@@ -116,7 +114,6 @@ namespace DrawingForm
         {
             _drawingFormPresentationModel.HandleLineButtonClick();
             RefreshButton();
-            ResetSelection();
         }
 
         //HandleClearButtonClick
@@ -125,7 +122,6 @@ namespace DrawingForm
             _drawingFormPresentationModel.Clear();
             _drawingFormPresentationModel.HandleClearButtonClick();
             RefreshButton();
-            ResetSelection();
             RefreshUserInterface();
         }
 
@@ -169,7 +165,6 @@ namespace DrawingForm
         //UndoHandler
         void UndoHandler(object sender, System.EventArgs e)
         {
-            ResetSelection();
             _drawingFormPresentationModel.Undo();
             RefreshUserInterface();
         }
@@ -177,7 +172,6 @@ namespace DrawingForm
         //RedoHandler
         void RedoHandler(object sender, System.EventArgs e)
         {
-            ResetSelection();
             _drawingFormPresentationModel.Redo();
             RefreshUserInterface();
         }
@@ -217,26 +211,6 @@ namespace DrawingForm
                 return number1;
             }
             return number2;
-        }
-
-        //ReserSelection
-        public void ResetSelection()
-        {
-            List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
-            if (shapes.Count != 0)
-            {
-                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
-                {
-                    ClearSelection();
-                    _label.Text = LABEL_DEFAULT;
-                }
-            }
-        }
-
-        //ClearSelection
-        private void ClearSelection()
-        {
-            _drawingFormPresentationModel.DeleteShape();
         }
 
         //GetShapeWithIndex

@@ -173,6 +173,9 @@
     <Compile Include="..\DrawingModel\ShapeFlag.cs">
       <Link>Model\ShapeFlag.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\StateFlag.cs">
+      <Link>Model\StateFlag.cs</Link>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>

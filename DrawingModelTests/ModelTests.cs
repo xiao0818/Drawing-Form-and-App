@@ -20,10 +20,10 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
-            Assert.AreEqual(10, model.GetFirstPointX);
-            Assert.AreEqual(20, model.GetFirstPointY);
-            Assert.AreEqual(10, model.GetShapeHint.X1);
-            Assert.AreEqual(20, model.GetShapeHint.Y1);
+            Assert.AreEqual(10, model.FirstPointX);
+            Assert.AreEqual(20, model.FirstPointY);
+            Assert.AreEqual(10, model.ShapeHint.X1);
+            Assert.AreEqual(20, model.ShapeHint.Y1);
             Assert.IsTrue(model.IsPressed);
         }
 
@@ -33,10 +33,10 @@ namespace DrawingModel.Tests
         {
             model.ShapeFlag = ShapeFlag.Line;
             model.PressedPointer(10, 20, null);
-            Assert.AreEqual(10, model.GetFirstPointX);
-            Assert.AreEqual(20, model.GetFirstPointY);
-            Assert.AreEqual(10, model.GetLineHint.X1);
-            Assert.AreEqual(20, model.GetLineHint.Y1);
+            Assert.AreEqual(10, model.FirstPointX);
+            Assert.AreEqual(20, model.FirstPointY);
+            Assert.AreEqual(10, model.LineHint.X1);
+            Assert.AreEqual(20, model.LineHint.Y1);
             Assert.IsTrue(model.IsPressed);
         }
 
@@ -45,8 +45,8 @@ namespace DrawingModel.Tests
         public void PressedPointerTestFail()
         {
             model.PressedPointer(-10, -20, null);
-            Assert.AreEqual(0, model.GetFirstPointX);
-            Assert.AreEqual(0, model.GetFirstPointY);
+            Assert.AreEqual(0, model.FirstPointX);
+            Assert.AreEqual(0, model.FirstPointY);
             Assert.IsFalse(model.IsPressed);
         }
 
@@ -57,8 +57,8 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
             model.MovedPointer(30, 40);
-            Assert.AreEqual(30, model.GetShapeHint.X2);
-            Assert.AreEqual(40, model.GetShapeHint.Y2);
+            Assert.AreEqual(30, model.ShapeHint.X2);
+            Assert.AreEqual(40, model.ShapeHint.Y2);
         }
 
         //MovedPointerTestForLine
@@ -68,8 +68,8 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Line;
             model.PressedPointer(10, 20, null);
             model.MovedPointer(30, 40);
-            Assert.AreEqual(30, model.GetLineHint.X2);
-            Assert.AreEqual(40, model.GetLineHint.Y2);
+            Assert.AreEqual(30, model.LineHint.X2);
+            Assert.AreEqual(40, model.LineHint.Y2);
         }
 
         //MovedPointerTestFail
@@ -92,11 +92,11 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Rectangle;
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
-            Assert.AreEqual(1, model.GetShapes.Count);
-            Assert.AreEqual(model.GetShapeHint.X1, model.GetShapes[0].X1);
-            Assert.AreEqual(model.GetShapeHint.Y1, model.GetShapes[0].Y1);
-            Assert.AreEqual(model.GetShapeHint.X2, model.GetShapes[0].X2);
-            Assert.AreEqual(model.GetShapeHint.Y2, model.GetShapes[0].Y2);
+            Assert.AreEqual(1, model.Shapes.Count);
+            Assert.AreEqual(model.ShapeHint.X1, model.Shapes[0].X1);
+            Assert.AreEqual(model.ShapeHint.Y1, model.Shapes[0].Y1);
+            Assert.AreEqual(model.ShapeHint.X2, model.Shapes[0].X2);
+            Assert.AreEqual(model.ShapeHint.Y2, model.Shapes[0].Y2);
             Assert.IsFalse(model.IsPressed);
         }
 
@@ -107,11 +107,11 @@ namespace DrawingModel.Tests
             model.ShapeFlag = ShapeFlag.Line;
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
-            Assert.AreEqual(1, model.GetShapes.Count);
-            Assert.AreEqual(model.GetLineHint.X1, model.GetShapes[0].X1);
-            Assert.AreEqual(model.GetLineHint.Y1, model.GetShapes[0].Y1);
-            Assert.AreEqual(model.GetLineHint.X2, model.GetShapes[0].X2);
-            Assert.AreEqual(model.GetLineHint.Y2, model.GetShapes[0].Y2);
+            Assert.AreEqual(1, model.Shapes.Count);
+            Assert.AreEqual(model.LineHint.X1, model.Shapes[0].X1);
+            Assert.AreEqual(model.LineHint.Y1, model.Shapes[0].Y1);
+            Assert.AreEqual(model.LineHint.X2, model.Shapes[0].X2);
+            Assert.AreEqual(model.LineHint.Y2, model.Shapes[0].Y2);
             Assert.IsFalse(model.IsPressed);
         }
 
@@ -136,7 +136,7 @@ namespace DrawingModel.Tests
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
             model.Clear();
-            Assert.AreEqual(0, model.GetShapes.Count);
+            Assert.AreEqual(0, model.Shapes.Count);
             Assert.IsFalse(model.IsPressed);
         }
 
@@ -146,7 +146,7 @@ namespace DrawingModel.Tests
         {
             Rectangle rectangle = new Rectangle();
             model.DrawShape(rectangle);
-            Assert.AreEqual(1, model.GetShapes.Count);
+            Assert.AreEqual(1, model.Shapes.Count);
         }
 
         //ClearAllTest
@@ -158,7 +158,7 @@ namespace DrawingModel.Tests
             model.DrawShape(rectangle);
             model.DrawShape(ellipse);
             model.ClearAll();
-            Assert.AreEqual(0, model.GetShapes.Count);
+            Assert.AreEqual(0, model.Shapes.Count);
         }
 
         //DeleteShapeTest
@@ -168,7 +168,7 @@ namespace DrawingModel.Tests
             Rectangle rectangle = new Rectangle();
             model.DrawShape(rectangle);
             model.DeleteShape();
-            Assert.AreEqual(0, model.GetShapes.Count);
+            Assert.AreEqual(0, model.Shapes.Count);
         }
 
         //UndoTest
@@ -179,7 +179,7 @@ namespace DrawingModel.Tests
             model.PressedPointer(10, 20, null);
             model.ReleasedPointer(30, 40, null);
             model.Undo();
-            Assert.AreEqual(0, model.GetShapes.Count);
+            Assert.AreEqual(0, model.Shapes.Count);
             Assert.IsFalse(model.IsUndoEnabled);
             Assert.IsTrue(model.IsRedoEnabled);
         }
@@ -193,11 +193,11 @@ namespace DrawingModel.Tests
             model.ReleasedPointer(30, 40, null);
             model.Undo();
             model.Redo();
-            Assert.AreEqual(1, model.GetShapes.Count);
-            Assert.AreEqual(model.GetShapeHint.X1, model.GetShapes[0].X1);
-            Assert.AreEqual(model.GetShapeHint.Y1, model.GetShapes[0].Y1);
-            Assert.AreEqual(model.GetShapeHint.X2, model.GetShapes[0].X2);
-            Assert.AreEqual(model.GetShapeHint.Y2, model.GetShapes[0].Y2);
+            Assert.AreEqual(1, model.Shapes.Count);
+            Assert.AreEqual(model.ShapeHint.X1, model.Shapes[0].X1);
+            Assert.AreEqual(model.ShapeHint.Y1, model.Shapes[0].Y1);
+            Assert.AreEqual(model.ShapeHint.X2, model.Shapes[0].X2);
+            Assert.AreEqual(model.ShapeHint.Y2, model.Shapes[0].Y2);
             Assert.IsTrue(model.IsUndoEnabled);
             Assert.IsFalse(model.IsRedoEnabled);
         }

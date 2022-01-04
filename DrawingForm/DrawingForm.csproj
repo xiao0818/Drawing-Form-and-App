@@ -103,6 +103,9 @@
     <Compile Include="..\DrawingModel\ShapeFlag.cs">
       <Link>Model\ShapeFlag.cs</Link>
     </Compile>
+    <Compile Include="..\DrawingModel\StateFlag.cs">
+      <Link>Model\StateFlag.cs</Link>
+    </Compile>
     <Compile Include="View\DrawingFormPresentationModel.cs" />
     <Compile Include="View\DoubleBufferedPanel.cs">
       <SubType>Component</SubType>
