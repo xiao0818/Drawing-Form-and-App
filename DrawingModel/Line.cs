@@ -9,6 +9,8 @@
         Shape _shape1 = null;
         Shape _shape2 = null;
         const int TWO = 2;
+        int _shapeIndex1 = -1;
+        int _shapeIndex2 = -1;
 
         //X1
         public double X1
@@ -88,6 +90,32 @@
             }
         }
 
+        //shapeIndex1
+        public int ShapeIndex1
+        {
+            get
+            {
+                return _shapeIndex1;
+            }
+            set
+            {
+                _shapeIndex1 = value;
+            }
+        }
+
+        //shapeIndex2
+        public int ShapeIndex2
+        {
+            get
+            {
+                return _shapeIndex2;
+            }
+            set
+            {
+                _shapeIndex2 = value;
+            }
+        }
+
         //Draw
         public void Draw(IGraphics graphics)
         {
@@ -106,10 +134,12 @@
             if (_shape1 != null)
             {
                 hint.Shape1 = _shape1;
+                hint.ShapeIndex1 = _shapeIndex1;
             }
             if (_shape2 != null)
             {
                 hint.Shape2 = _shape2;
+                hint.ShapeIndex2 = _shapeIndex2;
             }
             return hint;
         }
@@ -121,6 +151,12 @@
             {
                 return ShapeFlag.Line;
             }
+        }
+
+        //Save
+        public string Save()
+        {
+            return "Line " + _shapeIndex1.ToString() + " " + _shapeIndex2.ToString();
         }
 
         //SetPointToShapeCenter

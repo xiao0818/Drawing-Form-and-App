@@ -13,6 +13,8 @@ namespace DrawingForm
         Button _ellipse = new Button();
         Button _line = new Button();
         Button _clear = new Button();
+        Button _save = new Button();
+        Button _load = new Button();
         Label _label = new Label();
         ToolStripButton _undo;
         ToolStripButton _redo;
@@ -44,21 +46,29 @@ namespace DrawingForm
             _ellipse.Text = "Ellipse";
             _line.Text = "Line";
             _clear.Text = "Clear";
-            _rectangle.AutoSize = _ellipse.AutoSize = _line.AutoSize = _clear.AutoSize = false;
-            _rectangle.Height = _ellipse.Height = _line.Height = _clear.Height = HEIGHT;
-            _rectangle.Width = _ellipse.Width = _line.Width = _clear.Width = WIDTH;
-            _rectangle.Location = new Point(100, LOCATION_Y);
-            _ellipse.Location = new Point(450, LOCATION_Y);
-            _line.Location = new Point(800, LOCATION_Y);
-            _clear.Location = new Point(1150, LOCATION_Y);
+            _save.Text = "Save";
+            _load.Text = "Load";
+            _rectangle.AutoSize = _ellipse.AutoSize = _line.AutoSize = _clear.AutoSize = _save.AutoSize = _load.AutoSize = false;
+            _rectangle.Height = _ellipse.Height = _line.Height = _clear.Height = _save.Height = _load.Height = HEIGHT;
+            _rectangle.Width = _ellipse.Width = _line.Width = _clear.Width = _save.Width = _load.Width = WIDTH;
+            _rectangle.Location = new Point(125, LOCATION_Y);
+            _ellipse.Location = new Point(325, LOCATION_Y);
+            _line.Location = new Point(525, LOCATION_Y);
+            _clear.Location = new Point(725, LOCATION_Y);
+            _save.Location = new Point(925, LOCATION_Y);
+            _load.Location = new Point(1125, LOCATION_Y);
             _rectangle.Click += HandleRectangleButtonClick;
             _ellipse.Click += HandleEllipseButtonClick;
             _line.Click += HandleLineButtonClick;
             _clear.Click += HandleClearButtonClick;
+            _save.Click += HandleSaveButtonClick;
+            _load.Click += HandleLoadButtonClick;
             Controls.Add(_rectangle);
             Controls.Add(_ellipse);
             Controls.Add(_line);
             Controls.Add(_clear);
+            Controls.Add(_save);
+            Controls.Add(_load);
             //
             // prepare label
             //
@@ -119,7 +129,6 @@ namespace DrawingForm
         //HandleClearButtonClick
         public void HandleClearButtonClick(object sender, System.EventArgs e)
         {
-            _drawingFormPresentationModel.Clear();
             _drawingFormPresentationModel.HandleClearButtonClick();
             RefreshButton();
             RefreshUserInterface();
@@ -263,6 +272,22 @@ namespace DrawingForm
             {
                 _label.Text = LABEL_DEFAULT;
             }
+        }
+
+        //HandleSaveButtonClick
+        public void HandleSaveButtonClick(object sender, System.EventArgs e)
+        {
+            _drawingFormPresentationModel.HandleSaveButtonClick();
+            RefreshButton();
+            RefreshUserInterface();
+        }
+
+        //HandleLoadButtonClick
+        public void HandleLoadButtonClick(object sender, System.EventArgs e)
+        {
+            _drawingFormPresentationModel.HandleLoadButtonClickAsync();
+            RefreshButton();
+            RefreshUserInterface();
         }
     }
 }

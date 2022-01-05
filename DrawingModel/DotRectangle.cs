@@ -108,6 +108,12 @@
             }
         }
 
+        //Save
+        public string Save()
+        {
+            return "DotRectangle " + X1.ToString() + " " + Y1.ToString() + " " + X2.ToString() + " " + Y2.ToString();
+        }
+
         //TakeLarger
         public double TakeLarge(double number1, double number2)
         {

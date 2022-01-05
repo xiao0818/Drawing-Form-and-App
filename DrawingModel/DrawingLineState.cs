@@ -24,6 +24,7 @@ namespace DrawingModel
                 _line.X1 = pointX;
                 _line.Y1 = pointY;
                 _line.Shape1 = IsInShape(pointX, pointY);
+                _line.ShapeIndex1 = GetShapeIndex(_line.Shape1);
                 _isPressed = true;
             }
         }
@@ -49,6 +50,7 @@ namespace DrawingModel
                     _line.X2 = pointX;
                     _line.Y2 = pointY;
                     _line.Shape2 = isInShapes;
+                    _line.ShapeIndex2 = GetShapeIndex(_line.Shape2);
                     _model.ExecuteCommand(new DrawCommand(_model, _line.Copy()));
                     _model.ShapeFlag = ShapeFlag.Null;
                     _model.SetPointerState();
@@ -85,6 +87,21 @@ namespace DrawingModel
                 }
             }
             return null;
+        }
+
+        //GetShapeIndex
+        private int GetShapeIndex(Shape shape)
+        {
+            List<Shape> shapes = _model.Shapes;
+            for (int index = 0; index < shapes.Count; index++)
+            {
+                Shape aShape = shapes[index];
+                if (shape == aShape)
+                {
+                    return index;
+                }
+            }
+            return -1;
         }
     }
 }

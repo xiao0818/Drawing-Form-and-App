@@ -41,5 +41,8 @@
         {
             get;
         }
+
+        //Save
+        string Save();
     }
 }

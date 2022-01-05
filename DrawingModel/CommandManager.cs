@@ -62,5 +62,12 @@ namespace DrawingModel
             _undo.Push(command);
             _redo.Clear();
         }
+
+        //ClearAllCommand
+        public void ClearAllCommand()
+        {
+            _redo.Clear();
+            _undo.Clear();
+        }
     }
 }

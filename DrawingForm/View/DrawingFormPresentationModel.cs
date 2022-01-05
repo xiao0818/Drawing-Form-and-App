@@ -1,5 +1,6 @@
 ﻿using DrawingModel;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace DrawingForm
 {
@@ -87,6 +88,7 @@ namespace DrawingForm
         public void HandleClearButtonClick()
         {
             _model.ResetSelection();
+            _model.Clear();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
@@ -120,13 +122,6 @@ namespace DrawingForm
                 _isRectangleButtonEnabled = true;
                 _isEllipseButtonEnabled = true;
             }
-            NotifyModelChanged();
-        }
-
-        //Clear
-        public void Clear()
-        {
-            _model.Clear();
             NotifyModelChanged();
         }
 
@@ -176,6 +171,30 @@ namespace DrawingForm
         public DotRectangle GetTarget()
         {
             return _model.GetTarget();
+        }
+
+        //HandleSaveButtonClick
+        public void HandleSaveButtonClick()
+        {
+            _model.ResetSelection();
+            _model.Save();
+            _isRectangleButtonEnabled = true;
+            _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
+            _model.ShapeFlag = ShapeFlag.Null;
+            _model.SetPointerState();
+        }
+
+        //HandleLoadButtonClick
+        public async void HandleLoadButtonClickAsync()
+        {
+            _model.ResetSelection();
+            int count = await _model.Load();
+            _isRectangleButtonEnabled = true;
+            _isEllipseButtonEnabled = true;
+            _isLineButtonEnabled = true;
+            _model.ShapeFlag = ShapeFlag.Null;
+            _model.SetPointerState();
         }
 
         //NotifyModelChanged

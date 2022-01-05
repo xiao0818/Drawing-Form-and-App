@@ -10,10 +10,12 @@
     <Grid Background="#FFE0E0E0">
         <AppBarButton x:Name="_undo" Content="Undo" Margin="0, 0, 0, 0" Width="50" Height="40" Background="#FFE0E0E0"/>
         <AppBarButton x:Name="_redo" Content="Redo" Margin="50, 0, 0, 0" Width="50" Height="40" Background="#FFE0E0E0"/>
-        <Button x:Name="_rectangle" Content="Rectangle" Margin="50,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button x:Name="_ellipse" Content="Ellipse" Margin="439,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button x:Name="_line" Content="Line" Margin="827,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
-        <Button x:Name="_clear" Content="Clear" Margin="1216,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_rectangle" Content="Rectangle" Margin="133,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_ellipse" Content="Ellipse" Margin="333,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_line" Content="Line" Margin="533,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_clear" Content="Clear" Margin="733,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_save" Content="Save" Margin="933,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
+        <Button x:Name="_load" Content="Load" Margin="1133,50,50,10" VerticalAlignment="Top" Width="100" Height="40"/>
         <Canvas x:Name="_canvas" Margin="0,100,0,0" Background="#FFFFFFA0"/>
         <TextBlock x:Name="_label" Text="Selected : None" Margin="1066,720,50,10" Width="250" Height="20"/>
     </Grid>

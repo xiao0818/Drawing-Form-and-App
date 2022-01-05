@@ -38,6 +38,8 @@ namespace DrawingApp
             _ellipse.Click += HandleEllipseButtonClick;
             _line.Click += HandleLineButtonClick;
             _clear.Click += HandleClearButtonClick;
+            _save.Click += HandleSaveButtonClick;
+            _load.Click += HandleLoadButtonClick;
             _undo.Click += UndoHandler;
             _redo.Click += RedoHandler;
             _drawingAppPresentationModel._drawingAppPresentationModelChanged += HandleModelChanged;
@@ -67,7 +69,6 @@ namespace DrawingApp
         //HandleClearButtonClick
         private void HandleClearButtonClick(object sender, RoutedEventArgs e)
         {
-            _drawingAppPresentationModel.Clear();
             _drawingAppPresentationModel.HandleClearButtonClick();
             RefreshButton();
             RefreshUserInterface();
@@ -202,6 +203,22 @@ namespace DrawingApp
             {
                 _label.Text = LABEL_DEFAULT;
             }
+        }
+
+        //HandleSaveButtonClick
+        public void HandleSaveButtonClick(object sender, RoutedEventArgs e)
+        {
+            _drawingAppPresentationModel.HandleSaveButtonClick();
+            RefreshButton();
+            RefreshUserInterface();
+        }
+
+        //HandleLoadButtonClick
+        public void HandleLoadButtonClick(object sender, RoutedEventArgs e)
+        {
+            _drawingAppPresentationModel.HandleLoadButtonClickAsync();
+            RefreshButton();
+            RefreshUserInterface();
         }
     }
 }

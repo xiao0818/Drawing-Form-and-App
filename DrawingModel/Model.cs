@@ -1,4 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace DrawingModel
 {
@@ -236,6 +240,65 @@ namespace DrawingModel
         public StateFlag GetStateFlag()
         {
             return _state.GetStateFlag();
+        }
+
+        //Save
+        public void Save()
+        {
+            List<Shape> saveShapes = new List<Shape>(_shapes);
+            //StreamWriter str = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Shape.txt");
+            StreamWriter str = new StreamWriter(@"C:\Users\kta23\Desktop\Shape.txt");
+            foreach (Shape aShape in saveShapes)
+            {
+                str.WriteLine(aShape.Save());
+            }
+            str.Close();
+        }
+
+        //Load
+        public Task<int> Load()
+        {
+            _commandManager.ClearAllCommand();
+            int count = 0;
+            StreamReader str = new StreamReader(@"C:\Users\kta23\Desktop\Shape.txt");
+            List<Shape> loadShapes = new List<Shape>();
+            while (str.EndOfStream == false)
+            {
+                count++;
+                string text = str.ReadLine();
+                List<string> textList = text.Split(' ').ToList();
+                if (textList[0] == "Rectangle")
+                {
+                    Rectangle rectangle = new Rectangle();
+                    rectangle.X1 = Convert.ToDouble(textList[1]);
+                    rectangle.Y1 = Convert.ToDouble(textList[2]);
+                    rectangle.X2 = Convert.ToDouble(textList[3]);
+                    rectangle.Y2 = Convert.ToDouble(textList[4]);
+                    loadShapes.Add(rectangle.Copy());
+                }
+                else if (textList[0] == "Ellipse")
+                {
+                    Ellipse ellipse = new Ellipse();
+                    ellipse.X1 = Convert.ToDouble(textList[1]);
+                    ellipse.Y1 = Convert.ToDouble(textList[2]);
+                    ellipse.X2 = Convert.ToDouble(textList[3]);
+                    ellipse.Y2 = Convert.ToDouble(textList[4]);
+                    loadShapes.Add(ellipse.Copy());
+                }
+                else if (textList[0] == "Line")
+                {
+                    Line line = new Line();
+                    line.ShapeIndex1 = Convert.ToInt32(textList[1]);
+                    line.Shape1 = loadShapes[line.ShapeIndex1];
+                    line.ShapeIndex2 = Convert.ToInt32(textList[2]);
+                    line.Shape2 = loadShapes[line.ShapeIndex2];
+                    loadShapes.Add(line.Copy());
+                }
+            }
+            str.Close();
+            _shapes = new List<Shape>(loadShapes);
+            NotifyModelChanged();
+            return Task.FromResult(count);
         }
 
         //NotifyModelChanged
