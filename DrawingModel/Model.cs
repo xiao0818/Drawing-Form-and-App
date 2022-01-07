@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GoogleDriveUploader.GoogleDrive;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -16,6 +17,12 @@ namespace DrawingModel
         DotRectangle _target;
         bool _isSelectMode = true;
         IState _state;
+
+        GoogleDriveService _service;
+        const string APPLICATION_NAME = "DrawAnywhere";
+        const string CLIENT_SECRET_FILE_NAME = "clientSecret.json";
+        const string CONTENT_TYPE = "text/txt";
+
         public Model()
         {
             _state = new PointerState(this);
@@ -246,26 +253,27 @@ namespace DrawingModel
         public void Save()
         {
             List<Shape> saveShapes = new List<Shape>(_shapes);
-            //StreamWriter str = new StreamWriter(Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "\\Shape.txt");
-            StreamWriter str = new StreamWriter(@"C:\Users\kta23\Desktop\Shape.txt");
+            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
             foreach (Shape aShape in saveShapes)
             {
-                str.WriteLine(aShape.Save());
+                fileWriter.WriteLine(aShape.Save());
             }
-            str.Close();
+            fileWriter.Close();
+            SaveToGoogle();
         }
 
         //Load
-        public Task<int> Load()
+        public void Load()
         {
+            LoadFromGoogle();
             _commandManager.ClearAllCommand();
             int count = 0;
-            StreamReader str = new StreamReader(@"C:\Users\kta23\Desktop\Shape.txt");
+            StreamReader fileReader = new StreamReader(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
             List<Shape> loadShapes = new List<Shape>();
-            while (str.EndOfStream == false)
+            while (fileReader.EndOfStream == false)
             {
                 count++;
-                string text = str.ReadLine();
+                string text = fileReader.ReadLine();
                 List<string> textList = text.Split(' ').ToList();
                 if (textList[0] == "Rectangle")
                 {
@@ -295,10 +303,31 @@ namespace DrawingModel
                     loadShapes.Add(line.Copy());
                 }
             }
-            str.Close();
+            fileReader.Close();
             _shapes = new List<Shape>(loadShapes);
             NotifyModelChanged();
-            return Task.FromResult(count);
+        }
+
+        //SaveToGoogle
+        private void SaveToGoogle()
+        {
+            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\" + CLIENT_SECRET_FILE_NAME);
+            Google.Apis.Drive.v2.Data.File foundFile = _service.ListRootFileAndFolder().Find(item => item.Title == "Shape.txt");
+            if (foundFile != null)
+            {
+                _service.DeleteFile(foundFile.Id);
+            }
+            _service.UploadFile(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt", CONTENT_TYPE);
+        }
+
+        //LoadFromGoogle
+        private void LoadFromGoogle()
+        {
+            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
+            fileWriter.Close();
+            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\" + CLIENT_SECRET_FILE_NAME);
+            Google.Apis.Drive.v2.Data.File selectedFile = _service.ListRootFileAndFolder().Find(item => item.Title == "Shape.txt");
+            _service.DownloadFile(selectedFile, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\");
         }
 
         //NotifyModelChanged

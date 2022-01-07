@@ -174,10 +174,10 @@ namespace DrawingForm
         }
 
         //HandleSaveButtonClick
-        public void HandleSaveButtonClick()
+        public async void HandleSaveButtonClick()
         {
             _model.ResetSelection();
-            _model.Save();
+            await Task.Factory.StartNew(() => _model.Save());
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
@@ -186,10 +186,10 @@ namespace DrawingForm
         }
 
         //HandleLoadButtonClick
-        public async void HandleLoadButtonClickAsync()
+        public void HandleLoadButtonClick()
         {
             _model.ResetSelection();
-            int count = await _model.Load();
+            _model.Load();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;

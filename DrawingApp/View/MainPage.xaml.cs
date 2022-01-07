@@ -1,6 +1,8 @@
 ﻿using DrawingModel;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Input;
@@ -206,17 +208,21 @@ namespace DrawingApp
         }
 
         //HandleSaveButtonClick
-        public void HandleSaveButtonClick(object sender, RoutedEventArgs e)
+        public async void HandleSaveButtonClick(object sender, RoutedEventArgs e)
         {
-            _drawingAppPresentationModel.HandleSaveButtonClick();
+            //_drawingAppPresentationModel.HandleSaveButtonClick();
+            var messageDialog = new MessageDialog("This function has been closed.", "Error");
+            await messageDialog.ShowAsync();
             RefreshButton();
             RefreshUserInterface();
         }
 
         //HandleLoadButtonClick
-        public void HandleLoadButtonClick(object sender, RoutedEventArgs e)
+        public async void HandleLoadButtonClick(object sender, RoutedEventArgs e)
         {
-            _drawingAppPresentationModel.HandleLoadButtonClickAsync();
+            //_drawingAppPresentationModel.HandleLoadButtonClick();
+            var messageDialog = new MessageDialog("This function has been closed.", "Error");
+            await messageDialog.ShowAsync();
             RefreshButton();
             RefreshUserInterface();
         }

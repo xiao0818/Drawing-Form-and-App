@@ -1,6 +1,7 @@
 ﻿using DrawingModel;
 using System.Collections.Generic;
 using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace DrawingForm
@@ -26,6 +27,7 @@ namespace DrawingForm
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
+        
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -277,7 +279,10 @@ namespace DrawingForm
         //HandleSaveButtonClick
         public void HandleSaveButtonClick(object sender, System.EventArgs e)
         {
-            _drawingFormPresentationModel.HandleSaveButtonClick();
+            if (MessageBox.Show("Are you sure to save shapes?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                _drawingFormPresentationModel.HandleSaveButtonClick();
+            }
             RefreshButton();
             RefreshUserInterface();
         }
@@ -285,7 +290,10 @@ namespace DrawingForm
         //HandleLoadButtonClick
         public void HandleLoadButtonClick(object sender, System.EventArgs e)
         {
-            _drawingFormPresentationModel.HandleLoadButtonClickAsync();
+            if (MessageBox.Show("Are you sure to load shapes?", "Load", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                _drawingFormPresentationModel.HandleLoadButtonClick();
+            }
             RefreshButton();
             RefreshUserInterface();
         }

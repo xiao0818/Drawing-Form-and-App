@@ -192,10 +192,10 @@ namespace DrawingApp
         }
 
         //HandleLoadButtonClick
-        public async void HandleLoadButtonClickAsync()
+        public void HandleLoadButtonClick()
         {
             _model.ResetSelection();
-            int count = await _model.Load();
+            _model.Load();
             _isRectangleButtonEnabled = true;
             _isEllipseButtonEnabled = true;
             _isLineButtonEnabled = true;
