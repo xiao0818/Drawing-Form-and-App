@@ -64,9 +64,12 @@
     <Compile Include="CommandManagerTests.cs" />
     <Compile Include="DotRectangleTests.cs" />
     <Compile Include="DrawCommandTests.cs" />
+    <Compile Include="DrawingLineStateTests.cs" />
+    <Compile Include="DrawingStateTests.cs" />
     <Compile Include="EllipseTests.cs" />
     <Compile Include="LineTests.cs" />
-    <Compile Include="ModelTests.cs" />
+    <Compile Include="MovingStateTests.cs" />
+    <Compile Include="PointerStateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RectangleTests.cs" />
     <Compile Include="ShapeFactoryTests.cs" />

@@ -1176,6 +1176,16 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
+                <RelativePath>DrawingLineStateTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>DrawingStateTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
                 <RelativePath>EllipseTests.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
                 <AnalysisFileType>Test</AnalysisFileType>
@@ -1186,9 +1196,14 @@
                 <AnalysisFileType>Test</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
-                <RelativePath>ModelTests.cs</RelativePath>
+                <RelativePath>MovingStateTests.cs</RelativePath>
                 <ProjectName>DrawingModelTests</ProjectName>
-                <AnalysisFileType>Test</AnalysisFileType>
+                <AnalysisFileType>Unknown</AnalysisFileType>
+              </AnalysisFile>
+              <AnalysisFile>
+                <RelativePath>PointerStateTests.cs</RelativePath>
+                <ProjectName>DrawingModelTests</ProjectName>
+                <AnalysisFileType>Unknown</AnalysisFileType>
               </AnalysisFile>
               <AnalysisFile>
                 <RelativePath>Properties\AssemblyInfo.cs</RelativePath>
