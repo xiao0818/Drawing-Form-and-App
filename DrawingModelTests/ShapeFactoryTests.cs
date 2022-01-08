@@ -18,28 +18,28 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void CreateShapeTestForRectangle()
         {
-            Assert.AreEqual(ShapeFlag.Rectangle, shapeFactory.CreateShape(ShapeFlag.Rectangle).GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, shapeFactory.CreateShape(ShapeFlag.Rectangle).ShapeFlag);
         }
 
         //CreateShapeTestForEllipse
         [TestMethod()]
         public void CreateShapeTestForEllipse()
         {
-            Assert.AreEqual(ShapeFlag.Ellipse, shapeFactory.CreateShape(ShapeFlag.Ellipse).GetShape);
+            Assert.AreEqual(ShapeFlag.Ellipse, shapeFactory.CreateShape(ShapeFlag.Ellipse).ShapeFlag);
         }
 
         //CreateShapeTestForDotRectangle
         [TestMethod()]
         public void CreateShapeTestForDotRectangle()
         {
-            Assert.AreEqual(ShapeFlag.DotRectangle, shapeFactory.CreateShape(ShapeFlag.DotRectangle).GetShape);
+            Assert.AreEqual(ShapeFlag.DotRectangle, shapeFactory.CreateShape(ShapeFlag.DotRectangle).ShapeFlag);
         }
 
         //CreateLineTest
         [TestMethod()]
         public void CreateLineTest()
         {
-            Assert.AreEqual(ShapeFlag.Line, shapeFactory.CreateLine.GetShape);
+            Assert.AreEqual(ShapeFlag.Line, shapeFactory.CreateLine.ShapeFlag);
         }
     }
 }

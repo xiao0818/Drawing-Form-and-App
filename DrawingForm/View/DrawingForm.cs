@@ -27,7 +27,6 @@ namespace DrawingForm
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
-        
 
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
@@ -260,10 +259,10 @@ namespace DrawingForm
             List<Shape> shapes = _drawingFormPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
+                if (GetShapeWithIndex(shapes, 0).ShapeFlag == ShapeFlag.DotRectangle)
                 {
-                    DotRectangle target = _drawingFormPresentationModel.GetTarget();
-                    _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
+                    DotRectangle target = _drawingFormPresentationModel.Target;
+                    _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
                 }
                 else
                 {

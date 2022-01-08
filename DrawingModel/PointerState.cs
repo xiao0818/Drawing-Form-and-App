@@ -41,16 +41,22 @@ namespace DrawingModel
             }
         }
 
-        //GetHint
-        public Shape GetHint()
+        //Hint
+        public Shape Hint
         {
-            return null;
+            get
+            {
+                return null;
+            }
         }
 
-        //GetStateFlag
-        public StateFlag GetStateFlag()
+        //StateFlag
+        public StateFlag StateFlag
         {
-            return StateFlag.PointerState;
+            get
+            {
+                return StateFlag.PointerState;
+            }
         }
     }
 }

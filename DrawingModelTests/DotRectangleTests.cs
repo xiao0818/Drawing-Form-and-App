@@ -25,7 +25,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(rectangle.Y1, dotRectangle.Y1);
             Assert.AreEqual(rectangle.X2, dotRectangle.X2);
             Assert.AreEqual(rectangle.Y2, dotRectangle.Y2);
-            Assert.AreEqual(ShapeFlag.Rectangle, dotRectangle.Shape.GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, dotRectangle.Shape.ShapeFlag);
         }
 
         //CopyTestForNoShapeReference
@@ -60,7 +60,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void GetShapeTest()
         {
-            Assert.AreEqual(ShapeFlag.DotRectangle, dotRectangle.GetShape);
+            Assert.AreEqual(ShapeFlag.DotRectangle, dotRectangle.ShapeFlag);
         }
 
         //TakeLargeTest1

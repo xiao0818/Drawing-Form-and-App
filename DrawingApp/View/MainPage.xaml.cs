@@ -23,6 +23,8 @@ namespace DrawingApp
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
+        const string ERROR_TITLE = "Error";
+        const string ERROR_MESSAGE = "This function has already been closed";
 
         public MainPage()
         {
@@ -191,10 +193,10 @@ namespace DrawingApp
             List<Shape> shapes = _drawingAppPresentationModel.GetShapes;
             if (shapes.Count != 0)
             {
-                if (GetShapeWithIndex(shapes, 0).GetShape == ShapeFlag.DotRectangle)
+                if (GetShapeWithIndex(shapes, 0).ShapeFlag == ShapeFlag.DotRectangle)
                 {
-                    DotRectangle target = _drawingAppPresentationModel.GetTarget();
-                    _label.Text = LABEL_HEAD + target.Shape.GetShape + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
+                    DotRectangle target = _drawingAppPresentationModel.Target;
+                    _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
                 }
                 else
                 {
@@ -211,7 +213,7 @@ namespace DrawingApp
         public async void HandleSaveButtonClick(object sender, RoutedEventArgs e)
         {
             //_drawingAppPresentationModel.HandleSaveButtonClick();
-            var messageDialog = new MessageDialog("This function has been closed.", "Error");
+            var messageDialog = new MessageDialog(ERROR_MESSAGE, ERROR_TITLE);
             await messageDialog.ShowAsync();
             RefreshButton();
             RefreshUserInterface();
@@ -221,7 +223,7 @@ namespace DrawingApp
         public async void HandleLoadButtonClick(object sender, RoutedEventArgs e)
         {
             //_drawingAppPresentationModel.HandleLoadButtonClick();
-            var messageDialog = new MessageDialog("This function has been closed.", "Error");
+            var messageDialog = new MessageDialog(ERROR_MESSAGE, ERROR_TITLE);
             await messageDialog.ShowAsync();
             RefreshButton();
             RefreshUserInterface();

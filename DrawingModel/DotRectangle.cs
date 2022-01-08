@@ -7,6 +7,8 @@
         double _x2;
         double _y2;
         Shape _shape = null;
+        const string SHAPE_TEXT_HEAD = "DotRectangle ";
+        const string SPACE = " ";
         //X1
         public double X1
         {
@@ -100,7 +102,7 @@
         }
 
         //GetShape
-        public ShapeFlag GetShape
+        public ShapeFlag ShapeFlag
         {
             get
             {
@@ -108,10 +110,13 @@
             }
         }
 
-        //Save
-        public string Save()
+        //SaveText
+        public string SaveText
         {
-            return "DotRectangle " + X1.ToString() + " " + Y1.ToString() + " " + X2.ToString() + " " + Y2.ToString();
+            get
+            {
+                return SHAPE_TEXT_HEAD + X1.ToString() + SPACE + Y1.ToString() + SPACE + X2.ToString() + SPACE + Y2.ToString();
+            }
         }
 
         //TakeLarger

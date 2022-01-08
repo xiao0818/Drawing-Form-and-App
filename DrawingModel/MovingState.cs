@@ -12,7 +12,7 @@
         public MovingState(Model model)
         {
             _model = model;
-            _target = _model.GetTarget();
+            _target = _model.Target;
         }
 
         //PressedPointer
@@ -67,16 +67,23 @@
             _target.Shape.Y2 += yChange;
         }
 
-        //GetHint
-        public Shape GetHint()
+        //Hint
+        public Shape Hint
         {
-            return null;
+            get
+            {
+                return null;
+            }
+            
         }
 
-        //GetStateFlag
-        public StateFlag GetStateFlag()
+        //StateFlag
+        public StateFlag StateFlag
         {
-            return StateFlag.MovingState;
+            get
+            {
+                return StateFlag.MovingState;
+            }
         }
     }
 }

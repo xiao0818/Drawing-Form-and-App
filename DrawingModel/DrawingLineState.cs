@@ -62,16 +62,22 @@ namespace DrawingModel
             }
         }
 
-        //GetHint
-        public Shape GetHint()
+        //Hint
+        public Shape Hint
         {
-            return _line;
+            get
+            {
+                return _line;
+            }
         }
 
-        //GetStateFlag
-        public StateFlag GetStateFlag()
+        //StateFlag
+        public StateFlag StateFlag
         {
-            return StateFlag.DrawingLineState;
+            get
+            {
+                return StateFlag.DrawingLineState;
+            }
         }
 
         //IsInShape
@@ -81,7 +87,7 @@ namespace DrawingModel
             for (int index = 0; index < shapes.Count; index++)
             {
                 Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.GetShape != ShapeFlag.Line) && ((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
+                if ((aShape.ShapeFlag != ShapeFlag.Line) && ((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
                 {
                     return aShape;
                 }

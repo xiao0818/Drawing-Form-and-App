@@ -52,16 +52,22 @@
             }
         }
 
-        //GetHint
-        public Shape GetHint()
+        //Hint
+        public Shape Hint
         {
-            return _hint;
+            get
+            {
+                return _hint;
+            }
         }
 
-        //GetStateFlag
-        public StateFlag GetStateFlag()
+        //StateFlag
+        public StateFlag StateFlag
         {
-            return StateFlag.DrawingState;
+            get
+            {
+                return StateFlag.DrawingState;
+            }
         }
     }
 }

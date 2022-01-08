@@ -9,7 +9,6 @@ namespace DrawingModel
         Stack<ICommand> _redo = new Stack<ICommand>();
         const string UNDO_EXCEPTION = "Cannot Undo exception\n";
         const string REDO_EXCEPTION = "Cannot Redo exception\n";
-
         //Execute
         public void Execute(ICommand command)
         {

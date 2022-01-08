@@ -24,7 +24,7 @@ namespace DrawingModel.Tests
         {
             drawCommand.Execute();
             Assert.AreEqual(1, model.Shapes.Count);
-            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].ShapeFlag);
         }
 
         //ExecuteBackTest

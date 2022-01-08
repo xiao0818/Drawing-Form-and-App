@@ -40,8 +40,8 @@ namespace DrawingModel.Tests
         {
             clearCommand.ExecuteBack();
             Assert.AreEqual(2, model.Shapes.Count);
-            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].GetShape);
-            Assert.AreEqual(ShapeFlag.Ellipse, model.Shapes[1].GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].ShapeFlag);
+            Assert.AreEqual(ShapeFlag.Ellipse, model.Shapes[1].ShapeFlag);
         }
     }
 }

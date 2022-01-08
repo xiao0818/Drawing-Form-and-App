@@ -25,7 +25,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(rectangle.Y1, line.Shape1.Y1);
             Assert.AreEqual(rectangle.X2, line.Shape1.X2);
             Assert.AreEqual(rectangle.Y2, line.Shape1.Y2);
-            Assert.AreEqual(ShapeFlag.Rectangle, line.Shape1.GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, line.Shape1.ShapeFlag);
         }
 
         //Shape2Test
@@ -39,7 +39,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(ellipse.Y1, line.Shape2.Y1);
             Assert.AreEqual(ellipse.X2, line.Shape2.X2);
             Assert.AreEqual(ellipse.Y2, line.Shape2.Y2);
-            Assert.AreEqual(ShapeFlag.Ellipse, line.Shape2.GetShape);
+            Assert.AreEqual(ShapeFlag.Ellipse, line.Shape2.ShapeFlag);
         }
 
         //CopyTestForNoShapeReference
@@ -82,7 +82,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void GetShapeTest()
         {
-            Assert.AreEqual(ShapeFlag.Line, line.GetShape);
+            Assert.AreEqual(ShapeFlag.Line, line.ShapeFlag);
         }
 
         //SetPointToShapeCenterTest

@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Threading.Tasks;
 
 namespace DrawingModel
 {
@@ -17,12 +16,12 @@ namespace DrawingModel
         DotRectangle _target;
         bool _isSelectMode = true;
         IState _state;
-
         GoogleDriveService _service;
         const string APPLICATION_NAME = "DrawAnywhere";
         const string CLIENT_SECRET_FILE_NAME = "clientSecret.json";
         const string CONTENT_TYPE = "text/txt";
-
+        const string FILE_PATH = "\\..\\..\\..\\DrawingModel\\";
+        const string SHAPE_FILE_NAME = "Shape.txt";
         public Model()
         {
             _state = new PointerState(this);
@@ -91,14 +90,14 @@ namespace DrawingModel
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
             {
-                if (aShape.GetShape == ShapeFlag.Line)
+                if (aShape.ShapeFlag == ShapeFlag.Line)
                 {
                     DrawShapes(aShape, graphics);
                 }
             }
             foreach (Shape aShape in _shapes)
             {
-                if (aShape.GetShape != ShapeFlag.Line)
+                if (aShape.ShapeFlag != ShapeFlag.Line)
                 {
                     DrawShapes(aShape, graphics);
                 }
@@ -115,7 +114,7 @@ namespace DrawingModel
         //DrawHint
         private void DrawHint(IGraphics graphics)
         {
-            Shape hint = _state.GetHint();
+            Shape hint = _state.Hint;
             if (hint != null)
             {
                 hint.Draw(graphics);
@@ -188,23 +187,29 @@ namespace DrawingModel
         {
             if (_shapes.Count != 0)
             {
-                if (_shapes[_shapes.Count - 1].GetShape == ShapeFlag.DotRectangle)
+                if (_shapes[_shapes.Count - 1].ShapeFlag == ShapeFlag.DotRectangle)
                 {
                     DeleteShape();
                 }
             }
         }
 
-        //GetTarget
-        public DotRectangle GetTarget()
+        //Target
+        public DotRectangle Target
         {
-            return _target;
+            get
+            {
+                return _target;
+            }
         }
 
-        //GetIsSelectMode
-        public bool GetIsSelectMode()
+        //IsSelectMode
+        public bool IsSelectMode
         {
-            return _isSelectMode;
+            get
+            {
+                return _isSelectMode;
+            }
         }
 
         //SetDrawingState
@@ -243,20 +248,23 @@ namespace DrawingModel
             _commandManager.Execute(command);
         }
 
-        //GetSTateFlag
-        public StateFlag GetStateFlag()
+        //STateFlag
+        public StateFlag StateFlag
         {
-            return _state.GetStateFlag();
+            get
+            {
+                return _state.StateFlag;
+            }
         }
 
         //Save
         public void Save()
         {
             List<Shape> saveShapes = new List<Shape>(_shapes);
-            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
+            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             foreach (Shape aShape in saveShapes)
             {
-                fileWriter.WriteLine(aShape.Save());
+                fileWriter.WriteLine(aShape.SaveText);
             }
             fileWriter.Close();
             SaveToGoogle();
@@ -268,32 +276,31 @@ namespace DrawingModel
             LoadFromGoogle();
             _commandManager.ClearAllCommand();
             int count = 0;
-            StreamReader fileReader = new StreamReader(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
+            StreamReader fileReader = new StreamReader(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             List<Shape> loadShapes = new List<Shape>();
             while (fileReader.EndOfStream == false)
             {
                 count++;
                 string text = fileReader.ReadLine();
                 List<string> textList = text.Split(' ').ToList();
-                if (textList[0] == "Rectangle")
+                if (textList[0] != "Line")
                 {
-                    Rectangle rectangle = new Rectangle();
-                    rectangle.X1 = Convert.ToDouble(textList[1]);
-                    rectangle.Y1 = Convert.ToDouble(textList[2]);
-                    rectangle.X2 = Convert.ToDouble(textList[3]);
-                    rectangle.Y2 = Convert.ToDouble(textList[4]);
-                    loadShapes.Add(rectangle.Copy());
+                    Shape shape = null;
+                    if (textList[0] == "Rectangle")
+                    {
+                        shape = new Rectangle();
+                    }
+                    else if (textList[0] == "Ellipse")
+                    {
+                        shape = new Ellipse();
+                    }
+                    shape.X1 = Convert.ToDouble(textList[1]);
+                    shape.Y1 = Convert.ToDouble(textList[2]);
+                    shape.X2 = Convert.ToDouble(textList[3]);
+                    shape.Y2 = Convert.ToDouble(textList[4]);
+                    loadShapes.Add(shape.Copy());
                 }
-                else if (textList[0] == "Ellipse")
-                {
-                    Ellipse ellipse = new Ellipse();
-                    ellipse.X1 = Convert.ToDouble(textList[1]);
-                    ellipse.Y1 = Convert.ToDouble(textList[2]);
-                    ellipse.X2 = Convert.ToDouble(textList[3]);
-                    ellipse.Y2 = Convert.ToDouble(textList[4]);
-                    loadShapes.Add(ellipse.Copy());
-                }
-                else if (textList[0] == "Line")
+                else
                 {
                     Line line = new Line();
                     line.ShapeIndex1 = Convert.ToInt32(textList[1]);
@@ -311,23 +318,23 @@ namespace DrawingModel
         //SaveToGoogle
         private void SaveToGoogle()
         {
-            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\" + CLIENT_SECRET_FILE_NAME);
-            Google.Apis.Drive.v2.Data.File foundFile = _service.ListRootFileAndFolder().Find(item => item.Title == "Shape.txt");
+            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + FILE_PATH + CLIENT_SECRET_FILE_NAME);
+            Google.Apis.Drive.v2.Data.File foundFile = _service.ListRootFileAndFolder().Find(item => item.Title == SHAPE_FILE_NAME);
             if (foundFile != null)
             {
                 _service.DeleteFile(foundFile.Id);
             }
-            _service.UploadFile(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt", CONTENT_TYPE);
+            _service.UploadFile(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME, CONTENT_TYPE);
         }
 
         //LoadFromGoogle
         private void LoadFromGoogle()
         {
-            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\Shape.txt");
+            StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             fileWriter.Close();
-            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\" + CLIENT_SECRET_FILE_NAME);
-            Google.Apis.Drive.v2.Data.File selectedFile = _service.ListRootFileAndFolder().Find(item => item.Title == "Shape.txt");
-            _service.DownloadFile(selectedFile, Environment.CurrentDirectory + "\\..\\..\\..\\DrawingModel\\");
+            _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + FILE_PATH + CLIENT_SECRET_FILE_NAME);
+            Google.Apis.Drive.v2.Data.File selectedFile = _service.ListRootFileAndFolder().Find(item => item.Title == SHAPE_FILE_NAME);
+            _service.DownloadFile(selectedFile, Environment.CurrentDirectory + FILE_PATH);
         }
 
         //NotifyModelChanged

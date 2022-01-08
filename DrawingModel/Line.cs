@@ -11,7 +11,8 @@
         const int TWO = 2;
         int _shapeIndex1 = -1;
         int _shapeIndex2 = -1;
-
+        const string SHAPE_TEXT_HEAD = "Line ";
+        const string SPACE = " ";
         //X1
         public double X1
         {
@@ -145,7 +146,7 @@
         }
 
         //GetShape
-        public ShapeFlag GetShape
+        public ShapeFlag ShapeFlag
         {
             get
             {
@@ -153,10 +154,13 @@
             }
         }
 
-        //Save
-        public string Save()
+        //SaveText
+        public string SaveText
         {
-            return "Line " + _shapeIndex1.ToString() + " " + _shapeIndex2.ToString();
+            get
+            {
+                return SHAPE_TEXT_HEAD + _shapeIndex1.ToString() + SPACE + _shapeIndex2.ToString();
+            }
         }
 
         //SetPointToShapeCenter

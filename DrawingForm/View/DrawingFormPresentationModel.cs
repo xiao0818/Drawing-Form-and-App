@@ -113,11 +113,11 @@ namespace DrawingForm
         public void ReleasedPointer(double pointX, double pointY)
         {
             _model.ReleasedPointer(pointX, pointY);
-            if (_model.GetStateFlag() != StateFlag.DrawingLineState)
+            if (_model.StateFlag != StateFlag.DrawingLineState)
             {
                 _isLineButtonEnabled = true;
             }
-            if (_model.GetStateFlag() != StateFlag.DrawingState)
+            if (_model.StateFlag != StateFlag.DrawingState)
             {
                 _isRectangleButtonEnabled = true;
                 _isEllipseButtonEnabled = true;
@@ -167,10 +167,13 @@ namespace DrawingForm
             }
         }
 
-        //GetTarget
-        public DotRectangle GetTarget()
+        //Target
+        public DotRectangle Target
         {
-            return _model.GetTarget();
+            get
+            {
+                return _model.Target;
+            }
         }
 
         //HandleSaveButtonClick

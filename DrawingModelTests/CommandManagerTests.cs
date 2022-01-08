@@ -27,7 +27,7 @@ namespace DrawingModel.Tests
         {
             commandManager.Execute(drawCommand);
             Assert.AreEqual(1, model.Shapes.Count);
-            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].ShapeFlag);
             Assert.IsTrue(commandManager.IsUndoEnabled);
             Assert.IsFalse(commandManager.IsRedoEnabled);
         }
@@ -68,7 +68,7 @@ namespace DrawingModel.Tests
             commandManager.Undo();
             commandManager.Redo();
             Assert.AreEqual(1, model.Shapes.Count);
-            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].GetShape);
+            Assert.AreEqual(ShapeFlag.Rectangle, model.Shapes[0].ShapeFlag);
             Assert.IsTrue(commandManager.IsUndoEnabled);
             Assert.IsFalse(commandManager.IsRedoEnabled);
         }

@@ -33,7 +33,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void GetShapeTest()
         {
-            Assert.AreEqual(ShapeFlag.Ellipse, ellipse.GetShape);
+            Assert.AreEqual(ShapeFlag.Ellipse, ellipse.ShapeFlag);
         }
 
         //TakeLargeTest1

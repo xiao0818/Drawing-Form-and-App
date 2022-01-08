@@ -11,10 +11,16 @@
         //ReleasedPointer
         void ReleasedPointer(double pointX, double pointY);
 
-        //GetHint
-        Shape GetHint();
+        //Hint
+        Shape Hint
+        {
+            get;
+        }
 
-        //GetStateFlag
-        StateFlag GetStateFlag();
+        //StateFlag
+        StateFlag StateFlag
+        {
+            get;
+        }
     }
 }

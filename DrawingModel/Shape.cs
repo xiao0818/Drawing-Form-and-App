@@ -37,12 +37,15 @@
         Shape Copy();
 
         //GetShape
-        ShapeFlag GetShape
+        ShapeFlag ShapeFlag
         {
             get;
         }
 
-        //Save
-        string Save();
+        //SaveText
+        string SaveText
+        {
+            get;
+        }
     }
 }
