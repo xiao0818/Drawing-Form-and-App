@@ -18,6 +18,7 @@
         {
             get
             {
+                SetPointToShapeCenter();
                 return _x1;
             }
             set
@@ -31,6 +32,7 @@
         {
             get
             {
+                SetPointToShapeCenter();
                 return _y1;
             }
             set
@@ -44,6 +46,7 @@
         {
             get
             {
+                SetPointToShapeCenter();
                 return _x2;
             }
             set
@@ -57,6 +60,7 @@
         {
             get
             {
+                SetPointToShapeCenter();
                 return _y2;
             }
             set
@@ -75,6 +79,7 @@
             set
             {
                 _shape1 = value;
+                SetPointToShapeCenter();
             }
         }
 
@@ -88,6 +93,7 @@
             set
             {
                 _shape2 = value;
+                SetPointToShapeCenter();
             }
         }
 
@@ -164,7 +170,7 @@
         }
 
         //SetPointToShapeCenter
-        public void SetPointToShapeCenter()
+        private void SetPointToShapeCenter()
         {
             if (_shape1 != null && _shape2 != null)
             {

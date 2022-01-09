@@ -68,6 +68,7 @@
     <Compile Include="DrawingStateTests.cs" />
     <Compile Include="EllipseTests.cs" />
     <Compile Include="LineTests.cs" />
+    <Compile Include="MoveCommandTests.cs" />
     <Compile Include="MovingStateTests.cs" />
     <Compile Include="PointerStateTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

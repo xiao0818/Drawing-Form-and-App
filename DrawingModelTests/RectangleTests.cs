@@ -29,11 +29,22 @@ namespace DrawingModel.Tests
             Assert.AreEqual(rectangle.Y2, rectangleCopy.Y2);
         }
 
-        //GetShapeTest
+        //ShapeFlagTest
         [TestMethod()]
-        public void GetShapeTest()
+        public void ShapeFlagTest()
         {
             Assert.AreEqual(ShapeFlag.Rectangle, rectangle.ShapeFlag);
+        }
+
+        //SaveTextTest
+        [TestMethod()]
+        public void SaveTextTest()
+        {
+            rectangle.X1 = 10;
+            rectangle.Y1 = 20;
+            rectangle.X2 = 30;
+            rectangle.Y2 = 40;
+            Assert.AreEqual("Rectangle 10 20 30 40", rectangle.SaveText);
         }
 
         //TakeLargeTest1
@@ -41,17 +52,17 @@ namespace DrawingModel.Tests
         public void TakeLargeTest1()
         {
             rectangle.X1 = 10;
-            rectangle.X2 = 30;
-            Assert.AreEqual(30, rectangle.TakeLarge(rectangle.X1, rectangle.X2));
+            rectangle.X2 = 20;
+            Assert.AreEqual(20, rectangle.TakeLarge(rectangle.X1, rectangle.X2));
         }
 
         //TakeLargeTest2
         [TestMethod()]
         public void TakeLargeTest2()
         {
-            rectangle.X1 = 30;
+            rectangle.X1 = 20;
             rectangle.X2 = 10;
-            Assert.AreEqual(30, rectangle.TakeLarge(rectangle.X1, rectangle.X2));
+            Assert.AreEqual(20, rectangle.TakeLarge(rectangle.X1, rectangle.X2));
         }
 
         //TakeSmallTest1
@@ -59,7 +70,7 @@ namespace DrawingModel.Tests
         public void TakeSmallTest1()
         {
             rectangle.X1 = 10;
-            rectangle.X2 = 30;
+            rectangle.X2 = 20;
             Assert.AreEqual(10, rectangle.TakeSmall(rectangle.X1, rectangle.X2));
         }
 
@@ -67,7 +78,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TakeSmallTest2()
         {
-            rectangle.X1 = 30;
+            rectangle.X1 = 20;
             rectangle.X2 = 10;
             Assert.AreEqual(10, rectangle.TakeSmall(rectangle.X1, rectangle.X2));
         }

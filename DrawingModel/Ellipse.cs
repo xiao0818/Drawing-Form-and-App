@@ -98,21 +98,13 @@
         //TakeLarger
         public double TakeLarge(double number1, double number2)
         {
-            if (number1 > number2)
-            {
-                return number1;
-            }
-            return number2;
+            return number1 > number2 ? number1 : number2;
         }
 
         //TakeSmaller
         public double TakeSmall(double number1, double number2)
         {
-            if (number1 < number2)
-            {
-                return number1;
-            }
-            return number2;
+            return number1 < number2 ? number1 : number2;
         }
     }
 }

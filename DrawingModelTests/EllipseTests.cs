@@ -29,11 +29,22 @@ namespace DrawingModel.Tests
             Assert.AreEqual(ellipse.Y2, ellipseCopy.Y2);
         }
 
-        //GetShapeTest
+        //ShapeFlagTest
         [TestMethod()]
-        public void GetShapeTest()
+        public void ShapeFlagTest()
         {
             Assert.AreEqual(ShapeFlag.Ellipse, ellipse.ShapeFlag);
+        }
+
+        //SaveTextTest
+        [TestMethod()]
+        public void SaveTextTest()
+        {
+            ellipse.X1 = 10;
+            ellipse.Y1 = 20;
+            ellipse.X2 = 30;
+            ellipse.Y2 = 40;
+            Assert.AreEqual("Ellipse 10 20 30 40", ellipse.SaveText);
         }
 
         //TakeLargeTest1
@@ -41,17 +52,17 @@ namespace DrawingModel.Tests
         public void TakeLargeTest1()
         {
             ellipse.X1 = 10;
-            ellipse.X2 = 30;
-            Assert.AreEqual(30, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
+            ellipse.X2 = 20;
+            Assert.AreEqual(20, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
         }
 
         //TakeLargeTest2
         [TestMethod()]
         public void TakeLargeTest2()
         {
-            ellipse.X1 = 30;
+            ellipse.X1 = 20;
             ellipse.X2 = 10;
-            Assert.AreEqual(30, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
+            Assert.AreEqual(20, ellipse.TakeLarge(ellipse.X1, ellipse.X2));
         }
 
         //TakeSmallTest1
@@ -59,7 +70,7 @@ namespace DrawingModel.Tests
         public void TakeSmallTest1()
         {
             ellipse.X1 = 10;
-            ellipse.X2 = 30;
+            ellipse.X2 = 20;
             Assert.AreEqual(10, ellipse.TakeSmall(ellipse.X1, ellipse.X2));
         }
 
@@ -67,7 +78,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void TakeSmallTest2()
         {
-            ellipse.X1 = 30;
+            ellipse.X1 = 20;
             ellipse.X2 = 10;
             Assert.AreEqual(10, ellipse.TakeSmall(ellipse.X1, ellipse.X2));
         }

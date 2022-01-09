@@ -26,6 +26,7 @@ namespace DrawingModel.Tests
             Assert.AreEqual(rectangle.X2, line.Shape1.X2);
             Assert.AreEqual(rectangle.Y2, line.Shape1.Y2);
             Assert.AreEqual(ShapeFlag.Rectangle, line.Shape1.ShapeFlag);
+            Assert.AreEqual(0, line.ShapeIndex1);
         }
 
         //Shape2Test
@@ -40,11 +41,27 @@ namespace DrawingModel.Tests
             Assert.AreEqual(ellipse.X2, line.Shape2.X2);
             Assert.AreEqual(ellipse.Y2, line.Shape2.Y2);
             Assert.AreEqual(ShapeFlag.Ellipse, line.Shape2.ShapeFlag);
+            Assert.AreEqual(1, line.ShapeIndex2);
         }
 
         //CopyTestForNoShapeReference
         [TestMethod()]
         public void CopyTestForNoShapeReference()
+        {
+            line.X1 = 10;
+            line.Y1 = 20;
+            line.X2 = 30;
+            line.Y2 = 40;
+            Shape lineCopy = line.Copy();
+            Assert.AreEqual(line.X1, lineCopy.X1);
+            Assert.AreEqual(line.Y1, lineCopy.Y1);
+            Assert.AreEqual(line.X2, lineCopy.X2);
+            Assert.AreEqual(line.Y2, lineCopy.Y2);
+        }
+
+        //CopyTestForShapeReference
+        [TestMethod()]
+        public void CopyTestForShapeReference()
         {
             line.X1 = 10;
             line.Y1 = 20;
@@ -61,49 +78,28 @@ namespace DrawingModel.Tests
             Assert.AreEqual(line.Y1, lineCopy.Y1);
             Assert.AreEqual(line.X2, lineCopy.X2);
             Assert.AreEqual(line.Y2, lineCopy.Y2);
+            Assert.AreEqual(0, line.ShapeIndex1);
+            Assert.AreEqual(1, line.ShapeIndex2);
         }
 
-        //CopyTestForShapeReference
+        //ShapeFlagTest
         [TestMethod()]
-        public void CopyTestForShapeReference()
-        {
-            line.X1 = 10;
-            line.Y1 = 20;
-            line.X2 = 30;
-            line.Y2 = 40;
-            Shape lineCopy = line.Copy();
-            Assert.AreEqual(line.X1, lineCopy.X1);
-            Assert.AreEqual(line.Y1, lineCopy.Y1);
-            Assert.AreEqual(line.X2, lineCopy.X2);
-            Assert.AreEqual(line.Y2, lineCopy.Y2);
-        }
-
-        //GetShapeTest
-        [TestMethod()]
-        public void GetShapeTest()
+        public void ShapeFlagTest()
         {
             Assert.AreEqual(ShapeFlag.Line, line.ShapeFlag);
         }
 
-        //SetPointToShapeCenterTest
+        //SaveTextTest
         [TestMethod()]
-        public void SetPointToShapeCenterTest()
+        public void SaveTextTest()
         {
-            line.X1 = 10;
-            line.Y1 = 20;
-            line.X2 = 30;
-            line.Y2 = 40;
-            Ellipse ellipse1 = new Ellipse();
-            line.Shape1 = ellipse1;
-            SetShape1(ellipse1);
-            Ellipse ellipse2 = new Ellipse();
-            line.Shape2 = ellipse2;
-            SetShape2(ellipse2);
-            line.SetPointToShapeCenter();
-            Assert.AreEqual((ellipse1.X1 + ellipse1.X2) / 2, line.X1);
-            Assert.AreEqual((ellipse1.Y1 + ellipse1.Y2) / 2, line.Y1);
-            Assert.AreEqual((ellipse2.X1 + ellipse2.X2) / 2, line.X2);
-            Assert.AreEqual((ellipse2.Y1 + ellipse2.Y2) / 2, line.Y2);
+            Rectangle rectangle1 = new Rectangle();
+            line.Shape1 = rectangle1;
+            SetShape1(rectangle1);
+            Rectangle rectangle2 = new Rectangle();
+            line.Shape2 = rectangle2;
+            SetShape2(rectangle2);
+            Assert.AreEqual("Line 0 1", line.SaveText);
         }
 
         //setShape1
@@ -113,6 +109,7 @@ namespace DrawingModel.Tests
             shape.Y1 = 300;
             shape.X2 = 200;
             shape.Y2 = 100;
+            line.ShapeIndex1 = 0;
         }
 
         //setShape2
@@ -122,6 +119,7 @@ namespace DrawingModel.Tests
             shape.Y1 = 200;
             shape.X2 = 300;
             shape.Y2 = 400;
+            line.ShapeIndex2 = 1;
         }
     }
 }

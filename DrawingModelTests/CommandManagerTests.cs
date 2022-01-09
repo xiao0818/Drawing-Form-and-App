@@ -89,5 +89,25 @@ namespace DrawingModel.Tests
             }
             Assert.AreEqual("Cannot Redo exception\n", _exception);
         }
+
+        //AddCommandTest
+        [TestMethod()]
+        public void AddCommandTest()
+        {
+            commandManager.AddCommand(drawCommand);
+            Assert.AreEqual(0, model.Shapes.Count);
+            Assert.IsTrue(commandManager.IsUndoEnabled);
+            Assert.IsFalse(commandManager.IsRedoEnabled);
+        }
+
+        //ClearAllCommandTest
+        [TestMethod()]
+        public void ClearAllCommandTest()
+        {
+            commandManager.AddCommand(drawCommand);
+            commandManager.ClearAllCommand();
+            Assert.IsFalse(commandManager.IsUndoEnabled);
+            Assert.IsFalse(commandManager.IsRedoEnabled);
+        }
     }
 }
