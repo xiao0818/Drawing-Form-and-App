@@ -54,6 +54,7 @@
             }
             else
             {
+                _model.ResetSelection();
                 _model.SetPointerState();
             }
         }

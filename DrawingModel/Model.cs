@@ -227,6 +227,7 @@ namespace DrawingModel
         //SetPointerState
         public void SetPointerState()
         {
+            _shapeFlag = ShapeFlag.Null;
             _state = new PointerState(this);
         }
 

@@ -52,7 +52,6 @@ namespace DrawingModel
                     _line.Shape2 = isInShapes;
                     _line.ShapeIndex2 = GetShapeIndex(_line.Shape2);
                     _model.ExecuteCommand(new DrawCommand(_model, _line.Copy()));
-                    _model.ShapeFlag = ShapeFlag.Null;
                     _model.SetPointerState();
                 }
                 else
@@ -87,9 +86,12 @@ namespace DrawingModel
             for (int index = 0; index < shapes.Count; index++)
             {
                 Shape aShape = shapes[shapes.Count - index - 1];
-                if ((aShape.ShapeFlag != ShapeFlag.Line) && ((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
+                if (aShape.ShapeFlag != ShapeFlag.Line)
                 {
-                    return aShape;
+                    if (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
+                    {
+                        return aShape;
+                    }
                 }
             }
             return null;
@@ -98,16 +100,17 @@ namespace DrawingModel
         //GetShapeIndex
         private int GetShapeIndex(Shape shape)
         {
+            int targetIndex = 0;
             List<Shape> shapes = _model.Shapes;
             for (int index = 0; index < shapes.Count; index++)
             {
                 Shape aShape = shapes[index];
                 if (shape == aShape)
                 {
-                    return index;
+                    targetIndex = index;
                 }
             }
-            return -1;
+            return targetIndex;
         }
     }
 }

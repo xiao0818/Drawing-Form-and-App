@@ -13,13 +13,11 @@ namespace DrawingModel
         //PressedPointer
         public void PressedPointer(double pointX, double pointY)
         {
-
         }
 
         //MovedPointer
         public void MovedPointer(double pointX, double pointY)
         {
-
         }
 
         //ReleasedPointer

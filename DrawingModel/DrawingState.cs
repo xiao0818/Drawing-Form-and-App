@@ -43,7 +43,6 @@
                 _hint.X2 = pointX;
                 _hint.Y2 = pointY;
                 _model.ExecuteCommand(new DrawCommand(_model, _hint.Copy()));
-                _model.ShapeFlag = ShapeFlag.Null;
                 _model.SetPointerState();
             }
             else
