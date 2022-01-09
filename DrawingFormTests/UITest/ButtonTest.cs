@@ -1,12 +1,11 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace DrawingForm.Tests
 {
     [TestClass()]
-    public class ButtonFunctionTest
+    public class ButtonTest
     {
         Robot _robot;
         private string targetAppPath;
@@ -31,9 +30,9 @@ namespace DrawingForm.Tests
             _robot.CleanUp();
         }
 
-        //DrawRectangle
+        //DrawRectangleTest
         [TestMethod]
-        public void DrawRectangle()
+        public void DrawRectangleTest()
         {
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-100, -100, 100, 100);
@@ -41,9 +40,9 @@ namespace DrawingForm.Tests
             _robot.AssertLabelText("_label", "Selected : Rectangle (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
         }
 
-        //DrawEllipse
+        //DrawEllipseTest
         [TestMethod]
-        public void DrawEllipse()
+        public void DrawEllipseTest()
         {
             _robot.ClickButton("Ellipse");
             _robot.DragAndDrop(-100, -100, 100, 100);
@@ -51,9 +50,9 @@ namespace DrawingForm.Tests
             _robot.AssertLabelText("_label", "Selected : Ellipse (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
         }
 
-        //DrawLine
+        //DrawLineTest
         [TestMethod]
-        public void DrawLine()
+        public void DrawLineTest()
         {
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-150, -150, -50, -50);
@@ -65,9 +64,9 @@ namespace DrawingForm.Tests
             _robot.AssertLabelText("_label", "Selected : Line (" + (centerX - 100).ToString() + ", " + (centerY - 100).ToString() + ", " + (centerX + 100).ToString() + ", " + (centerY + 100).ToString() + ")");
         }
 
-        //Clear
+        //ClearTest
         [TestMethod]
-        public void Clear()
+        public void ClearTest()
         {
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-100, -100, 100, 100);

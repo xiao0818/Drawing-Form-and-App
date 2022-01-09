@@ -262,7 +262,7 @@ namespace DrawingForm
                 if (GetShapeWithIndex(shapes, 0).ShapeFlag == ShapeFlag.DotRectangle)
                 {
                     DotRectangle target = _drawingFormPresentationModel.Target;
-                    _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
+                    _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + (int)TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + (int)TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + (int)TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + (int)TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
                 }
                 else
                 {
