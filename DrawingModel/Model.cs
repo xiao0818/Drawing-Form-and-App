@@ -14,7 +14,6 @@ namespace DrawingModel
         ShapeFlag _shapeFlag = ShapeFlag.Null;
         CommandManager _commandManager = new CommandManager();
         DotRectangle _target;
-        bool _isSelectMode = true;
         IState _state;
         GoogleDriveService _service;
         const string APPLICATION_NAME = "DrawAnywhere";
@@ -200,15 +199,6 @@ namespace DrawingModel
             get
             {
                 return _target;
-            }
-        }
-
-        //IsSelectMode
-        public bool IsSelectMode
-        {
-            get
-            {
-                return _isSelectMode;
             }
         }
 

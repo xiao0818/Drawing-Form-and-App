@@ -1,2 +1,1 @@
-Rectangle 240 122 759 267
-Ellipse 491 166 1169 411
+Rectangle 100 100 200 200
