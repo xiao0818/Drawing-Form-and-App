@@ -41,9 +41,9 @@ namespace DrawingForm.Tests
             _robot.AssertLabelText("_label", "Selected : None");
         }
 
-        //MoveTest
+        //RedoTest
         [TestMethod]
-        public void MovingTest()
+        public void RedoTest()
         {
             _robot.ClickButton("Rectangle");
             _robot.DragAndDrop(-100, -100, 100, 100);
