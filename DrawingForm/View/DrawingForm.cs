@@ -29,7 +29,7 @@ namespace DrawingForm
         const string LABEL_RIGHT_BRACKET = ")";
         const string SAVE_TEXT = "Save";
         const string LOAD_TEXT = "Load";
-        const string WAITING_MESSAGE = "The Save Function is working now. Just a moment, please.";
+        const string WAITING_MESSAGE = "The \"Save\" function is working now. Just a moment, please.";
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
             InitializeComponent();
