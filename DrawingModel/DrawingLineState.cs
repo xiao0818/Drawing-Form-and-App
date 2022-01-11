@@ -55,9 +55,7 @@ namespace DrawingModel
                     _model.SetPointerState();
                 }
                 else
-                {
                     _model.SetDrawingLineState();
-                }
             }
         }
 
@@ -87,12 +85,8 @@ namespace DrawingModel
             {
                 Shape aShape = shapes[shapes.Count - index - 1];
                 if (aShape.ShapeFlag != ShapeFlag.Line)
-                {
                     if (((aShape.X1 <= pointX && aShape.X2 >= pointX) || (aShape.X1 >= pointX && aShape.X2 <= pointX)) && ((aShape.Y1 <= pointY && aShape.Y2 >= pointY) || (aShape.Y1 >= pointY && aShape.Y2 <= pointY)))
-                    {
                         return aShape;
-                    }
-                }
             }
             return null;
         }
@@ -106,9 +100,7 @@ namespace DrawingModel
             {
                 Shape aShape = shapes[index];
                 if (shape == aShape)
-                {
                     targetIndex = index;
-                }
             }
             return targetIndex;
         }

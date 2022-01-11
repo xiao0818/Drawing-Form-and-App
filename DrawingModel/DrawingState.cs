@@ -46,9 +46,7 @@
                 _model.SetPointerState();
             }
             else
-            {
                 _model.SetDrawingState();
-            }
         }
 
         //Hint

@@ -113,9 +113,7 @@ namespace DrawingApp
         {
             _model.ReleasedPointer(pointX, pointY);
             if (_model.StateFlag != StateFlag.DrawingLineState)
-            {
                 _isLineButtonEnabled = true;
-            }
             if (_model.StateFlag != StateFlag.DrawingState)
             {
                 _isRectangleButtonEnabled = true;
@@ -210,9 +208,7 @@ namespace DrawingApp
         public void NotifyModelChanged()
         {
             if (_drawingAppPresentationModelChanged != null)
-            {
                 _drawingAppPresentationModelChanged();
-            }
         }
     }
 }

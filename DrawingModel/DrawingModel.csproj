@@ -86,13 +86,15 @@
     <Compile Include="StateFlag.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="clientSecret.json">
+    <None Include="..\clientSecret.json">
+      <Link>clientSecret.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Shape.txt">
+    <Content Include="..\Shape.txt">
+      <Link>Shape.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

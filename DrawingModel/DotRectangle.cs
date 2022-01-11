@@ -95,9 +95,7 @@
             hint.X2 = _x2;
             hint.Y2 = _y2;
             if (_shape != null)
-            {
                 hint.Shape = _shape;
-            }
             return hint;
         }
 

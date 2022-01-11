@@ -27,7 +27,9 @@ namespace DrawingForm
         const string LABEL_COMMA = ", ";
         const string LABEL_LEFT_BRACKET = " (";
         const string LABEL_RIGHT_BRACKET = ")";
-
+        const string SAVE_TEXT = "Save";
+        const string LOAD_TEXT = "Load";
+        const string WAITING_MESSAGE = "The Save Function is working now. Just a moment, please.";
         public DrawingForm(DrawingFormPresentationModel drawingFormPresentationModel)
         {
             InitializeComponent();
@@ -207,9 +209,7 @@ namespace DrawingForm
         public double TakeLarge(double number1, double number2)
         {
             if (number1 > number2)
-            {
                 return number1;
-            }
             return number2;
         }
 
@@ -217,9 +217,7 @@ namespace DrawingForm
         public double TakeSmall(double number1, double number2)
         {
             if (number1 < number2)
-            {
                 return number1;
-            }
             return number2;
         }
 
@@ -265,22 +263,21 @@ namespace DrawingForm
                     _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + (int)TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + (int)TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + (int)TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + (int)TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
                 }
                 else
-                {
                     _label.Text = LABEL_DEFAULT;
-                }
             }
             else
-            {
                 _label.Text = LABEL_DEFAULT;
-            }
         }
 
         //HandleSaveButtonClick
         public void HandleSaveButtonClick(object sender, System.EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to save shapes?", "Save", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure to save shapes?", SAVE_TEXT, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _drawingFormPresentationModel.HandleSaveButtonClick();
+                if (_drawingFormPresentationModel.IsShapeFileWorking == false)
+                    _drawingFormPresentationModel.HandleSaveButtonClick();
+                else
+                    MessageBox.Show(WAITING_MESSAGE);
             }
             RefreshButton();
             RefreshUserInterface();
@@ -289,9 +286,16 @@ namespace DrawingForm
         //HandleLoadButtonClick
         public void HandleLoadButtonClick(object sender, System.EventArgs e)
         {
-            if (MessageBox.Show("Are you sure to load shapes?", "Load", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Are you sure to load shapes?", LOAD_TEXT, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                _drawingFormPresentationModel.HandleLoadButtonClick();
+                if (_drawingFormPresentationModel.IsShapeFileWorking == false)
+                {
+                    this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+                    _drawingFormPresentationModel.HandleLoadButtonClick();
+                    this.Cursor = System.Windows.Forms.Cursors.Default;
+                }
+                else
+                    MessageBox.Show(WAITING_MESSAGE);
             }
             RefreshButton();
             RefreshUserInterface();

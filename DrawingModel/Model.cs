@@ -19,14 +19,25 @@ namespace DrawingModel
         const string APPLICATION_NAME = "DrawAnywhere";
         const string CLIENT_SECRET_FILE_NAME = "clientSecret.json";
         const string CONTENT_TYPE = "text/txt";
-        const string FILE_PATH = "\\..\\..\\..\\DrawingModel\\";
+        const string FILE_PATH = "\\..\\..\\..\\";
         const string SHAPE_FILE_NAME = "Shape.txt";
+        const string LINE_STRING = "Line";
+        const string RECTANGLE_STRING = "Rectangle";
+        const string ELLIPSE_STRING = "Ellipse";
+        const char SPACE = ' ';
+        const int SHAPE_NAME_INDEX = 0;
+        const int X_1_INDEX = 1;
+        const int Y_1_INDEX = 2;
+        const int X_2_INDEX = 3;
+        const int Y_2_INDEX = 4;
+        const int SHAPE_1_INDEX = 1;
+        const int SHAPE_2_INDEX = 2;
+        bool _isShapeFileWorking = false;
         public Model()
         {
             _state = new PointerState(this);
         }
 
-        //Shapes
         public List<Shape> Shapes
         {
             get
@@ -39,7 +50,6 @@ namespace DrawingModel
             }
         }
 
-        //ShapeFlag
         public ShapeFlag ShapeFlag
         {
             get
@@ -56,9 +66,7 @@ namespace DrawingModel
         public void PressedPointer(double pointX, double pointY)
         {
             if (pointX > 0 && pointY > 0)
-            {
                 _state.PressedPointer(pointX, pointY);
-            }
         }
 
         //PointerMoved
@@ -88,19 +96,11 @@ namespace DrawingModel
         {
             graphics.ClearAll();
             foreach (Shape aShape in _shapes)
-            {
                 if (aShape.ShapeFlag == ShapeFlag.Line)
-                {
                     DrawShapes(aShape, graphics);
-                }
-            }
             foreach (Shape aShape in _shapes)
-            {
                 if (aShape.ShapeFlag != ShapeFlag.Line)
-                {
                     DrawShapes(aShape, graphics);
-                }
-            }
             DrawHint(graphics);
         }
 
@@ -115,9 +115,7 @@ namespace DrawingModel
         {
             Shape hint = _state.Hint;
             if (hint != null)
-            {
                 hint.Draw(graphics);
-            }
         }
 
         //DrawShape
@@ -185,15 +183,10 @@ namespace DrawingModel
         public void ResetSelection()
         {
             if (_shapes.Count != 0)
-            {
                 if (_shapes[_shapes.Count - 1].ShapeFlag == ShapeFlag.DotRectangle)
-                {
                     DeleteShape();
-                }
-            }
         }
 
-        //Target
         public DotRectangle Target
         {
             get
@@ -239,7 +232,6 @@ namespace DrawingModel
             _commandManager.Execute(command);
         }
 
-        //STateFlag
         public StateFlag StateFlag
         {
             get
@@ -248,17 +240,25 @@ namespace DrawingModel
             }
         }
 
+        public bool IsShapeFileWorking
+        {
+            get
+            {
+                return _isShapeFileWorking;
+            }
+        }
+
         //Save
         public void Save()
         {
+            _isShapeFileWorking = true;
             List<Shape> saveShapes = new List<Shape>(_shapes);
             StreamWriter fileWriter = new StreamWriter(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             foreach (Shape aShape in saveShapes)
-            {
                 fileWriter.WriteLine(aShape.SaveText);
-            }
             fileWriter.Close();
             SaveToGoogle();
+            _isShapeFileWorking = false;
         }
 
         //Load
@@ -266,44 +266,48 @@ namespace DrawingModel
         {
             LoadFromGoogle();
             _commandManager.ClearAllCommand();
-            int count = 0;
             StreamReader fileReader = new StreamReader(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             List<Shape> loadShapes = new List<Shape>();
             while (fileReader.EndOfStream == false)
             {
-                count++;
                 string text = fileReader.ReadLine();
-                List<string> textList = text.Split(' ').ToList();
-                if (textList[0] != "Line")
-                {
-                    Shape shape = null;
-                    if (textList[0] == "Rectangle")
-                    {
-                        shape = new Rectangle();
-                    }
-                    else if (textList[0] == "Ellipse")
-                    {
-                        shape = new Ellipse();
-                    }
-                    shape.X1 = Convert.ToDouble(textList[1]);
-                    shape.Y1 = Convert.ToDouble(textList[2]);
-                    shape.X2 = Convert.ToDouble(textList[3]);
-                    shape.Y2 = Convert.ToDouble(textList[4]);
-                    loadShapes.Add(shape.Copy());
-                }
-                else
-                {
-                    Line line = new Line();
-                    line.ShapeIndex1 = Convert.ToInt32(textList[1]);
-                    line.Shape1 = loadShapes[line.ShapeIndex1];
-                    line.ShapeIndex2 = Convert.ToInt32(textList[2]);
-                    line.Shape2 = loadShapes[line.ShapeIndex2];
-                    loadShapes.Add(line.Copy());
-                }
+                List<string> textList = text.Split(SPACE).ToList();
+                LoadForShapes(textList, loadShapes);
             }
             fileReader.Close();
             _shapes = new List<Shape>(loadShapes);
             NotifyModelChanged();
+        }
+
+        //LoadForShapes
+        private void LoadForShapes(List<string> textList, List<Shape> loadShapes)
+        {
+            if (textList[SHAPE_NAME_INDEX] != LINE_STRING)
+                LoadForNotLine(textList, loadShapes);
+            else
+            {
+                Line line = new Line();
+                line.ShapeIndex1 = Convert.ToInt32(textList[SHAPE_1_INDEX]);
+                line.Shape1 = loadShapes[line.ShapeIndex1];
+                line.ShapeIndex2 = Convert.ToInt32(textList[SHAPE_2_INDEX]);
+                line.Shape2 = loadShapes[line.ShapeIndex2];
+                loadShapes.Add(line.Copy());
+            }
+        }
+
+        //LoadForNotLine
+        private void LoadForNotLine(List<string> textList, List<Shape> loadShapes)
+        {
+            Shape shape = null;
+            if (textList[SHAPE_NAME_INDEX] == RECTANGLE_STRING)
+                shape = new Rectangle();
+            else if (textList[SHAPE_NAME_INDEX] == ELLIPSE_STRING)
+                shape = new Ellipse();
+            shape.X1 = Convert.ToDouble(textList[X_1_INDEX]);
+            shape.Y1 = Convert.ToDouble(textList[Y_1_INDEX]);
+            shape.X2 = Convert.ToDouble(textList[X_2_INDEX]);
+            shape.Y2 = Convert.ToDouble(textList[Y_2_INDEX]);
+            loadShapes.Add(shape.Copy());
         }
 
         //SaveToGoogle
@@ -312,9 +316,7 @@ namespace DrawingModel
             _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + FILE_PATH + CLIENT_SECRET_FILE_NAME);
             Google.Apis.Drive.v2.Data.File foundFile = _service.ListRootFileAndFolder().Find(item => item.Title == SHAPE_FILE_NAME);
             if (foundFile != null)
-            {
                 _service.DeleteFile(foundFile.Id);
-            }
             _service.UploadFile(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME, CONTENT_TYPE);
         }
 
@@ -332,9 +334,7 @@ namespace DrawingModel
         public void NotifyModelChanged()
         {
             if (_modelChanged != null)
-            {
                 _modelChanged();
-            }
         }
     }
 }

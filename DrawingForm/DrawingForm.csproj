@@ -155,7 +155,7 @@
     <EmbeddedResource Include="View\DrawingForm.resx">
       <DependentUpon>DrawingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="..\DrawingModel\clientSecret.json">
+    <None Include="..\clientSecret.json">
       <Link>Model\clientSecret.json</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -174,7 +174,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="..\DrawingModel\Shape.txt">
+    <Content Include="..\Shape.txt">
       <Link>Model\Shape.txt</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

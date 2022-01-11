@@ -13,9 +13,7 @@ namespace DrawingModel
         public void Execute(ICommand command)
         {
             command.Execute();
-            // push command 進 undo stack
             _undo.Push(command);
-            // 清除redo stack
             _redo.Clear();
         }
 

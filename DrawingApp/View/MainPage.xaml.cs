@@ -141,9 +141,7 @@ namespace DrawingApp
         public double TakeLarge(double number1, double number2)
         {
             if (number1 > number2)
-            {
                 return Math.Round(number1, 0);
-            }
             return Math.Round(number2, 0);
         }
 
@@ -151,9 +149,7 @@ namespace DrawingApp
         public double TakeSmall(double number1, double number2)
         {
             if (number1 < number2)
-            {
                 return Math.Round(number1, 0);
-            }
             return Math.Round(number2, 0);
         }
 
@@ -199,14 +195,10 @@ namespace DrawingApp
                     _label.Text = LABEL_HEAD + target.Shape.ShapeFlag + LABEL_LEFT_BRACKET + TakeSmall(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeSmall(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_COMMA + TakeLarge(GetShapePointX1(target), GetShapePointX2(target)) + LABEL_COMMA + TakeLarge(GetShapePointY1(target), GetShapePointY2(target)) + LABEL_RIGHT_BRACKET;
                 }
                 else
-                {
                     _label.Text = LABEL_DEFAULT;
-                }
             }
             else
-            {
                 _label.Text = LABEL_DEFAULT;
-            }
         }
 
         //HandleSaveButtonClick

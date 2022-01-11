@@ -8,7 +8,7 @@ namespace DrawingModel.Tests
     public class ModelTests
     {
         Model model;
-        const string FILE_PATH = "\\..\\..\\..\\DrawingModel\\";
+        const string FILE_PATH = "\\..\\..\\..\\";
         const string SHAPE_FILE_NAME = "Shape.txt";
 
         //Initialize
@@ -210,6 +210,7 @@ namespace DrawingModel.Tests
         [TestMethod()]
         public void SaveTest()
         {
+            Assert.IsFalse(model.IsShapeFileWorking);
             Rectangle rectangle = new Rectangle();
             rectangle.X1 = rectangle.Y1 = 100;
             rectangle.X2 = rectangle.Y2 = 200;
@@ -217,6 +218,7 @@ namespace DrawingModel.Tests
             model.Save();
             StreamReader fileReader = new StreamReader(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME);
             Assert.AreEqual(rectangle.SaveText + "\r\n", fileReader.ReadToEnd());
+            Assert.IsFalse(model.IsShapeFileWorking);
         }
 
         //LoadTest

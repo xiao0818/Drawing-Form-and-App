@@ -114,9 +114,7 @@ namespace DrawingForm
         {
             _model.ReleasedPointer(pointX, pointY);
             if (_model.StateFlag != StateFlag.DrawingLineState)
-            {
                 _isLineButtonEnabled = true;
-            }
             if (_model.StateFlag != StateFlag.DrawingState)
             {
                 _isRectangleButtonEnabled = true;
@@ -200,13 +198,19 @@ namespace DrawingForm
             _model.SetPointerState();
         }
 
+        public bool IsShapeFileWorking
+        {
+            get
+            {
+                return _model.IsShapeFileWorking;
+            }
+        }
+
         //NotifyModelChanged
         public void NotifyModelChanged()
         {
             if (_drawingFormPresentationModelChanged != null)
-            {
                 _drawingFormPresentationModelChanged();
-            }
         }
     }
 }
