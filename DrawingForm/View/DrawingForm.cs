@@ -274,7 +274,7 @@ namespace DrawingForm
         {
             if (MessageBox.Show("Are you sure to save shapes?", SAVE_TEXT, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (_drawingFormPresentationModel.IsShapeFileWorking == false)
+                if (IsShapeFileWorking == false)
                     _drawingFormPresentationModel.HandleSaveButtonClick();
                 else
                     MessageBox.Show(WAITING_MESSAGE);
@@ -288,7 +288,7 @@ namespace DrawingForm
         {
             if (MessageBox.Show("Are you sure to load shapes?", LOAD_TEXT, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if (_drawingFormPresentationModel.IsShapeFileWorking == false)
+                if (IsShapeFileWorking == false)
                 {
                     this.Cursor = System.Windows.Forms.Cursors.WaitCursor;
                     _drawingFormPresentationModel.HandleLoadButtonClick();
@@ -299,6 +299,14 @@ namespace DrawingForm
             }
             RefreshButton();
             RefreshUserInterface();
+        }
+
+        private bool IsShapeFileWorking
+        {
+            get
+            {
+                return _drawingFormPresentationModel.IsShapeFileWorking;
+            }
         }
     }
 }

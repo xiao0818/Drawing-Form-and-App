@@ -26,12 +26,10 @@ namespace DrawingModel
         const string ELLIPSE_STRING = "Ellipse";
         const char SPACE = ' ';
         const int SHAPE_NAME_INDEX = 0;
-        const int X_1_INDEX = 1;
-        const int Y_1_INDEX = 2;
-        const int X_2_INDEX = 3;
-        const int Y_2_INDEX = 4;
-        const int SHAPE_1_INDEX = 1;
-        const int SHAPE_2_INDEX = 2;
+        const int FIRST_INDEX = 1;
+        const int SECOND_INDEX = 2;
+        const int THIRD_INDEX = 3;
+        const int FORTH_INDEX = 4;
         bool _isShapeFileWorking = false;
         public Model()
         {
@@ -287,9 +285,9 @@ namespace DrawingModel
             else
             {
                 Line line = new Line();
-                line.ShapeIndex1 = Convert.ToInt32(textList[SHAPE_1_INDEX]);
+                line.ShapeIndex1 = Convert.ToInt32(textList[FIRST_INDEX]);
                 line.Shape1 = loadShapes[line.ShapeIndex1];
-                line.ShapeIndex2 = Convert.ToInt32(textList[SHAPE_2_INDEX]);
+                line.ShapeIndex2 = Convert.ToInt32(textList[SECOND_INDEX]);
                 line.Shape2 = loadShapes[line.ShapeIndex2];
                 loadShapes.Add(line.Copy());
             }
@@ -303,10 +301,10 @@ namespace DrawingModel
                 shape = new Rectangle();
             else if (textList[SHAPE_NAME_INDEX] == ELLIPSE_STRING)
                 shape = new Ellipse();
-            shape.X1 = Convert.ToDouble(textList[X_1_INDEX]);
-            shape.Y1 = Convert.ToDouble(textList[Y_1_INDEX]);
-            shape.X2 = Convert.ToDouble(textList[X_2_INDEX]);
-            shape.Y2 = Convert.ToDouble(textList[Y_2_INDEX]);
+            shape.X1 = Convert.ToDouble(textList[FIRST_INDEX]);
+            shape.Y1 = Convert.ToDouble(textList[SECOND_INDEX]);
+            shape.X2 = Convert.ToDouble(textList[THIRD_INDEX]);
+            shape.Y2 = Convert.ToDouble(textList[FORTH_INDEX]);
             loadShapes.Add(shape.Copy());
         }
 
@@ -315,9 +313,15 @@ namespace DrawingModel
         {
             _service = new GoogleDriveService(APPLICATION_NAME, Environment.CurrentDirectory + FILE_PATH + CLIENT_SECRET_FILE_NAME);
             Google.Apis.Drive.v2.Data.File foundFile = _service.ListRootFileAndFolder().Find(item => item.Title == SHAPE_FILE_NAME);
+            DeleteFile(foundFile);
+            _service.UploadFile(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME, CONTENT_TYPE);
+        }
+
+        //DeleteFile
+        private void DeleteFile(Google.Apis.Drive.v2.Data.File foundFile)
+        {
             if (foundFile != null)
                 _service.DeleteFile(foundFile.Id);
-            _service.UploadFile(Environment.CurrentDirectory + FILE_PATH + SHAPE_FILE_NAME, CONTENT_TYPE);
         }
 
         //LoadFromGoogle
